@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="MCU2">
+		<CBX_INST_ENTRY INSTANCE_NAME="|MCU2|ALU:MainALU|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_fom.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MCU2|ALU:MainALU|lpm_mult:Mult0" CBX_FILE_NAME="mult_jft.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MCU2|ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_out:mac_out2" CBX_FILE_NAME="mac_out_mv82.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MCU2|Rom:ProgramMemory|altsyncram:rom_rtl_0" CBX_FILE_NAME="altsyncram_0u61.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MCU2|ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1" CBX_FILE_NAME="mac_mult_d1h1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
