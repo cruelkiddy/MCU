@@ -25,9 +25,17 @@ module MCU2(
     assign testout = DataACC[15:0];
     assign McodeOut = ProgramCode;
 
+    ///< Wires Linking Controller & Ram
+    wire RamCS;
+    wire RamRE;
+    wire RamWE;
+    wire [7:0] RamAddr;
+    wire [15:0] DataFromRam;
+    wire [15:0] DataIntoRam;
 
-    //< TODO For ram 
-    //< Ram myRam();
+
+
+    Ram myRam(DataIntoRam, DataFromRam, RamAddr, RamCS, RamWE, RamRE);
     
     Rom ProgramMemory(ProgramCode, RomAddr, RomCS, RomRE);
 
@@ -41,7 +49,13 @@ module MCU2(
                               .dataACC(DataACC),
                               .functionSelect(FunctionSelect),
                               .arin(ar),
-                              .brin(br)
+                              .brin(br),
+                              .ramData(DataFromRam),
+                              .ram_data_out(DataIntoRam),
+                              .ram_cs(RamCS),
+                              .ram_re(RamRE),
+                              .ram_we(RamWE),
+                              .portOut(portOut)
                              );
 
 

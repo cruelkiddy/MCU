@@ -1,20 +1,24 @@
 
 State Machine - |MCU2|controller:MainController|CurrentState
-Name CurrentState.State27 CurrentState.State26 CurrentState.State25 CurrentState.11000 CurrentState.State23 CurrentState.State22 CurrentState.10101 CurrentState.State9 CurrentState.State8 CurrentState.State7 CurrentState.State6 CurrentState.State5 CurrentState.State4 CurrentState.State3 CurrentState.State2 CurrentState.State1 CurrentState.IDLE 
-CurrentState.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-CurrentState.State1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
-CurrentState.State2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
-CurrentState.State3 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
-CurrentState.State4 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
-CurrentState.State5 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
-CurrentState.State6 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
-CurrentState.State7 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
-CurrentState.State8 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
-CurrentState.State9 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
-CurrentState.10101 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
-CurrentState.State22 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
-CurrentState.State23 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
-CurrentState.11000 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
-CurrentState.State25 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-CurrentState.State26 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-CurrentState.State27 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+Name CurrentState.PState1 CurrentState.PState0 CurrentState.TState1 CurrentState.TState0 CurrentState.State27 CurrentState.State26 CurrentState.State25 CurrentState.State24 CurrentState.State23 CurrentState.State22 CurrentState.State21 CurrentState.State9 CurrentState.State8 CurrentState.State7 CurrentState.State6 CurrentState.State5 CurrentState.State4 CurrentState.State3 CurrentState.State2 CurrentState.State1 CurrentState.IDLE 
+CurrentState.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+CurrentState.State1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+CurrentState.State2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+CurrentState.State3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+CurrentState.State4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+CurrentState.State5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+CurrentState.State6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+CurrentState.State7 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+CurrentState.State8 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+CurrentState.State9 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+CurrentState.State21 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+CurrentState.State22 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+CurrentState.State23 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+CurrentState.State24 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+CurrentState.State25 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+CurrentState.State26 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+CurrentState.State27 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+CurrentState.TState0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+CurrentState.TState1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+CurrentState.PState0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+CurrentState.PState1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 

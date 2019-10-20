@@ -1,2 +1,2 @@
 v1
-DSP_BALANCING_IMPLEMENTATION,LOGIC_ELEMENTS,ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,LOGIC_ELEMENTS,ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|mac_out2,

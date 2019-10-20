@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MCU2
-Tue Oct 15 20:31:17 2019
+Sun Oct 20 21:42:48 2019
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -22,19 +22,21 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
  14. Registers Packed Into Inferred Megafunctions
  15. Multiplexer Restructuring Statistics (Restructuring Performed)
  16. Source assignments for Rom:ProgramMemory|altsyncram:rom_rtl_0|altsyncram_0u61:auto_generated
- 17. Parameter Settings for User Entity Instance: Rom:ProgramMemory
- 18. Parameter Settings for User Entity Instance: controller:MainController
- 19. Parameter Settings for Inferred Entity Instance: Rom:ProgramMemory|altsyncram:rom_rtl_0
- 20. Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_divide:Div0
- 21. Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_mult:Mult0
- 22. Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1
- 23. Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_out:mac_out2
- 24. altsyncram Parameter Settings by Entity Instance
- 25. lpm_mult Parameter Settings by Entity Instance
- 26. Port Connectivity Checks: "controller:MainController"
- 27. Port Connectivity Checks: "ALU:MainALU"
- 28. Elapsed Time Per Partition
- 29. Analysis & Synthesis Messages
+ 17. Source assignments for Ram:myRam|altsyncram:ram_rtl_0|altsyncram_87d1:auto_generated
+ 18. Parameter Settings for User Entity Instance: Rom:ProgramMemory
+ 19. Parameter Settings for User Entity Instance: controller:MainController
+ 20. Parameter Settings for Inferred Entity Instance: Rom:ProgramMemory|altsyncram:rom_rtl_0
+ 21. Parameter Settings for Inferred Entity Instance: Ram:myRam|altsyncram:ram_rtl_0
+ 22. Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_mult:Mult0
+ 23. Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_divide:Div0
+ 24. Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1
+ 25. Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out2
+ 26. altsyncram Parameter Settings by Entity Instance
+ 27. lpm_mult Parameter Settings by Entity Instance
+ 28. Port Connectivity Checks: "controller:MainController"
+ 29. Port Connectivity Checks: "ALU:MainALU"
+ 30. Elapsed Time Per Partition
+ 31. Analysis & Synthesis Messages
 
 
 
@@ -60,18 +62,18 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Oct 15 20:31:17 2019       ;
+; Analysis & Synthesis Status        ; Successful - Sun Oct 20 21:42:48 2019       ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
 ; Revision Name                      ; MCU2                                        ;
 ; Top-level Entity Name              ; MCU2                                        ;
 ; Family                             ; Cyclone IV GX                               ;
-; Total logic elements               ; 783                                         ;
-;     Total combinational functions  ; 741                                         ;
-;     Dedicated logic registers      ; 78                                          ;
-; Total registers                    ; 78                                          ;
+; Total logic elements               ; 1,228                                       ;
+;     Total combinational functions  ; 1,177                                       ;
+;     Dedicated logic registers      ; 138                                         ;
+; Total registers                    ; 138                                         ;
 ; Total pins                         ; 98                                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 4,096                                       ;
+; Total memory bits                  ; 4,128                                       ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
 ; Total GXB Receiver Channel PCS     ; 0                                           ;
 ; Total GXB Receiver Channel PMA     ; 0                                           ;
@@ -191,6 +193,7 @@ applicable agreement for further details.
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                               ; Library ;
 +----------------------------------+-----------------+-------------------------------------------------------+--------------------------------------------------------------------------------------------+---------+
 ; Rom.v                            ; yes             ; User Verilog HDL File                                 ; C:/Users/84368/EE/FPGA_Project/ElectronicDesignProject/MCU2/Rom.v                          ;         ;
+; Ram.v                            ; yes             ; User Verilog HDL File                                 ; C:/Users/84368/EE/FPGA_Project/ElectronicDesignProject/MCU2/Ram.v                          ;         ;
 ; MCU2.v                           ; yes             ; User Verilog HDL File                                 ; C:/Users/84368/EE/FPGA_Project/ElectronicDesignProject/MCU2/MCU2.v                         ;         ;
 ; controller.v                     ; yes             ; User Verilog HDL File                                 ; C:/Users/84368/EE/FPGA_Project/ElectronicDesignProject/MCU2/controller.v                   ;         ;
 ; ALU.v                            ; yes             ; User Verilog HDL File                                 ; C:/Users/84368/EE/FPGA_Project/ElectronicDesignProject/MCU2/ALU.v                          ;         ;
@@ -205,7 +208,14 @@ applicable agreement for further details.
 ; altram.inc                       ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/altram.inc                                  ;         ;
 ; altdpram.inc                     ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/altdpram.inc                                ;         ;
 ; db/altsyncram_0u61.tdf           ; yes             ; Auto-Generated Megafunction                           ; C:/Users/84368/EE/FPGA_Project/ElectronicDesignProject/MCU2/db/altsyncram_0u61.tdf         ;         ;
-; db/MCU2.ram0_Rom_15fa0.hdl.mif   ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/84368/EE/FPGA_Project/ElectronicDesignProject/MCU2/db/MCU2.ram0_Rom_15fa0.hdl.mif ;         ;
+; db/mcu2.ram0_rom_15fa0.hdl.mif   ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/84368/EE/FPGA_Project/ElectronicDesignProject/MCU2/db/mcu2.ram0_rom_15fa0.hdl.mif ;         ;
+; db/altsyncram_87d1.tdf           ; yes             ; Auto-Generated Megafunction                           ; C:/Users/84368/EE/FPGA_Project/ElectronicDesignProject/MCU2/db/altsyncram_87d1.tdf         ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_mult.tdf                                ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_add_sub.inc                             ;         ;
+; multcore.inc                     ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/multcore.inc                                ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/bypassff.inc                                ;         ;
+; altshift.inc                     ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/altshift.inc                                ;         ;
+; db/mult_1ht.tdf                  ; yes             ; Auto-Generated Megafunction                           ; C:/Users/84368/EE/FPGA_Project/ElectronicDesignProject/MCU2/db/mult_1ht.tdf                ;         ;
 ; lpm_divide.tdf                   ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_divide.tdf                              ;         ;
 ; abs_divider.inc                  ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/abs_divider.inc                             ;         ;
 ; sign_div_unsign.inc              ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/sign_div_unsign.inc                         ;         ;
@@ -214,19 +224,13 @@ applicable agreement for further details.
 ; db/alt_u_div_8ef.tdf             ; yes             ; Auto-Generated Megafunction                           ; C:/Users/84368/EE/FPGA_Project/ElectronicDesignProject/MCU2/db/alt_u_div_8ef.tdf           ;         ;
 ; db/add_sub_1tc.tdf               ; yes             ; Auto-Generated Megafunction                           ; C:/Users/84368/EE/FPGA_Project/ElectronicDesignProject/MCU2/db/add_sub_1tc.tdf             ;         ;
 ; db/add_sub_2tc.tdf               ; yes             ; Auto-Generated Megafunction                           ; C:/Users/84368/EE/FPGA_Project/ElectronicDesignProject/MCU2/db/add_sub_2tc.tdf             ;         ;
-; lpm_mult.tdf                     ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_mult.tdf                                ;         ;
-; lpm_add_sub.inc                  ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_add_sub.inc                             ;         ;
-; multcore.inc                     ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/multcore.inc                                ;         ;
-; bypassff.inc                     ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/bypassff.inc                                ;         ;
-; altshift.inc                     ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/altshift.inc                                ;         ;
-; db/mult_jft.tdf                  ; yes             ; Auto-Generated Megafunction                           ; C:/Users/84368/EE/FPGA_Project/ElectronicDesignProject/MCU2/db/mult_jft.tdf                ;         ;
 ; alt_mac_mult.tdf                 ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/alt_mac_mult.tdf                            ;         ;
 ; lpm_mult.inc                     ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_mult.inc                                ;         ;
-; db/mac_mult_d1h1.tdf             ; yes             ; Auto-Generated Megafunction                           ; C:/Users/84368/EE/FPGA_Project/ElectronicDesignProject/MCU2/db/mac_mult_d1h1.tdf           ;         ;
-; db/mult_5tl.tdf                  ; yes             ; Auto-Generated Megafunction                           ; C:/Users/84368/EE/FPGA_Project/ElectronicDesignProject/MCU2/db/mult_5tl.tdf                ;         ;
+; db/mac_mult_r2h1.tdf             ; yes             ; Auto-Generated Megafunction                           ; C:/Users/84368/EE/FPGA_Project/ElectronicDesignProject/MCU2/db/mac_mult_r2h1.tdf           ;         ;
+; db/mult_jul.tdf                  ; yes             ; Auto-Generated Megafunction                           ; C:/Users/84368/EE/FPGA_Project/ElectronicDesignProject/MCU2/db/mult_jul.tdf                ;         ;
 ; alt_mac_out.tdf                  ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/alt_mac_out.tdf                             ;         ;
 ; alt_zaccum.inc                   ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/alt_zaccum.inc                              ;         ;
-; db/mac_out_mv82.tdf              ; yes             ; Auto-Generated Megafunction                           ; C:/Users/84368/EE/FPGA_Project/ElectronicDesignProject/MCU2/db/mac_out_mv82.tdf            ;         ;
+; db/mac_out_kv82.tdf              ; yes             ; Auto-Generated Megafunction                           ; C:/Users/84368/EE/FPGA_Project/ElectronicDesignProject/MCU2/db/mac_out_kv82.tdf            ;         ;
 +----------------------------------+-----------------+-------------------------------------------------------+--------------------------------------------------------------------------------------------+---------+
 
 
@@ -236,72 +240,81 @@ applicable agreement for further details.
 ; Resource                 ; Usage            ;
 +--------------------------+------------------+
 ; I/O pins                 ; 98               ;
-; Total memory bits        ; 4096             ;
+; Total memory bits        ; 4128             ;
 ; DSP block 9-bit elements ; 0                ;
 ; Maximum fan-out node     ; clk~input        ;
-; Maximum fan-out          ; 78               ;
-; Total fan-out            ; 2900             ;
-; Average fan-out          ; 2.81             ;
+; Maximum fan-out          ; 138              ;
+; Total fan-out            ; 4785             ;
+; Average fan-out          ; 3.10             ;
 +--------------------------+------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                ;
-+-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                    ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                         ; Library Name ;
-+-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+--------------+
-; |MCU2                                         ; 741 (0)           ; 78 (0)       ; 4096        ; 0            ; 0       ; 0         ; 0         ; 98   ; 0            ; |MCU2                                                                                                                       ; work         ;
-;    |ALU:MainALU|                              ; 698 (269)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU                                                                                                           ; work         ;
-;       |lpm_divide:Div0|                       ; 310 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_divide:Div0                                                                                           ; work         ;
-;          |lpm_divide_fom:auto_generated|      ; 310 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_divide:Div0|lpm_divide_fom:auto_generated                                                             ; work         ;
-;             |sign_div_unsign_dnh:divider|     ; 310 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_divide:Div0|lpm_divide_fom:auto_generated|sign_div_unsign_dnh:divider                                 ; work         ;
-;                |alt_u_div_8ef:divider|        ; 310 (310)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_divide:Div0|lpm_divide_fom:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_8ef:divider           ; work         ;
-;       |lpm_mult:Mult0|                        ; 119 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_mult:Mult0                                                                                            ; work         ;
-;          |mult_jft:auto_generated|            ; 119 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated                                                                    ; work         ;
-;             |alt_mac_mult:mac_mult1|          ; 119 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1                                             ; work         ;
-;                |mac_mult_d1h1:auto_generated| ; 119 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1|mac_mult_d1h1:auto_generated                ; work         ;
-;                   |mult_5tl:mult1|            ; 119 (119)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1|mac_mult_d1h1:auto_generated|mult_5tl:mult1 ; work         ;
-;    |Rom:ProgramMemory|                        ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|Rom:ProgramMemory                                                                                                     ; work         ;
-;       |altsyncram:rom_rtl_0|                  ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|Rom:ProgramMemory|altsyncram:rom_rtl_0                                                                                ; work         ;
-;          |altsyncram_0u61:auto_generated|     ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|Rom:ProgramMemory|altsyncram:rom_rtl_0|altsyncram_0u61:auto_generated                                                 ; work         ;
-;    |controller:MainController|                ; 43 (43)           ; 78 (78)      ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|controller:MainController                                                                                             ; work         ;
-+-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                            ;
++-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                    ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                     ; Library Name ;
++-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |MCU2                                         ; 1177 (1)          ; 138 (0)      ; 4128        ; 0            ; 0       ; 0         ; 0         ; 98   ; 0            ; |MCU2                                                                                                                                   ; work         ;
+;    |ALU:MainALU|                              ; 1010 (393)        ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU                                                                                                                       ; work         ;
+;       |lpm_divide:Div0|                       ; 276 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_divide:Div0                                                                                                       ; work         ;
+;          |lpm_divide_fom:auto_generated|      ; 276 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_divide:Div0|lpm_divide_fom:auto_generated                                                                         ; work         ;
+;             |sign_div_unsign_dnh:divider|     ; 276 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_divide:Div0|lpm_divide_fom:auto_generated|sign_div_unsign_dnh:divider                                             ; work         ;
+;                |alt_u_div_8ef:divider|        ; 276 (275)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_divide:Div0|lpm_divide_fom:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_8ef:divider                       ; work         ;
+;                   |add_sub_2tc:add_sub_1|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_divide:Div0|lpm_divide_fom:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_8ef:divider|add_sub_2tc:add_sub_1 ; work         ;
+;       |lpm_mult:Mult0|                        ; 341 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_mult:Mult0                                                                                                        ; work         ;
+;          |mult_1ht:auto_generated|            ; 341 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated                                                                                ; work         ;
+;             |alt_mac_mult:mac_mult1|          ; 341 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1                                                         ; work         ;
+;                |mac_mult_r2h1:auto_generated| ; 341 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated                            ; work         ;
+;                   |mult_jul:mult1|            ; 341 (341)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1             ; work         ;
+;    |Ram:myRam|                                ; 0 (0)             ; 0 (0)        ; 32          ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|Ram:myRam                                                                                                                         ; work         ;
+;       |altsyncram:ram_rtl_0|                  ; 0 (0)             ; 0 (0)        ; 32          ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|Ram:myRam|altsyncram:ram_rtl_0                                                                                                    ; work         ;
+;          |altsyncram_87d1:auto_generated|     ; 0 (0)             ; 0 (0)        ; 32          ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|Ram:myRam|altsyncram:ram_rtl_0|altsyncram_87d1:auto_generated                                                                     ; work         ;
+;    |Rom:ProgramMemory|                        ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|Rom:ProgramMemory                                                                                                                 ; work         ;
+;       |altsyncram:rom_rtl_0|                  ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|Rom:ProgramMemory|altsyncram:rom_rtl_0                                                                                            ; work         ;
+;          |altsyncram_0u61:auto_generated|     ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|Rom:ProgramMemory|altsyncram:rom_rtl_0|altsyncram_0u61:auto_generated                                                             ; work         ;
+;    |controller:MainController|                ; 166 (166)         ; 138 (138)    ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|controller:MainController                                                                                                         ; work         ;
++-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                   ;
-+----------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+--------------------------------+
-; Name                                                                             ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                            ;
-+----------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+--------------------------------+
-; Rom:ProgramMemory|altsyncram:rom_rtl_0|altsyncram_0u61:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 256          ; 16           ; --           ; --           ; 4096 ; db/MCU2.ram0_Rom_15fa0.hdl.mif ;
-+----------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+--------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                               ;
++----------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+--------------------------------+
+; Name                                                                             ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                            ;
++----------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+--------------------------------+
+; Ram:myRam|altsyncram:ram_rtl_0|altsyncram_87d1:auto_generated|ALTSYNCRAM         ; AUTO ; Simple Dual Port ; 256          ; 16           ; 256          ; 16           ; 4096 ; None                           ;
+; Rom:ProgramMemory|altsyncram:rom_rtl_0|altsyncram_0u61:auto_generated|ALTSYNCRAM ; AUTO ; ROM              ; 256          ; 16           ; --           ; --           ; 4096 ; db/MCU2.ram0_Rom_15fa0.hdl.mif ;
++----------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+--------------------------------+
 
 
 Encoding Type:  One-Hot
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |MCU2|controller:MainController|CurrentState                                                                                                                                                                                                                                                                                                                                                ;
-+----------------------+----------------------+----------------------+----------------------+--------------------+----------------------+----------------------+--------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+-------------------+
-; Name                 ; CurrentState.State27 ; CurrentState.State26 ; CurrentState.State25 ; CurrentState.11000 ; CurrentState.State23 ; CurrentState.State22 ; CurrentState.10101 ; CurrentState.State9 ; CurrentState.State8 ; CurrentState.State7 ; CurrentState.State6 ; CurrentState.State5 ; CurrentState.State4 ; CurrentState.State3 ; CurrentState.State2 ; CurrentState.State1 ; CurrentState.IDLE ;
-+----------------------+----------------------+----------------------+----------------------+--------------------+----------------------+----------------------+--------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+-------------------+
-; CurrentState.IDLE    ; 0                    ; 0                    ; 0                    ; 0                  ; 0                    ; 0                    ; 0                  ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                 ;
-; CurrentState.State1  ; 0                    ; 0                    ; 0                    ; 0                  ; 0                    ; 0                    ; 0                  ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 1                 ;
-; CurrentState.State2  ; 0                    ; 0                    ; 0                    ; 0                  ; 0                    ; 0                    ; 0                  ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 1                 ;
-; CurrentState.State3  ; 0                    ; 0                    ; 0                    ; 0                  ; 0                    ; 0                    ; 0                  ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 1                 ;
-; CurrentState.State4  ; 0                    ; 0                    ; 0                    ; 0                  ; 0                    ; 0                    ; 0                  ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 1                 ;
-; CurrentState.State5  ; 0                    ; 0                    ; 0                    ; 0                  ; 0                    ; 0                    ; 0                  ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                 ;
-; CurrentState.State6  ; 0                    ; 0                    ; 0                    ; 0                  ; 0                    ; 0                    ; 0                  ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                 ;
-; CurrentState.State7  ; 0                    ; 0                    ; 0                    ; 0                  ; 0                    ; 0                    ; 0                  ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                 ;
-; CurrentState.State8  ; 0                    ; 0                    ; 0                    ; 0                  ; 0                    ; 0                    ; 0                  ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                 ;
-; CurrentState.State9  ; 0                    ; 0                    ; 0                    ; 0                  ; 0                    ; 0                    ; 0                  ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                 ;
-; CurrentState.10101   ; 0                    ; 0                    ; 0                    ; 0                  ; 0                    ; 0                    ; 1                  ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                 ;
-; CurrentState.State22 ; 0                    ; 0                    ; 0                    ; 0                  ; 0                    ; 1                    ; 0                  ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                 ;
-; CurrentState.State23 ; 0                    ; 0                    ; 0                    ; 0                  ; 1                    ; 0                    ; 0                  ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                 ;
-; CurrentState.11000   ; 0                    ; 0                    ; 0                    ; 1                  ; 0                    ; 0                    ; 0                  ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                 ;
-; CurrentState.State25 ; 0                    ; 0                    ; 1                    ; 0                  ; 0                    ; 0                    ; 0                  ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                 ;
-; CurrentState.State26 ; 0                    ; 1                    ; 0                    ; 0                  ; 0                    ; 0                    ; 0                  ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                 ;
-; CurrentState.State27 ; 1                    ; 0                    ; 0                    ; 0                  ; 0                    ; 0                    ; 0                  ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                 ;
-+----------------------+----------------------+----------------------+----------------------+--------------------+----------------------+----------------------+--------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+-------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |MCU2|controller:MainController|CurrentState                                                                                                                                                                                                                                                                                                                                                                                                                                                ;
++----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+-------------------+
+; Name                 ; CurrentState.PState1 ; CurrentState.PState0 ; CurrentState.TState1 ; CurrentState.TState0 ; CurrentState.State27 ; CurrentState.State26 ; CurrentState.State25 ; CurrentState.State24 ; CurrentState.State23 ; CurrentState.State22 ; CurrentState.State21 ; CurrentState.State9 ; CurrentState.State8 ; CurrentState.State7 ; CurrentState.State6 ; CurrentState.State5 ; CurrentState.State4 ; CurrentState.State3 ; CurrentState.State2 ; CurrentState.State1 ; CurrentState.IDLE ;
++----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+-------------------+
+; CurrentState.IDLE    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                 ;
+; CurrentState.State1  ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 1                 ;
+; CurrentState.State2  ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 1                 ;
+; CurrentState.State3  ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 1                 ;
+; CurrentState.State4  ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 1                 ;
+; CurrentState.State5  ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                 ;
+; CurrentState.State6  ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                 ;
+; CurrentState.State7  ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                 ;
+; CurrentState.State8  ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                 ;
+; CurrentState.State9  ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                 ;
+; CurrentState.State21 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                 ;
+; CurrentState.State22 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                 ;
+; CurrentState.State23 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                 ;
+; CurrentState.State24 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                 ;
+; CurrentState.State25 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                 ;
+; CurrentState.State26 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                 ;
+; CurrentState.State27 ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                 ;
+; CurrentState.TState0 ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                 ;
+; CurrentState.TState1 ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                 ;
+; CurrentState.PState0 ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                 ;
+; CurrentState.PState1 ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                 ;
++----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+-------------------+
 
 
 +----------------------------------------------------------------------------------------------------+
@@ -325,34 +338,52 @@ Encoding Type:  One-Hot
 ; ALU:MainALU|dataAcc[13]                             ; ALU:MainALU|WideOr0 ; yes                    ;
 ; ALU:MainALU|dataAcc[14]                             ; ALU:MainALU|WideOr0 ; yes                    ;
 ; ALU:MainALU|dataAcc[15]                             ; ALU:MainALU|WideOr0 ; yes                    ;
-; Number of user-specified and inferred latches = 16  ;                     ;                        ;
+; ALU:MainALU|dataAcc[16]                             ; ALU:MainALU|WideOr0 ; yes                    ;
+; ALU:MainALU|dataAcc[17]                             ; ALU:MainALU|WideOr0 ; yes                    ;
+; ALU:MainALU|dataAcc[18]                             ; ALU:MainALU|WideOr0 ; yes                    ;
+; ALU:MainALU|dataAcc[19]                             ; ALU:MainALU|WideOr0 ; yes                    ;
+; ALU:MainALU|dataAcc[20]                             ; ALU:MainALU|WideOr0 ; yes                    ;
+; ALU:MainALU|dataAcc[21]                             ; ALU:MainALU|WideOr0 ; yes                    ;
+; ALU:MainALU|dataAcc[22]                             ; ALU:MainALU|WideOr0 ; yes                    ;
+; ALU:MainALU|dataAcc[23]                             ; ALU:MainALU|WideOr0 ; yes                    ;
+; ALU:MainALU|dataAcc[24]                             ; ALU:MainALU|WideOr0 ; yes                    ;
+; ALU:MainALU|dataAcc[25]                             ; ALU:MainALU|WideOr0 ; yes                    ;
+; ALU:MainALU|dataAcc[26]                             ; ALU:MainALU|WideOr0 ; yes                    ;
+; ALU:MainALU|dataAcc[27]                             ; ALU:MainALU|WideOr0 ; yes                    ;
+; ALU:MainALU|dataAcc[28]                             ; ALU:MainALU|WideOr0 ; yes                    ;
+; ALU:MainALU|dataAcc[29]                             ; ALU:MainALU|WideOr0 ; yes                    ;
+; ALU:MainALU|dataAcc[30]                             ; ALU:MainALU|WideOr0 ; yes                    ;
+; ALU:MainALU|dataAcc[31]                             ; ALU:MainALU|WideOr0 ; yes                    ;
+; Number of user-specified and inferred latches = 32  ;                     ;                        ;
 +-----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+-----------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                ;
-+------------------------------------------+----------------------------------------+
-; Register name                            ; Reason for Removal                     ;
-+------------------------------------------+----------------------------------------+
-; controller:MainController|brin[8..15]    ; Stuck at GND due to stuck port data_in ;
-; controller:MainController|CurrentState~4 ; Lost fanout                            ;
-; controller:MainController|CurrentState~5 ; Lost fanout                            ;
-; controller:MainController|CurrentState~6 ; Lost fanout                            ;
-; controller:MainController|CurrentState~7 ; Lost fanout                            ;
-; controller:MainController|CurrentState~8 ; Lost fanout                            ;
-; Total Number of Removed Registers = 13   ;                                        ;
-+------------------------------------------+----------------------------------------+
++-----------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                      ;
++------------------------------------------------+----------------------------------------+
+; Register name                                  ; Reason for Removal                     ;
++------------------------------------------------+----------------------------------------+
+; controller:MainController|ram_cs               ; Stuck at VCC due to stuck port data_in ;
+; controller:MainController|CurrentState~4       ; Lost fanout                            ;
+; controller:MainController|CurrentState~5       ; Lost fanout                            ;
+; controller:MainController|CurrentState~6       ; Lost fanout                            ;
+; controller:MainController|CurrentState~7       ; Lost fanout                            ;
+; controller:MainController|CurrentState~8       ; Lost fanout                            ;
+; controller:MainController|CurrentState.PState0 ; Stuck at GND due to stuck port data_in ;
+; controller:MainController|CurrentState.PState1 ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 8          ;                                        ;
++------------------------------------------------+----------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                           ;
-+------------------------------------+---------------------------+----------------------------------------------------------------------+
-; Register name                      ; Reason for Removal        ; Registers Removed due to This Register                               ;
-+------------------------------------+---------------------------+----------------------------------------------------------------------+
-; controller:MainController|brin[15] ; Stuck at GND              ; controller:MainController|brin[9], controller:MainController|brin[8] ;
-;                                    ; due to stuck port data_in ;                                                                      ;
-+------------------------------------+---------------------------+----------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                 ;
++------------------------------------------------+---------------------------+------------------------------------------------+
+; Register name                                  ; Reason for Removal        ; Registers Removed due to This Register         ;
++------------------------------------------------+---------------------------+------------------------------------------------+
+; controller:MainController|CurrentState.PState0 ; Stuck at GND              ; controller:MainController|CurrentState.PState1 ;
+;                                                ; due to stuck port data_in ;                                                ;
++------------------------------------------------+---------------------------+------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -360,12 +391,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 78    ;
+; Total registers                              ; 138   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 16    ;
+; Number of registers using Synchronous Load   ; 40    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 59    ;
+; Number of registers using Clock Enable       ; 115   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -376,23 +407,28 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Register Name                 ; Megafunction                ; Type ;
 +-------------------------------+-----------------------------+------+
 ; Rom:ProgramMemory|data[0..15] ; Rom:ProgramMemory|rom_rtl_0 ; RAM  ;
+; Ram:myRam|q[0..15]            ; Ram:myRam|ram_rtl_0         ; RAM  ;
 +-------------------------------+-----------------------------+------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
-; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |MCU2|controller:MainController|arin[9] ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |MCU2|controller:MainController|arin[5] ;
-; 23:1               ; 4 bits    ; 60 LEs        ; 32 LEs               ; 28 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux27                 ;
-; 24:1               ; 2 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux29                 ;
-; 25:1               ; 2 bits    ; 32 LEs        ; 18 LEs               ; 14 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux31                 ;
-; 20:1               ; 4 bits    ; 52 LEs        ; 32 LEs               ; 20 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux20                 ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 16 LEs               ; 12 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux19                 ;
-; 22:1               ; 2 bits    ; 28 LEs        ; 16 LEs               ; 12 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux16                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |MCU2|controller:MainController|portOut[4]        ;
+; 17:1               ; 8 bits    ; 88 LEs        ; 8 LEs                ; 80 LEs                 ; Yes        ; |MCU2|controller:MainController|ProgramCounter[1] ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |MCU2|controller:MainController|brin[8]           ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |MCU2|controller:MainController|brin[6]           ;
+; 14:1               ; 8 bits    ; 72 LEs        ; 24 LEs               ; 48 LEs                 ; Yes        ; |MCU2|controller:MainController|arin[1]           ;
+; 14:1               ; 8 bits    ; 72 LEs        ; 32 LEs               ; 40 LEs                 ; Yes        ; |MCU2|controller:MainController|arin[13]          ;
+; 21:1               ; 8 bits    ; 112 LEs       ; 64 LEs               ; 48 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux23                           ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux1                            ;
+; 10:1               ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux10                           ;
+; 22:1               ; 4 bits    ; 56 LEs        ; 32 LEs               ; 24 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux27                           ;
+; 23:1               ; 2 bits    ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux29                           ;
+; 24:1               ; 2 bits    ; 32 LEs        ; 18 LEs               ; 14 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux31                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------+
@@ -402,6 +438,15 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +---------------------------------+--------------------+------+--------------------------------+
 ; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                              ;
 +---------------------------------+--------------------+------+--------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Source assignments for Ram:myRam|altsyncram:ram_rtl_0|altsyncram_87d1:auto_generated ;
++---------------------------------+--------------------+------+------------------------+
+; Assignment                      ; Value              ; From ; To                     ;
++---------------------------------+--------------------+------+------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                      ;
++---------------------------------+--------------------+------+------------------------+
 
 
 +----------------------------------------------------------------+
@@ -437,6 +482,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; State25        ; 25    ; Signed Integer                                ;
 ; State26        ; 26    ; Signed Integer                                ;
 ; State27        ; 27    ; Signed Integer                                ;
+; TState0        ; 28    ; Signed Integer                                ;
+; TState1        ; 29    ; Signed Integer                                ;
+; PState0        ; 30    ; Signed Integer                                ;
+; PState1        ; 31    ; Signed Integer                                ;
+; PState2        ; 32    ; Signed Integer                                ;
+; PState3        ; 33    ; Signed Integer                                ;
 +----------------+-------+-----------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -502,6 +553,102 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Ram:myRam|altsyncram:ram_rtl_0 ;
++------------------------------------+----------------------+---------------------+
+; Parameter Name                     ; Value                ; Type                ;
++------------------------------------+----------------------+---------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped             ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE      ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped             ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped             ;
+; WIDTH_A                            ; 16                   ; Untyped             ;
+; WIDTHAD_A                          ; 8                    ; Untyped             ;
+; NUMWORDS_A                         ; 256                  ; Untyped             ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped             ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped             ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped             ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped             ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped             ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped             ;
+; WIDTH_B                            ; 16                   ; Untyped             ;
+; WIDTHAD_B                          ; 8                    ; Untyped             ;
+; NUMWORDS_B                         ; 256                  ; Untyped             ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped             ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped             ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped             ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped             ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped             ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped             ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped             ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped             ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped             ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped             ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped             ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped             ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped             ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped             ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped             ;
+; BYTE_SIZE                          ; 8                    ; Untyped             ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped             ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped             ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped             ;
+; INIT_FILE                          ; UNUSED               ; Untyped             ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped             ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped             ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped             ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped             ;
+; ENABLE_ECC                         ; FALSE                ; Untyped             ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped             ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped             ;
+; DEVICE_FAMILY                      ; Cyclone IV GX        ; Untyped             ;
+; CBXI_PARAMETER                     ; altsyncram_87d1      ; Untyped             ;
++------------------------------------+----------------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_mult:Mult0          ;
++------------------------------------------------+---------------+---------------------+
+; Parameter Name                                 ; Value         ; Type                ;
++------------------------------------------------+---------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON            ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF           ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON            ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF           ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 16            ; Untyped             ;
+; LPM_WIDTHB                                     ; 16            ; Untyped             ;
+; LPM_WIDTHP                                     ; 32            ; Untyped             ;
+; LPM_WIDTHR                                     ; 32            ; Untyped             ;
+; LPM_WIDTHS                                     ; 1             ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED      ; Untyped             ;
+; LPM_PIPELINE                                   ; 0             ; Untyped             ;
+; LATENCY                                        ; 0             ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO            ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO            ; Untyped             ;
+; USE_EAB                                        ; OFF           ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 6             ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV GX ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL        ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT           ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO          ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0             ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0             ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_1ht      ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx            ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx            ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF           ; Untyped             ;
++------------------------------------------------+---------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +------------------------------------------------------------------------------+
 ; Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_divide:Div0 ;
 +------------------------+----------------+------------------------------------+
@@ -525,49 +672,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_mult:Mult0          ;
-+------------------------------------------------+---------------+---------------------+
-; Parameter Name                                 ; Value         ; Type                ;
-+------------------------------------------------+---------------+---------------------+
-; AUTO_CARRY_CHAINS                              ; ON            ; AUTO_CARRY          ;
-; IGNORE_CARRY_BUFFERS                           ; OFF           ; IGNORE_CARRY        ;
-; AUTO_CASCADE_CHAINS                            ; ON            ; AUTO_CASCADE        ;
-; IGNORE_CASCADE_BUFFERS                         ; OFF           ; IGNORE_CASCADE      ;
-; LPM_WIDTHA                                     ; 16            ; Untyped             ;
-; LPM_WIDTHB                                     ; 8             ; Untyped             ;
-; LPM_WIDTHP                                     ; 24            ; Untyped             ;
-; LPM_WIDTHR                                     ; 24            ; Untyped             ;
-; LPM_WIDTHS                                     ; 1             ; Untyped             ;
-; LPM_REPRESENTATION                             ; UNSIGNED      ; Untyped             ;
-; LPM_PIPELINE                                   ; 0             ; Untyped             ;
-; LATENCY                                        ; 0             ; Untyped             ;
-; INPUT_A_IS_CONSTANT                            ; NO            ; Untyped             ;
-; INPUT_B_IS_CONSTANT                            ; NO            ; Untyped             ;
-; USE_EAB                                        ; OFF           ; Untyped             ;
-; MAXIMIZE_SPEED                                 ; 6             ; Untyped             ;
-; DEVICE_FAMILY                                  ; Cyclone IV GX ; Untyped             ;
-; CARRY_CHAIN                                    ; MANUAL        ; Untyped             ;
-; APEX20K_TECHNOLOGY_MAPPER                      ; LUT           ; TECH_MAPPER_APEX20K ;
-; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO          ; Untyped             ;
-; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0             ; Untyped             ;
-; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0             ; Untyped             ;
-; CBXI_PARAMETER                                 ; mult_jft      ; Untyped             ;
-; INPUT_A_FIXED_VALUE                            ; Bx            ; Untyped             ;
-; INPUT_B_FIXED_VALUE                            ; Bx            ; Untyped             ;
-; USE_AHDL_IMPLEMENTATION                        ; OFF           ; Untyped             ;
-+------------------------------------------------+---------------+---------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +----------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1 ;
+; Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1 ;
 +------------------------------+---------------+-----------------------------------------------------------------------------+
 ; Parameter Name               ; Value         ; Type                                                                        ;
 +------------------------------+---------------+-----------------------------------------------------------------------------+
 ; LPM_WIDTHS                   ; 1             ; Untyped                                                                     ;
 ; DATAA_WIDTH                  ; 16            ; Untyped                                                                     ;
-; DATAB_WIDTH                  ; 8             ; Untyped                                                                     ;
+; DATAB_WIDTH                  ; 16            ; Untyped                                                                     ;
 ; DATAA_CLOCK                  ; NONE          ; Untyped                                                                     ;
 ; DATAB_CLOCK                  ; NONE          ; Untyped                                                                     ;
 ; SIGNA_CLOCK                  ; NONE          ; Untyped                                                                     ;
@@ -602,18 +714,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; MULT_INPUT_A_FIXED_VALUE     ; Bx            ; Untyped                                                                     ;
 ; MULT_INPUT_B_FIXED_VALUE     ; Bx            ; Untyped                                                                     ;
 ; MULT_MAXIMIZE_SPEED          ; 5             ; Untyped                                                                     ;
-; CBXI_PARAMETER               ; mac_mult_d1h1 ; Untyped                                                                     ;
+; CBXI_PARAMETER               ; mac_mult_r2h1 ; Untyped                                                                     ;
 +------------------------------+---------------+-----------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_out:mac_out2 ;
+; Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out2 ;
 +-------------------------------+--------------+---------------------------------------------------------------------------+
 ; Parameter Name                ; Value        ; Type                                                                      ;
 +-------------------------------+--------------+---------------------------------------------------------------------------+
 ; OPERATION_MODE                ; OUTPUT_ONLY  ; Untyped                                                                   ;
-; DATAA_WIDTH                   ; 24           ; Untyped                                                                   ;
+; DATAA_WIDTH                   ; 32           ; Untyped                                                                   ;
 ; DATAB_WIDTH                   ; 0            ; Untyped                                                                   ;
 ; DATAC_WIDTH                   ; 0            ; Untyped                                                                   ;
 ; DATAD_WIDTH                   ; 0            ; Untyped                                                                   ;
@@ -704,7 +816,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; CHAININ_WIDTH                 ; 0            ; Untyped                                                                   ;
 ; CHAINOUT_PIPELINE_CLOCK       ; none         ; Untyped                                                                   ;
 ; CHAINOUT_PIPELINE_CLEAR       ; none         ; Untyped                                                                   ;
-; CBXI_PARAMETER                ; mac_out_mv82 ; Untyped                                                                   ;
+; CBXI_PARAMETER                ; mac_out_kv82 ; Untyped                                                                   ;
 +-------------------------------+--------------+---------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -714,7 +826,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+----------------------------------------+
 ; Name                                      ; Value                                  ;
 +-------------------------------------------+----------------------------------------+
-; Number of entity instances                ; 1                                      ;
+; Number of entity instances                ; 2                                      ;
 ; Entity Instance                           ; Rom:ProgramMemory|altsyncram:rom_rtl_0 ;
 ;     -- OPERATION_MODE                     ; ROM                                    ;
 ;     -- WIDTH_A                            ; 16                                     ;
@@ -722,6 +834,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- OUTDATA_REG_A                      ; UNREGISTERED                           ;
 ;     -- WIDTH_B                            ; 1                                      ;
 ;     -- NUMWORDS_B                         ; 1                                      ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                 ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                           ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                   ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                              ;
+; Entity Instance                           ; Ram:myRam|altsyncram:ram_rtl_0         ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                              ;
+;     -- WIDTH_A                            ; 16                                     ;
+;     -- NUMWORDS_A                         ; 256                                    ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                           ;
+;     -- WIDTH_B                            ; 16                                     ;
+;     -- NUMWORDS_B                         ; 256                                    ;
 ;     -- ADDRESS_REG_B                      ; CLOCK1                                 ;
 ;     -- OUTDATA_REG_B                      ; UNREGISTERED                           ;
 ;     -- RAM_BLOCK_TYPE                     ; AUTO                                   ;
@@ -737,8 +860,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Number of entity instances            ; 1                          ;
 ; Entity Instance                       ; ALU:MainALU|lpm_mult:Mult0 ;
 ;     -- LPM_WIDTHA                     ; 16                         ;
-;     -- LPM_WIDTHB                     ; 8                          ;
-;     -- LPM_WIDTHP                     ; 24                         ;
+;     -- LPM_WIDTHB                     ; 16                         ;
+;     -- LPM_WIDTHP                     ; 32                         ;
 ;     -- LPM_REPRESENTATION             ; UNSIGNED                   ;
 ;     -- INPUT_A_IS_CONSTANT            ; NO                         ;
 ;     -- INPUT_B_IS_CONSTANT            ; NO                         ;
@@ -749,22 +872,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------+----------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "controller:MainController"                                                                                                                           ;
-+--------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port         ; Type   ; Severity ; Details                                                                                                                                      ;
-+--------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; rst          ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; ramData      ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; ram_cs       ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; ram_re       ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; ram_we       ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; ram_addr     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; ram_data_in  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; ram_data_out ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; portOut      ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; codeOut      ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-+--------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "controller:MainController"                                                                                                                       ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                      ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; rst      ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; portIn   ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; ram_addr ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
+; codeOut  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------+
@@ -781,7 +898,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:07     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -791,7 +908,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
-    Info: Processing started: Tue Oct 15 20:31:08 2019
+    Info: Processing started: Sun Oct 20 21:42:42 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MCU2 -c MCU2
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file rom.v
@@ -805,9 +922,9 @@ Info (12021): Found 1 design units, including 1 entities, in source file control
 Info (12021): Found 1 design units, including 1 entities, in source file alu.v
     Info (12023): Found entity 1: ALU
 Info (12127): Elaborating entity "MCU2" for the top level hierarchy
-Warning (10034): Output port "portOut" at MCU2.v(5) has no driver
 Warning (10034): Output port "Macc" at MCU2.v(6) has no driver
 Warning (10034): Output port "MaccH" at MCU2.v(7) has no driver
+Info (12128): Elaborating entity "Ram" for hierarchy "Ram:myRam"
 Info (12128): Elaborating entity "Rom" for hierarchy "Rom:ProgramMemory"
 Warning (10036): Verilog HDL or VHDL warning at Rom.v(14): object "i" assigned a value but never read
 Warning (10850): Verilog HDL warning at Rom.v(20): number of words (10) in memory file does not match the number of elements in the address range [0:255]
@@ -849,59 +966,15 @@ Info (10041): Inferred latch for "dataAcc[29]" at ALU.v(12)
 Info (10041): Inferred latch for "dataAcc[30]" at ALU.v(12)
 Info (10041): Inferred latch for "dataAcc[31]" at ALU.v(12)
 Info (12128): Elaborating entity "controller" for hierarchy "controller:MainController"
-Warning (10036): Verilog HDL or VHDL warning at controller.v(34): object "hacc" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at controller.v(40): object "ar32" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at controller.v(40): object "br32" assigned a value but never read
-Warning (10240): Verilog HDL Always Construct warning at controller.v(48): inferring latch(es) for variable "ram_addr", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at controller.v(48): inferring latch(es) for variable "ram_cs", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at controller.v(48): inferring latch(es) for variable "ram_data_in", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at controller.v(48): inferring latch(es) for variable "ram_data_out", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at controller.v(48): inferring latch(es) for variable "ram_re", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at controller.v(48): inferring latch(es) for variable "ram_we", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "ram_we" at controller.v(48)
-Info (10041): Inferred latch for "ram_re" at controller.v(48)
-Info (10041): Inferred latch for "ram_data_out[0]" at controller.v(48)
-Info (10041): Inferred latch for "ram_data_out[1]" at controller.v(48)
-Info (10041): Inferred latch for "ram_data_out[2]" at controller.v(48)
-Info (10041): Inferred latch for "ram_data_out[3]" at controller.v(48)
-Info (10041): Inferred latch for "ram_data_out[4]" at controller.v(48)
-Info (10041): Inferred latch for "ram_data_out[5]" at controller.v(48)
-Info (10041): Inferred latch for "ram_data_out[6]" at controller.v(48)
-Info (10041): Inferred latch for "ram_data_out[7]" at controller.v(48)
-Info (10041): Inferred latch for "ram_data_out[8]" at controller.v(48)
-Info (10041): Inferred latch for "ram_data_out[9]" at controller.v(48)
-Info (10041): Inferred latch for "ram_data_out[10]" at controller.v(48)
-Info (10041): Inferred latch for "ram_data_out[11]" at controller.v(48)
-Info (10041): Inferred latch for "ram_data_out[12]" at controller.v(48)
-Info (10041): Inferred latch for "ram_data_out[13]" at controller.v(48)
-Info (10041): Inferred latch for "ram_data_out[14]" at controller.v(48)
-Info (10041): Inferred latch for "ram_data_out[15]" at controller.v(48)
-Info (10041): Inferred latch for "ram_data_in[0]" at controller.v(48)
-Info (10041): Inferred latch for "ram_data_in[1]" at controller.v(48)
-Info (10041): Inferred latch for "ram_data_in[2]" at controller.v(48)
-Info (10041): Inferred latch for "ram_data_in[3]" at controller.v(48)
-Info (10041): Inferred latch for "ram_data_in[4]" at controller.v(48)
-Info (10041): Inferred latch for "ram_data_in[5]" at controller.v(48)
-Info (10041): Inferred latch for "ram_data_in[6]" at controller.v(48)
-Info (10041): Inferred latch for "ram_data_in[7]" at controller.v(48)
-Info (10041): Inferred latch for "ram_data_in[8]" at controller.v(48)
-Info (10041): Inferred latch for "ram_data_in[9]" at controller.v(48)
-Info (10041): Inferred latch for "ram_data_in[10]" at controller.v(48)
-Info (10041): Inferred latch for "ram_data_in[11]" at controller.v(48)
-Info (10041): Inferred latch for "ram_data_in[12]" at controller.v(48)
-Info (10041): Inferred latch for "ram_data_in[13]" at controller.v(48)
-Info (10041): Inferred latch for "ram_data_in[14]" at controller.v(48)
-Info (10041): Inferred latch for "ram_data_in[15]" at controller.v(48)
-Info (10041): Inferred latch for "ram_cs" at controller.v(48)
-Info (10041): Inferred latch for "ram_addr[0]" at controller.v(48)
-Info (10041): Inferred latch for "ram_addr[1]" at controller.v(48)
-Info (10041): Inferred latch for "ram_addr[2]" at controller.v(48)
-Info (10041): Inferred latch for "ram_addr[3]" at controller.v(48)
-Info (10041): Inferred latch for "ram_addr[4]" at controller.v(48)
-Info (10041): Inferred latch for "ram_addr[5]" at controller.v(48)
-Info (10041): Inferred latch for "ram_addr[6]" at controller.v(48)
-Info (10041): Inferred latch for "ram_addr[7]" at controller.v(48)
-Info (19000): Inferred 1 megafunctions from design logic
+Warning (10036): Verilog HDL or VHDL warning at controller.v(47): object "ar32" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at controller.v(47): object "br32" assigned a value but never read
+Warning (10272): Verilog HDL Case Statement warning at controller.v(99): case item expression covers a value already covered by a previous case item
+Warning (10272): Verilog HDL Case Statement warning at controller.v(145): case item expression covers a value already covered by a previous case item
+Warning (10272): Verilog HDL Case Statement warning at controller.v(146): case item expression covers a value already covered by a previous case item
+Warning (276027): Inferred dual-clock RAM node "Ram:myRam|ram_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276007): RAM logic "Ram:myRam|ram" is uninferred due to asynchronous read logic
+Info (19000): Inferred 2 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "Rom:ProgramMemory|rom_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to ROM
         Info (286033): Parameter WIDTH_A set to 16
@@ -913,9 +986,24 @@ Info (19000): Inferred 1 megafunctions from design logic
         Info (286033): Parameter INDATA_ACLR_A set to NONE
         Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
         Info (286033): Parameter INIT_FILE set to db/MCU2.ram0_Rom_15fa0.hdl.mif
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "Ram:myRam|ram_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 16
+        Info (286033): Parameter WIDTHAD_A set to 8
+        Info (286033): Parameter NUMWORDS_A set to 256
+        Info (286033): Parameter WIDTH_B set to 16
+        Info (286033): Parameter WIDTHAD_B set to 8
+        Info (286033): Parameter NUMWORDS_B set to 256
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK1
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
 Info (278001): Inferred 2 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ALU:MainALU|Div0"
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "ALU:MainALU|Mult0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ALU:MainALU|Div0"
 Info (12130): Elaborated megafunction instantiation "Rom:ProgramMemory|altsyncram:rom_rtl_0"
 Info (12133): Instantiated megafunction "Rom:ProgramMemory|altsyncram:rom_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "ROM"
@@ -930,8 +1018,37 @@ Info (12133): Instantiated megafunction "Rom:ProgramMemory|altsyncram:rom_rtl_0"
     Info (12134): Parameter "INIT_FILE" = "db/MCU2.ram0_Rom_15fa0.hdl.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_0u61.tdf
     Info (12023): Found entity 1: altsyncram_0u61
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/84368/EE/FPGA_Project/ElectronicDesignProject/MCU2/db/MCU2.ram0_Rom_15fa0.hdl.mif" contains "don't care" values -- overwriting them with 0s
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/84368/EE/FPGA_Project/ElectronicDesignProject/MCU2/db/MCU2.ram0_Rom_15fa0.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Info (12130): Elaborated megafunction instantiation "Ram:myRam|altsyncram:ram_rtl_0"
+Info (12133): Instantiated megafunction "Ram:myRam|altsyncram:ram_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "16"
+    Info (12134): Parameter "WIDTHAD_A" = "8"
+    Info (12134): Parameter "NUMWORDS_A" = "256"
+    Info (12134): Parameter "WIDTH_B" = "16"
+    Info (12134): Parameter "WIDTHAD_B" = "8"
+    Info (12134): Parameter "NUMWORDS_B" = "256"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK1"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_87d1.tdf
+    Info (12023): Found entity 1: altsyncram_87d1
+Info (12130): Elaborated megafunction instantiation "ALU:MainALU|lpm_mult:Mult0"
+Info (12133): Instantiated megafunction "ALU:MainALU|lpm_mult:Mult0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHA" = "16"
+    Info (12134): Parameter "LPM_WIDTHB" = "16"
+    Info (12134): Parameter "LPM_WIDTHP" = "32"
+    Info (12134): Parameter "LPM_WIDTHR" = "32"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_1ht.tdf
+    Info (12023): Found entity 1: mult_1ht
 Info (12130): Elaborated megafunction instantiation "ALU:MainALU|lpm_divide:Div0"
 Info (12133): Instantiated megafunction "ALU:MainALU|lpm_divide:Div0" with the following parameter:
     Info (12134): Parameter "LPM_WIDTHN" = "16"
@@ -948,29 +1065,16 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/add_
     Info (12023): Found entity 1: add_sub_1tc
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_2tc.tdf
     Info (12023): Found entity 1: add_sub_2tc
-Info (12130): Elaborated megafunction instantiation "ALU:MainALU|lpm_mult:Mult0"
-Info (12133): Instantiated megafunction "ALU:MainALU|lpm_mult:Mult0" with the following parameter:
-    Info (12134): Parameter "LPM_WIDTHA" = "16"
-    Info (12134): Parameter "LPM_WIDTHB" = "8"
-    Info (12134): Parameter "LPM_WIDTHP" = "24"
-    Info (12134): Parameter "LPM_WIDTHR" = "24"
-    Info (12134): Parameter "LPM_WIDTHS" = "1"
-    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
-    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
-    Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
-Info (12021): Found 1 design units, including 1 entities, in source file db/mult_jft.tdf
-    Info (12023): Found entity 1: mult_jft
 Info (270001): Converted 1 DSP block slices
     Info (270002): Used 1 DSP blocks before DSP block balancing
         Info (270003): Used 1 DSP block slices in "Simple Multiplier (18-bit)" mode implemented in approximately 1 DSP blocks
     Info (270013): Converted the following 1 DSP block slices to logic elements
-        Info (270006): DSP block slice in "Simple Multiplier (18-bit)" mode with output node "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|mac_out2"
-            Info (270004): DSP block output node "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|mac_out2"
-            Info (270005): DSP block multiplier node "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|mac_mult1"
+        Info (270006): DSP block slice in "Simple Multiplier (18-bit)" mode with output node "ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|mac_out2"
+            Info (270004): DSP block output node "ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|mac_out2"
+            Info (270005): DSP block multiplier node "ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|mac_mult1"
     Info (270002): Used 0 DSP blocks after DSP block balancing
-Info (12130): Elaborated megafunction instantiation "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1"
-Info (12133): Instantiated megafunction "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1" with the following parameter:
+Info (12130): Elaborated megafunction instantiation "ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1"
+Info (12133): Instantiated megafunction "ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1" with the following parameter:
     Info (12134): Parameter "MULT_REPRESENTATION_A" = "UNSIGNED"
     Info (12134): Parameter "MULT_REPRESENTATION_B" = "UNSIGNED"
     Info (12134): Parameter "MULT_PIPELINE" = "0"
@@ -979,8 +1083,8 @@ Info (12133): Instantiated megafunction "ALU:MainALU|lpm_mult:Mult0|mult_jft:aut
     Info (12134): Parameter "MULT_INPUT_A_IS_CONSTANT" = "NO"
     Info (12134): Parameter "MULT_INPUT_B_IS_CONSTANT" = "NO"
     Info (12134): Parameter "dataa_width" = "16"
-    Info (12134): Parameter "datab_width" = "8"
-    Info (12134): Parameter "output_width" = "24"
+    Info (12134): Parameter "datab_width" = "16"
+    Info (12134): Parameter "output_width" = "32"
     Info (12134): Parameter "dataa_clock" = "NONE"
     Info (12134): Parameter "datab_clock" = "NONE"
     Info (12134): Parameter "signa_clock" = "NONE"
@@ -991,18 +1095,18 @@ Info (12133): Instantiated megafunction "ALU:MainALU|lpm_mult:Mult0|mult_jft:aut
     Info (12134): Parameter "signa_clear" = "NONE"
     Info (12134): Parameter "signb_clear" = "NONE"
     Info (12134): Parameter "output_clear" = "NONE"
-Info (12021): Found 1 design units, including 1 entities, in source file db/mac_mult_d1h1.tdf
-    Info (12023): Found entity 1: mac_mult_d1h1
-Info (12021): Found 1 design units, including 1 entities, in source file db/mult_5tl.tdf
-    Info (12023): Found entity 1: mult_5tl
-Info (12130): Elaborated megafunction instantiation "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_out:mac_out2"
-Info (12133): Instantiated megafunction "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_out:mac_out2" with the following parameter:
+Info (12021): Found 1 design units, including 1 entities, in source file db/mac_mult_r2h1.tdf
+    Info (12023): Found entity 1: mac_mult_r2h1
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_jul.tdf
+    Info (12023): Found entity 1: mult_jul
+Info (12130): Elaborated megafunction instantiation "ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out2"
+Info (12133): Instantiated megafunction "ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out2" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "OUTPUT_ONLY"
-    Info (12134): Parameter "dataa_width" = "24"
+    Info (12134): Parameter "dataa_width" = "32"
     Info (12134): Parameter "datab_width" = "0"
     Info (12134): Parameter "datac_width" = "0"
     Info (12134): Parameter "datad_width" = "0"
-    Info (12134): Parameter "output_width" = "24"
+    Info (12134): Parameter "output_width" = "32"
     Info (12134): Parameter "signa_clock" = "NONE"
     Info (12134): Parameter "signb_clock" = "NONE"
     Info (12134): Parameter "addnsub0_clock" = "NONE"
@@ -1029,44 +1133,12 @@ Info (12133): Instantiated megafunction "ALU:MainALU|lpm_mult:Mult0|mult_jft:aut
     Info (12134): Parameter "addnsub0_pipeline_clear" = "NONE"
     Info (12134): Parameter "addnsub1_pipeline_clear" = "NONE"
     Info (12134): Parameter "zeroacc_pipeline_clear" = "NONE"
-Info (12021): Found 1 design units, including 1 entities, in source file db/mac_out_mv82.tdf
-    Info (12023): Found entity 1: mac_out_mv82
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following LCELL buffer node(s):
-        Warning (14320): Synthesized away node "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1|mac_mult_d1h1:auto_generated|mult_5tl:mult1|le4a[17]"
-        Warning (14320): Synthesized away node "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1|mac_mult_d1h1:auto_generated|mult_5tl:mult1|le6a[17]"
-        Warning (14320): Synthesized away node "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1|mac_mult_d1h1:auto_generated|mult_5tl:mult1|le6a[16]"
-        Warning (14320): Synthesized away node "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1|mac_mult_d1h1:auto_generated|mult_5tl:mult1|le6a[12]"
-        Warning (14320): Synthesized away node "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1|mac_mult_d1h1:auto_generated|mult_5tl:mult1|le7a[17]"
-        Warning (14320): Synthesized away node "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1|mac_mult_d1h1:auto_generated|mult_5tl:mult1|le7a[16]"
-        Warning (14320): Synthesized away node "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1|mac_mult_d1h1:auto_generated|mult_5tl:mult1|le7a[15]"
-        Warning (14320): Synthesized away node "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1|mac_mult_d1h1:auto_generated|mult_5tl:mult1|le7a[14]"
-        Warning (14320): Synthesized away node "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1|mac_mult_d1h1:auto_generated|mult_5tl:mult1|le7a[13]"
-        Warning (14320): Synthesized away node "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1|mac_mult_d1h1:auto_generated|mult_5tl:mult1|le7a[12]"
-        Warning (14320): Synthesized away node "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1|mac_mult_d1h1:auto_generated|mult_5tl:mult1|le7a[11]"
-        Warning (14320): Synthesized away node "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1|mac_mult_d1h1:auto_generated|mult_5tl:mult1|le7a[10]"
-        Warning (14320): Synthesized away node "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1|mac_mult_d1h1:auto_generated|mult_5tl:mult1|le8a[16]"
-        Warning (14320): Synthesized away node "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1|mac_mult_d1h1:auto_generated|mult_5tl:mult1|le8a[15]"
-        Warning (14320): Synthesized away node "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1|mac_mult_d1h1:auto_generated|mult_5tl:mult1|le8a[14]"
-        Warning (14320): Synthesized away node "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1|mac_mult_d1h1:auto_generated|mult_5tl:mult1|le8a[13]"
-        Warning (14320): Synthesized away node "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1|mac_mult_d1h1:auto_generated|mult_5tl:mult1|le8a[12]"
-        Warning (14320): Synthesized away node "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1|mac_mult_d1h1:auto_generated|mult_5tl:mult1|le8a[11]"
-        Warning (14320): Synthesized away node "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1|mac_mult_d1h1:auto_generated|mult_5tl:mult1|le8a[10]"
-        Warning (14320): Synthesized away node "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1|mac_mult_d1h1:auto_generated|mult_5tl:mult1|le8a[9]"
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following LCELL buffer node(s):
-        Warning (14320): Synthesized away node "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1|mac_mult_d1h1:auto_generated|mult_5tl:mult1|le4a[16]"
-        Warning (14320): Synthesized away node "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1|mac_mult_d1h1:auto_generated|mult_5tl:mult1|le5a[17]"
-        Warning (14320): Synthesized away node "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1|mac_mult_d1h1:auto_generated|mult_5tl:mult1|le5a[16]"
-        Warning (14320): Synthesized away node "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1|mac_mult_d1h1:auto_generated|mult_5tl:mult1|le5a[15]"
-        Warning (14320): Synthesized away node "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1|mac_mult_d1h1:auto_generated|mult_5tl:mult1|le5a[14]"
-        Warning (14320): Synthesized away node "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1|mac_mult_d1h1:auto_generated|mult_5tl:mult1|le6a[15]"
-        Warning (14320): Synthesized away node "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1|mac_mult_d1h1:auto_generated|mult_5tl:mult1|le6a[14]"
-        Warning (14320): Synthesized away node "ALU:MainALU|lpm_mult:Mult0|mult_jft:auto_generated|alt_mac_mult:mac_mult1|mac_mult_d1h1:auto_generated|mult_5tl:mult1|le6a[13]"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mac_out_kv82.tdf
+    Info (12023): Found entity 1: mac_out_kv82
 Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info (13014): Ignored 158 buffer(s)
-    Info (13016): Ignored 8 CARRY_SUM buffer(s)
-    Info (13019): Ignored 150 SOFT buffer(s)
+Info (13014): Ignored 496 buffer(s)
+    Info (13016): Ignored 16 CARRY_SUM buffer(s)
+    Info (13019): Ignored 480 SOFT buffer(s)
 Warning (13012): Latch ALU:MainALU|dataAcc[0] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
 Warning (13012): Latch ALU:MainALU|dataAcc[1] has unsafe behavior
@@ -1096,26 +1168,42 @@ Warning (13012): Latch ALU:MainALU|dataAcc[12] has unsafe behavior
 Warning (13012): Latch ALU:MainALU|dataAcc[13] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
 Warning (13012): Latch ALU:MainALU|dataAcc[14] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
 Warning (13012): Latch ALU:MainALU|dataAcc[15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
+Warning (13012): Latch ALU:MainALU|dataAcc[16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+Warning (13012): Latch ALU:MainALU|dataAcc[17] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+Warning (13012): Latch ALU:MainALU|dataAcc[18] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+Warning (13012): Latch ALU:MainALU|dataAcc[19] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+Warning (13012): Latch ALU:MainALU|dataAcc[20] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+Warning (13012): Latch ALU:MainALU|dataAcc[21] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+Warning (13012): Latch ALU:MainALU|dataAcc[22] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+Warning (13012): Latch ALU:MainALU|dataAcc[23] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+Warning (13012): Latch ALU:MainALU|dataAcc[24] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+Warning (13012): Latch ALU:MainALU|dataAcc[25] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+Warning (13012): Latch ALU:MainALU|dataAcc[26] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+Warning (13012): Latch ALU:MainALU|dataAcc[27] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+Warning (13012): Latch ALU:MainALU|dataAcc[28] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+Warning (13012): Latch ALU:MainALU|dataAcc[29] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+Warning (13012): Latch ALU:MainALU|dataAcc[30] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+Warning (13012): Latch ALU:MainALU|dataAcc[31] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "portOut[0]" is stuck at GND
-    Warning (13410): Pin "portOut[1]" is stuck at GND
-    Warning (13410): Pin "portOut[2]" is stuck at GND
-    Warning (13410): Pin "portOut[3]" is stuck at GND
-    Warning (13410): Pin "portOut[4]" is stuck at GND
-    Warning (13410): Pin "portOut[5]" is stuck at GND
-    Warning (13410): Pin "portOut[6]" is stuck at GND
-    Warning (13410): Pin "portOut[7]" is stuck at GND
-    Warning (13410): Pin "portOut[8]" is stuck at GND
-    Warning (13410): Pin "portOut[9]" is stuck at GND
-    Warning (13410): Pin "portOut[10]" is stuck at GND
-    Warning (13410): Pin "portOut[11]" is stuck at GND
-    Warning (13410): Pin "portOut[12]" is stuck at GND
-    Warning (13410): Pin "portOut[13]" is stuck at GND
-    Warning (13410): Pin "portOut[14]" is stuck at GND
-    Warning (13410): Pin "portOut[15]" is stuck at GND
     Warning (13410): Pin "Macc[0]" is stuck at GND
     Warning (13410): Pin "Macc[1]" is stuck at GND
     Warning (13410): Pin "Macc[2]" is stuck at GND
@@ -1150,6 +1238,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "MaccH[15]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 5 registers lost all their fanouts during netlist optimizations.
+Info (17036): Removed 7 MSB VCC or GND address nodes from RAM block "Ram:myRam|altsyncram:ram_rtl_0|altsyncram_87d1:auto_generated|ALTSYNCRAM"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 17 input pin(s) that do not drive logic
@@ -1170,15 +1259,15 @@ Warning (21074): Design contains 17 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "portIn[13]"
     Warning (15610): No output dependent on input pin "portIn[14]"
     Warning (15610): No output dependent on input pin "portIn[15]"
-Info (21057): Implemented 898 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1374 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 18 input pins
     Info (21059): Implemented 80 output pins
-    Info (21061): Implemented 784 logic cells
-    Info (21064): Implemented 16 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 152 warnings
-    Info: Peak virtual memory: 4705 megabytes
-    Info: Processing ended: Tue Oct 15 20:31:17 2019
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:07
+    Info (21061): Implemented 1244 logic cells
+    Info (21064): Implemented 32 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 130 warnings
+    Info: Peak virtual memory: 4717 megabytes
+    Info: Processing ended: Sun Oct 20 21:42:48 2019
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:05
 
 

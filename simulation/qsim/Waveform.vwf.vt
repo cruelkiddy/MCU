@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "10/15/2019 20:32:46"
+// Generated on "10/20/2019 21:43:33"
                                                                         
 // Verilog Self-Checking Test Bench (with test vectors) for design :    MCU2
 // 

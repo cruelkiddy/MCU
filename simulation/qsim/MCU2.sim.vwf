@@ -3093,7 +3093,8 @@ TRANSITION_LIST("portOut[6]")
 		NODE
 		{
 			REPEAT = 1;
-			LEVEL 0 FOR 1000.0;
+			LEVEL 0 FOR 173.0;
+			LEVEL 1 FOR 827.0;
 		}
 	}
 }
@@ -3106,7 +3107,8 @@ TRANSITION_LIST("portOut[5]")
 		NODE
 		{
 			REPEAT = 1;
-			LEVEL 0 FOR 1000.0;
+			LEVEL 0 FOR 173.0;
+			LEVEL 1 FOR 827.0;
 		}
 	}
 }
@@ -3119,7 +3121,8 @@ TRANSITION_LIST("portOut[4]")
 		NODE
 		{
 			REPEAT = 1;
-			LEVEL 0 FOR 1000.0;
+			LEVEL 0 FOR 173.0;
+			LEVEL 1 FOR 827.0;
 		}
 	}
 }
@@ -3132,7 +3135,8 @@ TRANSITION_LIST("portOut[3]")
 		NODE
 		{
 			REPEAT = 1;
-			LEVEL 0 FOR 1000.0;
+			LEVEL 0 FOR 173.0;
+			LEVEL 1 FOR 827.0;
 		}
 	}
 }
