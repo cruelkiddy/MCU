@@ -115,6 +115,9 @@ module controller(
                         4'b1000: begin ///< Perform ar32 << br32;
                             functionSelect <= 4'b1000;
                         end
+                        4'b0100:begin  ///< Perform ar / br32
+                            functionSelect <= 4'b0100;
+                        end
                         default: begin ///< Do nothing
                             functionSelect <= 0;
                         end
@@ -198,16 +201,16 @@ module controller(
                     case(FuntionSelect)
                         4'b0000: begin
                             if(arin == 16'd0) ProgramCounter <= romReg[7:0];
-                            else ProgramCounter <= ProgramCounter;
+                            else ProgramCounter <= ProgramCounter + 1'b1;
                         end
                         4'b0001: begin
                             if(arin == brin) ProgramCounter <= romReg[7:0];
-                            else ProgramCounter <= ProgramCounter;                            
+                            else ProgramCounter <= ProgramCounter + 1'b1;                            
                         end
                         4'b0010: begin
                             brin <= brin - 1'b1;
                             if(brin != 16'b0) ProgramCounter <= romReg[7:0];
-                            else ProgramCounter <= ProgramCounter;                             
+                            else ProgramCounter <= ProgramCounter + 1'b1;                             
                         end
                         4'b0011: ProgramCounter <= romReg[7:0];
                     endcase                    
@@ -225,6 +228,7 @@ module controller(
                 end
 
                 PState1:begin
+                    ProgramCounter <= ProgramCounter + 1;
                     CurrentState <= IDLE;
                 end
 

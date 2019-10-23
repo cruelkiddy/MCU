@@ -1,5 +1,5 @@
 EDA Netlist Writer report for MCU2
-Sun Oct 20 21:43:34 2019
+Tue Oct 22 20:13:09 2019
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sun Oct 20 21:43:34 2019 ;
+; EDA Netlist Writer Status ; Successful - Tue Oct 22 20:13:09 2019 ;
 ; Revision Name             ; MCU2                                  ;
 ; Top-level Entity Name     ; MCU2                                  ;
 ; Family                    ; Cyclone IV GX                         ;
@@ -93,13 +93,13 @@ Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: programming logic devices manufactured by Altera and sold by 
     Info: Altera or its authorized distributors.  Please refer to the 
     Info: applicable agreement for further details.
-    Info: Processing started: Sun Oct 20 21:43:33 2019
+    Info: Processing started: Tue Oct 22 20:13:07 2019
 Info: Command: quartus_eda --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/Users/84368/EE/FPGA_Project/ElectronicDesignProject/MCU2/simulation/qsim/ MCU2 -c MCU2
 Info (204019): Generated file MCU2.vo in folder "C:/Users/84368/EE/FPGA_Project/ElectronicDesignProject/MCU2/simulation/qsim//" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 4629 megabytes
-    Info: Processing ended: Sun Oct 20 21:43:34 2019
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Processing ended: Tue Oct 22 20:13:09 2019
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 

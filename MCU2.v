@@ -55,7 +55,8 @@ module MCU2(
                               .ram_cs(RamCS),
                               .ram_re(RamRE),
                               .ram_we(RamWE),
-                              .portOut(portOut)
+                              .portOut(portOut),
+                              .portIn(portIn)
                              );
 
 
