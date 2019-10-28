@@ -118,6 +118,24 @@ module controller(
                         4'b0100:begin  ///< Perform ar / br32
                             functionSelect <= 4'b0100;
                         end
+                        4'b0010:begin ///< Perform ar - br
+                            functionSelect <= 4'b0010;
+                        end
+                        4'b0101:begin ///< Perform ar and br
+                            functionSelect <= 4'b0101;
+                        end
+                        4'b0110:begin ///< Perform ar or br
+                            functionSelect <= 4'b0110;
+                        end            
+                        4'b0111:begin ///< Perform not ar 
+                            functionSelect <= 4'b0111;
+                        end            
+                        4'b1000:begin ///< Perform ar << br
+                            functionSelect <= 4'b1000;
+                        end
+                        4'b1001:begin ///< Perform ar >> br
+                            functionSelect <= 4'b1001;
+                        end                       
                         default: begin ///< Do nothing
                             functionSelect <= 0;
                         end
