@@ -15,28 +15,27 @@ module timer
     reg [timerwid - 1 : 0] realTimer;
 
     always@(posedge clk) begin
-    if(cs) begin    
-        if (start) begin
+        if(cs) begin    
+            if (start) begin
 
-            if(realTimer == 16'hffff) begin
-                intrup <= 1'b1;
-                realTimer <= datain;
+                if(realTimer == 16'hffff) begin
+                    intrup <= 1'b1;
+                    realTimer <= datain;
+                end
+
+                else
+                    realTimer <= realTimer + 1'b1;
             end
-            else
-                realTimer <= realTimer + 1'b1;
-        end
-        else begin
-            if(wr)
-                realTimer <= datain;
-            else
-                realTimer <= realTimer;
-        end
+            else begin
+                if(wr)
+                    realTimer <= datain;
+                else
+                    realTimer <= realTimer;
+            end
 
-        if(rd)
-            dataout <= realTimer;
-            
-
-    end
+            if(rd)
+                dataout <= realTimer;
+        end
     end
 
 

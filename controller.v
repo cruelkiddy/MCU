@@ -3,12 +3,20 @@ module controller(
     input rst,
     input [15:0] ProgramCode,               ///< Program from ROM
     input [15:0] ramData,
-    input [15:0] portIn,                    ///< For port operation 
+    input [15:0] portIn,                    ///< For port operation
+    input timer_INT,
+    input EXT_INT,
+    input [15:0] timer_value, 
     output reg rom_cs,
     output reg re,                          ///< Enable read from ROM
     output reg ram_cs,
     output reg ram_re,
     output reg ram_we,
+    output timer_cs,
+    output timer_wr,
+    output timer_start,
+    output timer_rd,
+    output reg [15:0] timer_datain,
     output reg [7:0] ram_addr,
 //  output reg [15:0] ram_data_in,
     output reg [15:0] ram_data_out,
@@ -18,7 +26,8 @@ module controller(
     output reg [7:0] addr,                  ///< Program Counter
     input [31:0] dataACC,                   ///< Store Result
     output reg [15:0] arin,
-    output reg [15:0] brin
+    output reg [15:0] brin,
+    output reg PinOut
 );
     parameter IDLE=0, State1=1,
               State2=2, State3=3, 
@@ -33,7 +42,14 @@ module controller(
               TState0 = 28, TState1 = 29,
 
               PState0 = 30, PState1 = 31,
-              PState2 = 32, PState3 = 33;
+              PState2 = 32, PState3 = 33,
+              CheckINT = 34, PINT = 35,
+              NBranch0 = 36, NBranch1 = 37,
+              NBranch2 = 38, NBranch3 = 39,
+              NBranch4 = 40, NBranch5 = 41;
+
+    parameter rom_E0 = 8'b11110000; ///< Timer INT Entrance
+    parameter rom_F0 = 8'b10101010; ///< External INT Entrance
 
     
     reg[4:0] CurrentState = IDLE;
@@ -45,6 +61,32 @@ module controller(
     wire[3:0] FuntionSelect;
 
     wire[31:0] ar32, br32;  
+
+    ///< Registers Concerning INTERRUPT
+    reg [15:0] TC;   ///< Timer Controll Register, TC[3]: cs;  TC[2]: wr; TC[1]: start;TC[0]: rd
+    reg [15:0] INTR; ///< INTERRUPT Register,      INTR[15]: always allow, INTR[9]: allow timer(?),  
+                     ///<                          INTR[8]: allow external INT, INTR[1]: timer request, 
+                     ///<                          INTR[0]: external request
+    reg [7:0] pcSave;///< Save Program Counter before processing Interrupt
+
+
+    ///< TODO: Turn Down Interrupt Signal when Request Flag has been  
+    always@(*) begin
+        if(INTR[15] & INTR[9] & timer_INT)
+            INTR[1] <= 1'b1;
+        else
+            INTR[1] <= 0;
+        if(INTR[15] & INTR[8] & EXT_INT)
+            INTR[0] <= 1'b1;    
+        else
+            INTR[0] <= 0; 
+    end
+
+    ///< Control by TC
+    assign timer_cs = TC[3];
+    assign timer_wr = TC[2];
+    assign timer_start = TC[1];
+    assign timer_rd = TC[0];
 
 
     assign ControlSelect = romReg[15:13];
@@ -70,6 +112,29 @@ module controller(
         end
         else begin
             case (CurrentState)
+
+                CheckINT:begin  
+                    if(INTR[15] & INTR[9] & INTR[1]) begin ///< Check INT
+                        pcSave <= ProgramCounter;
+                    end
+
+                    if(INTR[15] & INTR[8] & INTR[0]) 
+                        pcSave <= ProgramCounter;
+
+                    CurrentState <= PINT;
+                end
+
+                PINT:begin
+                    if(INTR[15] & INTR[9] & INTR[1]) begin
+                        ProgramCounter <= rom_E0;
+                    end
+                    if(INTR[15] & INTR[8] & INTR[0]) begin
+                        ProgramCounter <= rom_F0;
+                    end
+                    CurrentState <= IDLE;
+                end
+
+
                 IDLE:begin
                     rom_cs <= 1'b1;
                     addr <= ProgramCounter;
@@ -78,6 +143,7 @@ module controller(
                     else
                         CurrentState <= State1;
                 end
+
                 State1:begin
                     CurrentState <= State2;
                     re <= 1'b1;
@@ -94,10 +160,11 @@ module controller(
                     case(ControlSelect)
                         3'b000:CurrentState <= State4;///< Arithmetic & Logic Operation
                         3'b001:CurrentState <= State8;///< Memory Operation
-                        3'b011:CurrentState <= State21; ///< External Input
+
                         3'b010:CurrentState <= TState0;///< Transfer Operation
                         3'b011:CurrentState <= PState0;///< Port Operation
-                        default:CurrentState <= State24;///< TODO HERE!
+                        3'b100:CurrentState <= NBranch0; ///< Instructions from MCU3
+                        default:CurrentState <= State23;///< PC++ And Go CheckINT
                     endcase
                 end
                 State4:begin
@@ -148,7 +215,7 @@ module controller(
                     CurrentState <= State7;
                 end
                 State7:begin
-                    CurrentState <= IDLE;
+                    CurrentState <= CheckINT;
                     arin <= dataACC[15:0];
                     hacc <= dataACC[31:16];
                     ProgramCounter <= ProgramCounter + 1'b1;
@@ -183,7 +250,7 @@ module controller(
                     CurrentState <= State23;
                 end
                 State23:begin
-                    CurrentState <= IDLE;
+                    CurrentState <= CheckINT;
                     ProgramCounter <= ProgramCounter + 1'b1;
                 end
                 State24:begin
@@ -211,7 +278,7 @@ module controller(
                     ram_re <= 0;
                 end
                 State27:begin
-                    CurrentState <= IDLE;
+                    CurrentState <= CheckINT;
                     ProgramCounter <= ProgramCounter + 1'b1;
                 end
                 TState0:begin
@@ -234,7 +301,7 @@ module controller(
                     endcase                    
                 end 
                 TState1:begin
-                    CurrentState <= IDLE;
+                    CurrentState <= CheckINT;
                 end
 
                 PState0:begin
@@ -247,11 +314,52 @@ module controller(
 
                 PState1:begin
                     ProgramCounter <= ProgramCounter + 1;
-                    CurrentState <= IDLE;
+                    CurrentState <= CheckINT;
                 end
 
+                NBranch0:begin
+                    CurrentState <= NBranch1;
+                    case(romReg[7:0])
+                        8'b00000000:begin
+                            timer_datain <= arin[15:0];
+                        end
+                        8'b00000001:begin
+                            TC <= arin[15:0];
+                        end
+                        8'b00000010:begin
+                            arin <= timer_value;
+                        end
+                        8'b00001000:begin
+                            INTR <= arin[15:0];
+                        end
+                        8'b00001001:begin
+                            arin <= INTR;
+                        end
+                        8'b00001010:begin
+                            ProgramCounter <= pcSave;
+                        end
+                        8'b00010000:begin
+                            PinOut <= 1'b1;
+                        end
+                        8'b00010001:begin
+                            PinOut <= 0;
+                        end
+                    endcase
+                end
+                
+                NBranch1:begin
+                    if(romReg[7:0] == 8'b00001010) begin
+                        CurrentState <= CheckINT;
+                    end
+                    else begin
+                        ProgramCounter <= ProgramCounter + 1'b1;
+                        CurrentState <= CheckINT;
+                    end
+                        
 
-                default:CurrentState <= IDLE; 
+                end
+
+                default:CurrentState <= CheckINT; 
             endcase                                          
         end
     end
