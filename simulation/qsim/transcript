@@ -21,8 +21,8 @@
 # Loading cycloneiv_ver.cycloneiv_clkctrl
 # Loading cycloneiv_ver.cycloneiv_mux41
 # Loading cycloneiv_ver.cycloneiv_ena_reg
-# Loading altera_ver.dffeas
 # Loading cycloneiv_ver.cycloneiv_lcell_comb
+# Loading altera_ver.dffeas
 # Loading cycloneiv_ver.cycloneiv_ram_block
 # Loading cycloneiv_ver.cycloneiv_ram_register
 # Loading cycloneiv_ver.cycloneiv_ram_pulse_generator

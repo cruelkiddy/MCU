@@ -1,6 +1,6 @@
 module timer
 #(
-    parameter timerwid = 16;
+    parameter timerwid = 16
 )
 (
     input clk,

@@ -4,10 +4,10 @@ K3
 cModel Technology
 Z0 dC:\Users\84368\EE\FPGA_Project\ElectronicDesignProject\MCU2\simulation\qsim
 vMCU2
-Z1 I??`Rdg6oXa2zN@gK0YX^X0
+Z1 IeXif`7S^k1FclmOAelOeH3
 Z2 V?K0L[B]mQ]]KACRWV0z7l3
-Z3 dC:\Users\84368\EE\FPGA_Project\ElectronicDesignProject\MCU2\simulation\qsim
-Z4 w1571746388
+Z3 dC:\Users\84368\Desktop\MCU\simulation\qsim
+Z4 w1572239338
 Z5 8MCU2.vo
 Z6 FMCU2.vo
 L0 31
@@ -18,9 +18,9 @@ Z8 !s90 -work|work|MCU2.vo|
 Z9 o-work work -O0
 Z10 n@m@c@u2
 !i10b 1
-Z11 !s100 _2h`nz]g<1cjz]3h<oYYj2
+Z11 !s100 >0:mkF``P8T?b`LULbz`O3
 !s85 0
-Z12 !s108 1571746390.255000
+Z12 !s108 1572239339.221000
 Z13 !s107 MCU2.vo|
 !s101 -O0
 vMCU2_vlg_check_tst
@@ -29,7 +29,7 @@ Z14 !s100 6NB@]K??K>IdGbFFHNPUX0
 Z15 Imok>42`Q2To<ghYNjJElU1
 Z16 V=goKeHFdUY@X`obc:lM4H1
 R3
-Z17 w1571746386
+Z17 w1572239336
 Z18 8Waveform.vwf.vt
 Z19 FWaveform.vwf.vt
 L0 61
@@ -37,7 +37,7 @@ R7
 r1
 !s85 0
 31
-Z20 !s108 1571746390.580000
+Z20 !s108 1572239339.424000
 Z21 !s107 Waveform.vwf.vt|
 Z22 !s90 -work|work|Waveform.vwf.vt|
 !s101 -O0
