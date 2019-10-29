@@ -70,7 +70,8 @@ module controller(
     reg [7:0] pcSave;///< Save Program Counter before processing Interrupt
 
 
-    ///< TODO: Turn Down Interrupt Signal when Request Flag has been  
+    ///< TODO: Turn Down Interrupt Signal when Request Flag has been
+    ///< Do this in Interrupt Service Routine
     always@(*) begin
         if(INTR[15] & INTR[9] & timer_INT)
             INTR[1] <= 1'b1;

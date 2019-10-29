@@ -52,7 +52,7 @@ module MCU2(
 
     ALU MainALU(FunctionSelect, ar, br, DataACC);
 
-    timer myTimer(clk, TimerCS, TimerWR, TimerSTART, TimerRD, TimerDataIn, TimerINT, TimerValue);
+    timer myTimer(clk, TimerCS, TimerWR, TimerSTART, TimerRD, TimerDataIn, TimerINT, TimerValue, PinOut);
 
     controller MainController(.clk(clk),
                               .rom_cs(RomCS), 
