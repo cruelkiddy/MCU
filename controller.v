@@ -27,8 +27,12 @@ module controller(
     input [31:0] dataACC,                   ///< Store Result
     output reg [15:0] arin,
     output reg [15:0] brin,
+    output [15:0] testPort,
     output reg PinOut
 );
+
+    assign testPort[7:0] = arin[15:8];
+
     parameter IDLE=0, State1=1,
               State2=2, State3=3, 
               State4=4, State5=5,
@@ -48,11 +52,11 @@ module controller(
               NBranch2 = 38, NBranch3 = 39,
               NBranch4 = 40, NBranch5 = 41;
 
-    parameter rom_E0 = 8'b11110000; ///< Timer INT Entrance
-    parameter rom_F0 = 8'b10101010; ///< External INT Entrance
+    parameter rom_E0 = 8'd19; ///< Timer INT Entrance
+    parameter rom_F0 = 8'd34; ///< External INT Entrance
 
     
-    reg[4:0] CurrentState = IDLE;
+    reg[7:0] CurrentState = IDLE;
     reg[7:0] ProgramCounter;
     reg[15:0] hacc; 
 
@@ -72,16 +76,6 @@ module controller(
 
     ///< TODO: Turn Down Interrupt Signal when Request Flag has been
     ///< Do this in Interrupt Service Routine
-    always@(*) begin
-        if(INTR[15] & INTR[9] & timer_INT)
-            INTR[1] <= 1'b1;
-        else
-            INTR[1] <= 0;
-        if(INTR[15] & INTR[8] & EXT_INT)
-            INTR[0] <= 1'b1;    
-        else
-            INTR[0] <= 0; 
-    end
 
     ///< Control by TC
     assign timer_cs = TC[3];
@@ -96,8 +90,9 @@ module controller(
     assign br32 = brin;
 
     always @(posedge clk or posedge rst) begin
+
         if(rst) begin
-           CurrentState <= IDLE;
+           CurrentState <= CheckINT;
            ProgramCounter <= 0;
            re <= 0;
            ram_addr <= 0;
@@ -110,17 +105,23 @@ module controller(
            arin <= 0;
            brin <= 0;
            functionSelect <= 0;
+
+           TC = 0;
+           INTR = 0;
+           pcSave = 0;
         end
-        else begin
+        else if(INTR[15] & INTR[9] & timer_INT) INTR[1] <= 1'b1;
+        else if(INTR[15] & INTR[8] & EXT_INT)   INTR[0] <= 1'b1;
+        else begin 
             case (CurrentState)
 
-                CheckINT:begin  
-                    if(INTR[15] & INTR[9] & INTR[1]) begin ///< Check INT
+                CheckINT:begin
+                    if((INTR[15] & INTR[9] & INTR[1]) | (INTR[15] & INTR[8] & INTR[0])) begin ///< Check INT
                         pcSave <= ProgramCounter;
                     end
 
-                    if(INTR[15] & INTR[8] & INTR[0]) 
-                        pcSave <= ProgramCounter;
+                    // if(INTR[15] & INTR[8] & INTR[0]) 
+                    //     pcSave <= ProgramCounter;
 
                     CurrentState <= PINT;
                 end
@@ -224,8 +225,6 @@ module controller(
                 State8:begin
                     CurrentState <= State9;
                     case(FuntionSelect)
-                        4'b0101:arin <= romReg[7:0];
-                        4'b1101:brin <= romReg[7:0];
                         4'b0000:ram_cs <= 1;
                         4'b0001:ram_cs <= 1;
                         4'b0010:arin <= brin;
@@ -348,8 +347,9 @@ module controller(
                     endcase
                 end
                 
-                NBranch1:begin
+                NBranch1:begin  ///< Avoid PC <= pcSave Failure
                     if(romReg[7:0] == 8'b00001010) begin
+                        ProgramCounter <= pcSave;
                         CurrentState <= CheckINT;
                     end
                     else begin

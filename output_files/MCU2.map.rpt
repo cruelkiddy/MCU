@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MCU2
-Mon Oct 28 17:30:20 2019
+Thu Oct 31 16:30:21 2019
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -14,28 +14,31 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
-  9. User-Specified and Inferred Latches
- 10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Registers Packed Into Inferred Megafunctions
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Source assignments for Rom:ProgramMemory|altsyncram:rom_rtl_0|altsyncram_0u61:auto_generated
- 15. Source assignments for Ram:myRam|altsyncram:ram_rtl_0|altsyncram_87d1:auto_generated
- 16. Parameter Settings for User Entity Instance: Rom:ProgramMemory
- 17. Parameter Settings for User Entity Instance: timer:myTimer
- 18. Parameter Settings for User Entity Instance: controller:MainController
- 19. Parameter Settings for Inferred Entity Instance: Rom:ProgramMemory|altsyncram:rom_rtl_0
- 20. Parameter Settings for Inferred Entity Instance: Ram:myRam|altsyncram:ram_rtl_0
- 21. Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_mult:Mult0
- 22. Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_divide:Div0
- 23. Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1
- 24. Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out2
- 25. altsyncram Parameter Settings by Entity Instance
- 26. lpm_mult Parameter Settings by Entity Instance
- 27. Port Connectivity Checks: "controller:MainController"
- 28. Port Connectivity Checks: "ALU:MainALU"
- 29. Elapsed Time Per Partition
- 30. Analysis & Synthesis Messages
+  9. State Machine - |MCU2|controller:MainController|CurrentState
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Registers Packed Into Inferred Megafunctions
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Source assignments for Rom:ProgramMemory|altsyncram:rom_rtl_0|altsyncram_0u61:auto_generated
+ 17. Source assignments for Ram:myRam|altsyncram:ram_rtl_0|altsyncram_87d1:auto_generated
+ 18. Parameter Settings for User Entity Instance: Rom:ProgramMemory
+ 19. Parameter Settings for User Entity Instance: timer:myTimer
+ 20. Parameter Settings for User Entity Instance: controller:MainController
+ 21. Parameter Settings for Inferred Entity Instance: Rom:ProgramMemory|altsyncram:rom_rtl_0
+ 22. Parameter Settings for Inferred Entity Instance: Ram:myRam|altsyncram:ram_rtl_0
+ 23. Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_mult:Mult0
+ 24. Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_divide:Div0
+ 25. Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1
+ 26. Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out2
+ 27. altsyncram Parameter Settings by Entity Instance
+ 28. lpm_mult Parameter Settings by Entity Instance
+ 29. Port Connectivity Checks: "controller:MainController"
+ 30. Port Connectivity Checks: "ALU:MainALU"
+ 31. Elapsed Time Per Partition
+ 32. Analysis & Synthesis Messages
+ 33. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -61,15 +64,15 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Oct 28 17:30:20 2019       ;
+; Analysis & Synthesis Status        ; Successful - Thu Oct 31 16:30:21 2019       ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
 ; Revision Name                      ; MCU2                                        ;
 ; Top-level Entity Name              ; MCU2                                        ;
 ; Family                             ; Cyclone IV GX                               ;
-; Total logic elements               ; 1,254                                       ;
-;     Total combinational functions  ; 1,215                                       ;
-;     Dedicated logic registers      ; 124                                         ;
-; Total registers                    ; 124                                         ;
+; Total logic elements               ; 1,402                                       ;
+;     Total combinational functions  ; 1,292                                       ;
+;     Dedicated logic registers      ; 220                                         ;
+; Total registers                    ; 220                                         ;
 ; Total pins                         ; 100                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 4,128                                       ;
@@ -243,37 +246,37 @@ applicable agreement for further details.
 ; Total memory bits        ; 4128             ;
 ; DSP block 9-bit elements ; 0                ;
 ; Maximum fan-out node     ; clk~input        ;
-; Maximum fan-out          ; 124              ;
-; Total fan-out            ; 4889             ;
-; Average fan-out          ; 3.11             ;
+; Maximum fan-out          ; 220              ;
+; Total fan-out            ; 5410             ;
+; Average fan-out          ; 3.10             ;
 +--------------------------+------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                            ;
-+-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                    ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                     ; Library Name ;
-+-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |MCU2                                         ; 1215 (1)          ; 124 (0)      ; 4128        ; 0            ; 0       ; 0         ; 0         ; 100  ; 0            ; |MCU2                                                                                                                                   ; work         ;
-;    |ALU:MainALU|                              ; 1015 (396)        ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU                                                                                                                       ; work         ;
-;       |lpm_divide:Div0|                       ; 278 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_divide:Div0                                                                                                       ; work         ;
-;          |lpm_divide_fom:auto_generated|      ; 278 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_divide:Div0|lpm_divide_fom:auto_generated                                                                         ; work         ;
-;             |sign_div_unsign_dnh:divider|     ; 278 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_divide:Div0|lpm_divide_fom:auto_generated|sign_div_unsign_dnh:divider                                             ; work         ;
-;                |alt_u_div_8ef:divider|        ; 278 (277)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_divide:Div0|lpm_divide_fom:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_8ef:divider                       ; work         ;
-;                   |add_sub_2tc:add_sub_1|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_divide:Div0|lpm_divide_fom:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_8ef:divider|add_sub_2tc:add_sub_1 ; work         ;
-;       |lpm_mult:Mult0|                        ; 341 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_mult:Mult0                                                                                                        ; work         ;
-;          |mult_1ht:auto_generated|            ; 341 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated                                                                                ; work         ;
-;             |alt_mac_mult:mac_mult1|          ; 341 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1                                                         ; work         ;
-;                |mac_mult_r2h1:auto_generated| ; 341 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated                            ; work         ;
-;                   |mult_jul:mult1|            ; 341 (341)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1             ; work         ;
-;    |Ram:myRam|                                ; 0 (0)             ; 0 (0)        ; 32          ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|Ram:myRam                                                                                                                         ; work         ;
-;       |altsyncram:ram_rtl_0|                  ; 0 (0)             ; 0 (0)        ; 32          ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|Ram:myRam|altsyncram:ram_rtl_0                                                                                                    ; work         ;
-;          |altsyncram_87d1:auto_generated|     ; 0 (0)             ; 0 (0)        ; 32          ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|Ram:myRam|altsyncram:ram_rtl_0|altsyncram_87d1:auto_generated                                                                     ; work         ;
-;    |Rom:ProgramMemory|                        ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|Rom:ProgramMemory                                                                                                                 ; work         ;
-;       |altsyncram:rom_rtl_0|                  ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|Rom:ProgramMemory|altsyncram:rom_rtl_0                                                                                            ; work         ;
-;          |altsyncram_0u61:auto_generated|     ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|Rom:ProgramMemory|altsyncram:rom_rtl_0|altsyncram_0u61:auto_generated                                                             ; work         ;
-;    |controller:MainController|                ; 199 (199)         ; 124 (124)    ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|controller:MainController                                                                                                         ; work         ;
-+-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                ;
++-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                    ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                         ; Library Name ;
++-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+--------------+
+; |MCU2                                         ; 1292 (1)          ; 220 (0)      ; 4128        ; 0            ; 0       ; 0         ; 0         ; 100  ; 0            ; |MCU2                                                                                                                       ; work         ;
+;    |ALU:MainALU|                              ; 1012 (391)        ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU                                                                                                           ; work         ;
+;       |lpm_divide:Div0|                       ; 280 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_divide:Div0                                                                                           ; work         ;
+;          |lpm_divide_fom:auto_generated|      ; 280 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_divide:Div0|lpm_divide_fom:auto_generated                                                             ; work         ;
+;             |sign_div_unsign_dnh:divider|     ; 280 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_divide:Div0|lpm_divide_fom:auto_generated|sign_div_unsign_dnh:divider                                 ; work         ;
+;                |alt_u_div_8ef:divider|        ; 280 (280)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_divide:Div0|lpm_divide_fom:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_8ef:divider           ; work         ;
+;       |lpm_mult:Mult0|                        ; 341 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_mult:Mult0                                                                                            ; work         ;
+;          |mult_1ht:auto_generated|            ; 341 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated                                                                    ; work         ;
+;             |alt_mac_mult:mac_mult1|          ; 341 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1                                             ; work         ;
+;                |mac_mult_r2h1:auto_generated| ; 341 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated                ; work         ;
+;                   |mult_jul:mult1|            ; 341 (341)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1 ; work         ;
+;    |Ram:myRam|                                ; 0 (0)             ; 0 (0)        ; 32          ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|Ram:myRam                                                                                                             ; work         ;
+;       |altsyncram:ram_rtl_0|                  ; 0 (0)             ; 0 (0)        ; 32          ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|Ram:myRam|altsyncram:ram_rtl_0                                                                                        ; work         ;
+;          |altsyncram_87d1:auto_generated|     ; 0 (0)             ; 0 (0)        ; 32          ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|Ram:myRam|altsyncram:ram_rtl_0|altsyncram_87d1:auto_generated                                                         ; work         ;
+;    |Rom:ProgramMemory|                        ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|Rom:ProgramMemory                                                                                                     ; work         ;
+;       |altsyncram:rom_rtl_0|                  ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|Rom:ProgramMemory|altsyncram:rom_rtl_0                                                                                ; work         ;
+;          |altsyncram_0u61:auto_generated|     ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|Rom:ProgramMemory|altsyncram:rom_rtl_0|altsyncram_0u61:auto_generated                                                 ; work         ;
+;    |controller:MainController|                ; 254 (254)         ; 187 (187)    ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|controller:MainController                                                                                             ; work         ;
+;    |timer:myTimer|                            ; 25 (25)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|timer:myTimer                                                                                                         ; work         ;
++-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -287,19 +290,45 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+--------------------------------+
 
 
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |MCU2|controller:MainController|CurrentState                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ;
++-----------------------+-----------------------+-----------------------+-------------------+-------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+-----------------------+
+; Name                  ; CurrentState.NBranch1 ; CurrentState.NBranch0 ; CurrentState.PINT ; CurrentState.IDLE ; CurrentState.PState1 ; CurrentState.PState0 ; CurrentState.TState1 ; CurrentState.TState0 ; CurrentState.State27 ; CurrentState.State26 ; CurrentState.State25 ; CurrentState.State24 ; CurrentState.State23 ; CurrentState.State22 ; CurrentState.State21 ; CurrentState.State9 ; CurrentState.State8 ; CurrentState.State7 ; CurrentState.State6 ; CurrentState.State5 ; CurrentState.State4 ; CurrentState.State3 ; CurrentState.State2 ; CurrentState.State1 ; CurrentState.CheckINT ;
++-----------------------+-----------------------+-----------------------+-------------------+-------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+-----------------------+
+; CurrentState.CheckINT ; 0                     ; 0                     ; 0                 ; 0                 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                     ;
+; CurrentState.State1   ; 0                     ; 0                     ; 0                 ; 0                 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 1                     ;
+; CurrentState.State2   ; 0                     ; 0                     ; 0                 ; 0                 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 1                     ;
+; CurrentState.State3   ; 0                     ; 0                     ; 0                 ; 0                 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 1                     ;
+; CurrentState.State4   ; 0                     ; 0                     ; 0                 ; 0                 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 1                     ;
+; CurrentState.State5   ; 0                     ; 0                     ; 0                 ; 0                 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                     ;
+; CurrentState.State6   ; 0                     ; 0                     ; 0                 ; 0                 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                     ;
+; CurrentState.State7   ; 0                     ; 0                     ; 0                 ; 0                 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                     ;
+; CurrentState.State8   ; 0                     ; 0                     ; 0                 ; 0                 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                     ;
+; CurrentState.State9   ; 0                     ; 0                     ; 0                 ; 0                 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                     ;
+; CurrentState.State21  ; 0                     ; 0                     ; 0                 ; 0                 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                     ;
+; CurrentState.State22  ; 0                     ; 0                     ; 0                 ; 0                 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                     ;
+; CurrentState.State23  ; 0                     ; 0                     ; 0                 ; 0                 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                     ;
+; CurrentState.State24  ; 0                     ; 0                     ; 0                 ; 0                 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                     ;
+; CurrentState.State25  ; 0                     ; 0                     ; 0                 ; 0                 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                     ;
+; CurrentState.State26  ; 0                     ; 0                     ; 0                 ; 0                 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                     ;
+; CurrentState.State27  ; 0                     ; 0                     ; 0                 ; 0                 ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                     ;
+; CurrentState.TState0  ; 0                     ; 0                     ; 0                 ; 0                 ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                     ;
+; CurrentState.TState1  ; 0                     ; 0                     ; 0                 ; 0                 ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                     ;
+; CurrentState.PState0  ; 0                     ; 0                     ; 0                 ; 0                 ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                     ;
+; CurrentState.PState1  ; 0                     ; 0                     ; 0                 ; 0                 ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                     ;
+; CurrentState.IDLE     ; 0                     ; 0                     ; 0                 ; 1                 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                     ;
+; CurrentState.PINT     ; 0                     ; 0                     ; 1                 ; 0                 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                     ;
+; CurrentState.NBranch0 ; 0                     ; 1                     ; 0                 ; 0                 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                     ;
+; CurrentState.NBranch1 ; 1                     ; 0                     ; 0                 ; 0                 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                     ;
++-----------------------+-----------------------+-----------------------+-------------------+-------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+-----------------------+
+
+
 +----------------------------------------------------------------------------------------------------+
 ; User-Specified and Inferred Latches                                                                ;
 +-----------------------------------------------------+---------------------+------------------------+
 ; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
 +-----------------------------------------------------+---------------------+------------------------+
-; ALU:MainALU|dataAcc[0]                              ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[1]                              ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[2]                              ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[3]                              ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[4]                              ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[5]                              ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[6]                              ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[7]                              ; ALU:MainALU|WideOr0 ; yes                    ;
 ; ALU:MainALU|dataAcc[8]                              ; ALU:MainALU|WideOr0 ; yes                    ;
 ; ALU:MainALU|dataAcc[9]                              ; ALU:MainALU|WideOr0 ; yes                    ;
 ; ALU:MainALU|dataAcc[10]                             ; ALU:MainALU|WideOr0 ; yes                    ;
@@ -308,14 +337,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ALU:MainALU|dataAcc[13]                             ; ALU:MainALU|WideOr0 ; yes                    ;
 ; ALU:MainALU|dataAcc[14]                             ; ALU:MainALU|WideOr0 ; yes                    ;
 ; ALU:MainALU|dataAcc[15]                             ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[16]                             ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[17]                             ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[18]                             ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[19]                             ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[20]                             ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[21]                             ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[22]                             ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[23]                             ; ALU:MainALU|WideOr0 ; yes                    ;
+; ALU:MainALU|dataAcc[0]                              ; ALU:MainALU|WideOr0 ; yes                    ;
+; ALU:MainALU|dataAcc[1]                              ; ALU:MainALU|WideOr0 ; yes                    ;
+; ALU:MainALU|dataAcc[2]                              ; ALU:MainALU|WideOr0 ; yes                    ;
+; ALU:MainALU|dataAcc[3]                              ; ALU:MainALU|WideOr0 ; yes                    ;
+; ALU:MainALU|dataAcc[4]                              ; ALU:MainALU|WideOr0 ; yes                    ;
+; ALU:MainALU|dataAcc[5]                              ; ALU:MainALU|WideOr0 ; yes                    ;
+; ALU:MainALU|dataAcc[6]                              ; ALU:MainALU|WideOr0 ; yes                    ;
+; ALU:MainALU|dataAcc[7]                              ; ALU:MainALU|WideOr0 ; yes                    ;
 ; ALU:MainALU|dataAcc[24]                             ; ALU:MainALU|WideOr0 ; yes                    ;
 ; ALU:MainALU|dataAcc[25]                             ; ALU:MainALU|WideOr0 ; yes                    ;
 ; ALU:MainALU|dataAcc[26]                             ; ALU:MainALU|WideOr0 ; yes                    ;
@@ -324,19 +353,47 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ALU:MainALU|dataAcc[29]                             ; ALU:MainALU|WideOr0 ; yes                    ;
 ; ALU:MainALU|dataAcc[30]                             ; ALU:MainALU|WideOr0 ; yes                    ;
 ; ALU:MainALU|dataAcc[31]                             ; ALU:MainALU|WideOr0 ; yes                    ;
+; ALU:MainALU|dataAcc[16]                             ; ALU:MainALU|WideOr0 ; yes                    ;
+; ALU:MainALU|dataAcc[17]                             ; ALU:MainALU|WideOr0 ; yes                    ;
+; ALU:MainALU|dataAcc[18]                             ; ALU:MainALU|WideOr0 ; yes                    ;
+; ALU:MainALU|dataAcc[19]                             ; ALU:MainALU|WideOr0 ; yes                    ;
+; ALU:MainALU|dataAcc[20]                             ; ALU:MainALU|WideOr0 ; yes                    ;
+; ALU:MainALU|dataAcc[21]                             ; ALU:MainALU|WideOr0 ; yes                    ;
+; ALU:MainALU|dataAcc[22]                             ; ALU:MainALU|WideOr0 ; yes                    ;
+; ALU:MainALU|dataAcc[23]                             ; ALU:MainALU|WideOr0 ; yes                    ;
 ; Number of user-specified and inferred latches = 32  ;                     ;                        ;
 +-----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; controller:MainController|ram_cs      ; Stuck at VCC due to stuck port data_in ;
-; Total Number of Removed Registers = 1 ;                                        ;
-+---------------------------------------+----------------------------------------+
++-----------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                      ;
++------------------------------------------------+----------------------------------------+
+; Register name                                  ; Reason for Removal                     ;
++------------------------------------------------+----------------------------------------+
+; controller:MainController|ram_cs               ; Stuck at VCC due to stuck port data_in ;
+; controller:MainController|CurrentState~4       ; Lost fanout                            ;
+; controller:MainController|CurrentState~5       ; Lost fanout                            ;
+; controller:MainController|CurrentState~6       ; Lost fanout                            ;
+; controller:MainController|CurrentState~7       ; Lost fanout                            ;
+; controller:MainController|CurrentState~8       ; Lost fanout                            ;
+; controller:MainController|CurrentState~9       ; Lost fanout                            ;
+; controller:MainController|CurrentState~10      ; Lost fanout                            ;
+; controller:MainController|CurrentState~11      ; Lost fanout                            ;
+; controller:MainController|CurrentState.State21 ; Stuck at GND due to stuck port data_in ;
+; controller:MainController|CurrentState.State22 ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 11         ;                                        ;
++------------------------------------------------+----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                 ;
++------------------------------------------------+---------------------------+------------------------------------------------+
+; Register name                                  ; Reason for Removal        ; Registers Removed due to This Register         ;
++------------------------------------------------+---------------------------+------------------------------------------------+
+; controller:MainController|CurrentState.State21 ; Stuck at GND              ; controller:MainController|CurrentState.State22 ;
+;                                                ; due to stuck port data_in ;                                                ;
++------------------------------------------------+---------------------------+------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -344,12 +401,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 124   ;
+; Total registers                              ; 220   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 40    ;
+; Number of registers using Synchronous Load   ; 27    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 115   ;
+; Number of registers using Clock Enable       ; 216   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -369,17 +426,20 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |MCU2|controller:MainController|portOut[0]        ;
-; 44:1               ; 8 bits    ; 232 LEs       ; 8 LEs                ; 224 LEs                ; Yes        ; |MCU2|controller:MainController|ProgramCounter[2] ;
-; 39:1               ; 8 bits    ; 208 LEs       ; 16 LEs               ; 192 LEs                ; Yes        ; |MCU2|controller:MainController|brin[9]           ;
-; 39:1               ; 8 bits    ; 208 LEs       ; 16 LEs               ; 192 LEs                ; Yes        ; |MCU2|controller:MainController|brin[0]           ;
-; 40:1               ; 8 bits    ; 208 LEs       ; 32 LEs               ; 176 LEs                ; Yes        ; |MCU2|controller:MainController|arin[7]           ;
-; 40:1               ; 8 bits    ; 208 LEs       ; 32 LEs               ; 176 LEs                ; Yes        ; |MCU2|controller:MainController|arin[9]           ;
-; 21:1               ; 8 bits    ; 112 LEs       ; 64 LEs               ; 48 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux20                           ;
-; 10:1               ; 8 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux2                            ;
-; 10:1               ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux12                           ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |MCU2|controller:MainController|portOut[6]        ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |MCU2|timer:myTimer|realTimer[8]                  ;
+; 25:1               ; 8 bits    ; 128 LEs       ; 24 LEs               ; 104 LEs                ; Yes        ; |MCU2|controller:MainController|ProgramCounter[0] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |MCU2|controller:MainController|brin[15]          ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |MCU2|controller:MainController|brin[7]           ;
+; 144:1              ; 8 bits    ; 768 LEs       ; 48 LEs               ; 720 LEs                ; Yes        ; |MCU2|controller:MainController|arin[5]           ;
+; 147:1              ; 8 bits    ; 784 LEs       ; 48 LEs               ; 736 LEs                ; Yes        ; |MCU2|controller:MainController|arin[10]          ;
+; 3:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; No         ; |MCU2|controller:MainController|CurrentState      ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |MCU2|controller:MainController|CurrentState      ;
+; 21:1               ; 8 bits    ; 112 LEs       ; 64 LEs               ; 48 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux19                           ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux4                            ;
+; 10:1               ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux11                           ;
 ; 22:1               ; 4 bits    ; 56 LEs        ; 32 LEs               ; 24 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux24                           ;
-; 23:1               ; 2 bits    ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux29                           ;
+; 23:1               ; 2 bits    ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux28                           ;
 ; 24:1               ; 2 bits    ; 32 LEs        ; 18 LEs               ; 14 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux30                           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 
@@ -459,8 +519,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; NBranch3       ; 39       ; Signed Integer                             ;
 ; NBranch4       ; 40       ; Signed Integer                             ;
 ; NBranch5       ; 41       ; Signed Integer                             ;
-; rom_E0         ; 11110000 ; Unsigned Binary                            ;
-; rom_F0         ; 10101010 ; Unsigned Binary                            ;
+; rom_E0         ; 00010011 ; Unsigned Binary                            ;
+; rom_F0         ; 00100010 ; Unsigned Binary                            ;
 +----------------+----------+--------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -870,7 +930,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -880,7 +940,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
-    Info: Processing started: Mon Oct 28 17:30:15 2019
+    Info: Processing started: Thu Oct 31 16:30:15 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MCU2 -c MCU2
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file timer.v
@@ -901,7 +961,7 @@ Warning (10034): Output port "MaccH" at MCU2.v(8) has no driver
 Info (12128): Elaborating entity "Ram" for hierarchy "Ram:myRam"
 Info (12128): Elaborating entity "Rom" for hierarchy "Rom:ProgramMemory"
 Warning (10036): Verilog HDL or VHDL warning at Rom.v(14): object "i" assigned a value but never read
-Warning (10850): Verilog HDL warning at Rom.v(20): number of words (11) in memory file does not match the number of elements in the address range [0:255]
+Warning (10850): Verilog HDL warning at Rom.v(20): number of words (35) in memory file does not match the number of elements in the address range [0:255]
 Warning (10030): Net "rom.data_a" at Rom.v(16) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "rom.waddr_a" at Rom.v(16) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "rom.we_a" at Rom.v(16) has no driver or initial value, using a default initial value '0'
@@ -941,50 +1001,12 @@ Info (10041): Inferred latch for "dataAcc[30]" at ALU.v(12)
 Info (10041): Inferred latch for "dataAcc[31]" at ALU.v(12)
 Info (12128): Elaborating entity "timer" for hierarchy "timer:myTimer"
 Info (12128): Elaborating entity "controller" for hierarchy "controller:MainController"
-Warning (10036): Verilog HDL or VHDL warning at controller.v(63): object "ar32" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at controller.v(63): object "br32" assigned a value but never read
-Warning (10230): Verilog HDL assignment warning at controller.v(55): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at controller.v(99): truncated value with size 32 to match size of target (5)
-Warning (10199): Verilog HDL Case Statement warning at controller.v(116): case item expression never matches the case expression
-Warning (10199): Verilog HDL Case Statement warning at controller.v(127): case item expression never matches the case expression
-Warning (10230): Verilog HDL assignment warning at controller.v(142): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at controller.v(144): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at controller.v(148): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at controller.v(152): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at controller.v(161): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at controller.v(162): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at controller.v(164): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at controller.v(165): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at controller.v(166): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at controller.v(167): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at controller.v(171): truncated value with size 32 to match size of target (5)
-Warning (10272): Verilog HDL Case Statement warning at controller.v(191): case item expression covers a value already covered by a previous case item
-Warning (10272): Verilog HDL Case Statement warning at controller.v(200): case item expression covers a value already covered by a previous case item
-Warning (10230): Verilog HDL assignment warning at controller.v(212): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at controller.v(215): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at controller.v(218): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at controller.v(224): truncated value with size 32 to match size of target (5)
-Warning (10272): Verilog HDL Case Statement warning at controller.v(233): case item expression covers a value already covered by a previous case item
-Warning (10272): Verilog HDL Case Statement warning at controller.v(234): case item expression covers a value already covered by a previous case item
-Warning (10230): Verilog HDL assignment warning at controller.v(239): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at controller.v(243): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at controller.v(250): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at controller.v(253): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at controller.v(257): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at controller.v(268): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at controller.v(276): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at controller.v(281): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at controller.v(285): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at controller.v(304): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at controller.v(308): truncated value with size 32 to match size of target (5)
+Warning (10036): Verilog HDL or VHDL warning at controller.v(67): object "ar32" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at controller.v(67): object "br32" assigned a value but never read
+Warning (10272): Verilog HDL Case Statement warning at controller.v(193): case item expression covers a value already covered by a previous case item
+Warning (10272): Verilog HDL Case Statement warning at controller.v(202): case item expression covers a value already covered by a previous case item
 Warning (10230): Verilog HDL assignment warning at controller.v(316): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at controller.v(317): truncated value with size 32 to match size of target (5)
-Warning (10199): Verilog HDL Case Statement warning at controller.v(320): case item expression never matches the case expression
-Warning (10199): Verilog HDL Case Statement warning at controller.v(350): case item expression never matches the case expression
-Warning (10230): Verilog HDL assignment warning at controller.v(362): truncated value with size 32 to match size of target (5)
-Warning (10030): Net "TC[3..0]" at controller.v(66) has no driver or initial value, using a default initial value '0'
-Warning (10034): Output port "timer_datain" at controller.v(19) has no driver
-Warning (10034): Output port "PinOut" at controller.v(31) has no driver
+Warning (10034): Output port "testPort[15..8]" at controller.v(30) has no driver
 Warning (276027): Inferred dual-clock RAM node "Ram:myRam|ram_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276007): RAM logic "Ram:myRam|ram" is uninferred due to asynchronous read logic
@@ -1153,22 +1175,6 @@ Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity
 Info (13014): Ignored 496 buffer(s)
     Info (13016): Ignored 16 CARRY_SUM buffer(s)
     Info (13019): Ignored 480 SOFT buffer(s)
-Warning (13012): Latch ALU:MainALU|dataAcc[0] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
-Warning (13012): Latch ALU:MainALU|dataAcc[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
-Warning (13012): Latch ALU:MainALU|dataAcc[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
-Warning (13012): Latch ALU:MainALU|dataAcc[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
-Warning (13012): Latch ALU:MainALU|dataAcc[4] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
-Warning (13012): Latch ALU:MainALU|dataAcc[5] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
-Warning (13012): Latch ALU:MainALU|dataAcc[6] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
-Warning (13012): Latch ALU:MainALU|dataAcc[7] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
 Warning (13012): Latch ALU:MainALU|dataAcc[8] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
 Warning (13012): Latch ALU:MainALU|dataAcc[9] has unsafe behavior
@@ -1185,22 +1191,22 @@ Warning (13012): Latch ALU:MainALU|dataAcc[14] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
 Warning (13012): Latch ALU:MainALU|dataAcc[15] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
-Warning (13012): Latch ALU:MainALU|dataAcc[16] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
-Warning (13012): Latch ALU:MainALU|dataAcc[17] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
-Warning (13012): Latch ALU:MainALU|dataAcc[18] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
-Warning (13012): Latch ALU:MainALU|dataAcc[19] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
-Warning (13012): Latch ALU:MainALU|dataAcc[20] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
-Warning (13012): Latch ALU:MainALU|dataAcc[21] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
-Warning (13012): Latch ALU:MainALU|dataAcc[22] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
-Warning (13012): Latch ALU:MainALU|dataAcc[23] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+Warning (13012): Latch ALU:MainALU|dataAcc[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
+Warning (13012): Latch ALU:MainALU|dataAcc[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
+Warning (13012): Latch ALU:MainALU|dataAcc[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
+Warning (13012): Latch ALU:MainALU|dataAcc[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
+Warning (13012): Latch ALU:MainALU|dataAcc[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
+Warning (13012): Latch ALU:MainALU|dataAcc[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
+Warning (13012): Latch ALU:MainALU|dataAcc[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
+Warning (13012): Latch ALU:MainALU|dataAcc[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
 Warning (13012): Latch ALU:MainALU|dataAcc[24] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
 Warning (13012): Latch ALU:MainALU|dataAcc[25] has unsafe behavior
@@ -1216,6 +1222,22 @@ Warning (13012): Latch ALU:MainALU|dataAcc[29] has unsafe behavior
 Warning (13012): Latch ALU:MainALU|dataAcc[30] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
 Warning (13012): Latch ALU:MainALU|dataAcc[31] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+Warning (13012): Latch ALU:MainALU|dataAcc[16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+Warning (13012): Latch ALU:MainALU|dataAcc[17] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+Warning (13012): Latch ALU:MainALU|dataAcc[18] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+Warning (13012): Latch ALU:MainALU|dataAcc[19] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+Warning (13012): Latch ALU:MainALU|dataAcc[20] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+Warning (13012): Latch ALU:MainALU|dataAcc[21] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+Warning (13012): Latch ALU:MainALU|dataAcc[22] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+Warning (13012): Latch ALU:MainALU|dataAcc[23] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "Macc[0]" is stuck at GND
@@ -1250,23 +1272,37 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "MaccH[13]" is stuck at GND
     Warning (13410): Pin "MaccH[14]" is stuck at GND
     Warning (13410): Pin "MaccH[15]" is stuck at GND
-    Warning (13410): Pin "PinOut" is stuck at GND
+    Warning (13410): Pin "testout[8]" is stuck at GND
+    Warning (13410): Pin "testout[9]" is stuck at GND
+    Warning (13410): Pin "testout[10]" is stuck at GND
+    Warning (13410): Pin "testout[11]" is stuck at GND
+    Warning (13410): Pin "testout[12]" is stuck at GND
+    Warning (13410): Pin "testout[13]" is stuck at GND
+    Warning (13410): Pin "testout[14]" is stuck at GND
+    Warning (13410): Pin "testout[15]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 8 registers lost all their fanouts during netlist optimizations.
 Info (17036): Removed 7 MSB VCC or GND address nodes from RAM block "Ram:myRam|altsyncram:ram_rtl_0|altsyncram_87d1:auto_generated|ALTSYNCRAM"
+Info (144001): Generated suppressed messages file C:/Users/84368/Desktop/MCU/output_files/MCU2.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 2 input pin(s) that do not drive logic
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "rst"
-    Warning (15610): No output dependent on input pin "exINT"
-Info (21057): Implemented 1402 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1550 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 19 input pins
     Info (21059): Implemented 81 output pins
-    Info (21061): Implemented 1270 logic cells
+    Info (21061): Implemented 1418 logic cells
     Info (21064): Implemented 32 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 155 warnings
-    Info: Peak virtual memory: 4717 megabytes
-    Info: Processing ended: Mon Oct 28 17:30:21 2019
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 123 warnings
+    Info: Peak virtual memory: 4720 megabytes
+    Info: Processing ended: Thu Oct 31 16:30:21 2019
     Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Total CPU time (on all processors): 00:00:06
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/84368/Desktop/MCU/output_files/MCU2.map.smsg.
 
 

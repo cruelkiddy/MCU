@@ -3,40 +3,40 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'controller:MainController|functionSelect[0]'
-Slack : -39.912
-TNS   : -549.743
+Slack : -35.971
+TNS   : -513.886
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -4.047
-TNS   : -333.468
+Slack : -5.132
+TNS   : -565.616
 
 Type  : Slow 1200mV 85C Model Setup 'controller:MainController|re'
-Slack : -0.107
-TNS   : -0.107
+Slack : -0.043
+TNS   : -0.043
 
 Type  : Slow 1200mV 85C Model Setup 'controller:MainController|ram_we'
-Slack : 0.411
+Slack : 0.223
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'controller:MainController|functionSelect[0]'
-Slack : -1.290
-TNS   : -34.955
+Slack : -1.352
+TNS   : -37.417
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : -0.139
-TNS   : -0.350
+Slack : -0.093
+TNS   : -0.172
 
 Type  : Slow 1200mV 85C Model Hold 'controller:MainController|ram_we'
-Slack : -0.120
-TNS   : -0.120
+Slack : 0.076
+TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'controller:MainController|re'
-Slack : 0.178
+Slack : 0.143
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -127.000
+TNS   : -223.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'controller:MainController|ram_we'
 Slack : -2.174
@@ -51,44 +51,44 @@ Slack : -2.174
 TNS   : -2.174
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'controller:MainController|functionSelect[0]'
-Slack : 0.370
+Slack : 0.415
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'controller:MainController|functionSelect[0]'
-Slack : -35.677
-TNS   : -491.482
+Slack : -32.069
+TNS   : -458.796
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -3.530
-TNS   : -288.222
+Slack : -4.493
+TNS   : -487.788
 
 Type  : Slow 1200mV 0C Model Setup 'controller:MainController|re'
-Slack : 0.002
+Slack : 0.055
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'controller:MainController|ram_we'
-Slack : 0.451
+Slack : 0.284
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'controller:MainController|functionSelect[0]'
-Slack : -1.120
-TNS   : -29.330
+Slack : -1.146
+TNS   : -31.536
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : -0.086
-TNS   : -0.198
+Slack : -0.055
+TNS   : -0.075
 
 Type  : Slow 1200mV 0C Model Hold 'controller:MainController|ram_we'
-Slack : -0.071
-TNS   : -0.071
+Slack : 0.096
+TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'controller:MainController|re'
-Slack : 0.186
+Slack : 0.164
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -127.000
+TNS   : -223.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'controller:MainController|ram_we'
 Slack : -2.174
@@ -103,44 +103,44 @@ Slack : -2.174
 TNS   : -2.174
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'controller:MainController|functionSelect[0]'
-Slack : 0.439
+Slack : 0.444
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'controller:MainController|functionSelect[0]'
-Slack : -21.995
-TNS   : -301.630
+Slack : -19.793
+TNS   : -281.032
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -1.996
-TNS   : -136.486
+Slack : -2.312
+TNS   : -221.524
 
 Type  : Fast 1200mV 0C Model Setup 'controller:MainController|re'
-Slack : 0.374
+Slack : 0.416
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'controller:MainController|ram_we'
-Slack : 0.612
+Slack : 0.519
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'controller:MainController|functionSelect[0]'
-Slack : -0.991
-TNS   : -26.803
+Slack : -0.971
+TNS   : -26.951
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : -0.192
-TNS   : -0.538
+Slack : -0.203
+TNS   : -0.410
 
 Type  : Fast 1200mV 0C Model Hold 'controller:MainController|ram_we'
-Slack : -0.138
-TNS   : -0.138
+Slack : -0.034
+TNS   : -0.034
 
 Type  : Fast 1200mV 0C Model Hold 'controller:MainController|re'
-Slack : 0.042
+Slack : 0.020
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -131.383
+TNS   : -228.847
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'controller:MainController|ram_we'
 Slack : -1.000
@@ -155,7 +155,7 @@ Slack : -1.000
 TNS   : -1.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'controller:MainController|functionSelect[0]'
-Slack : 0.298
+Slack : 0.316
 TNS   : 0.000
 
 ------------------------------------------------------------

@@ -24,7 +24,7 @@ module MCU2(
     wire [31:0] DataACC;
 
     ///< Test For calculate using ALU
-    assign testout = DataACC[15:0];
+    // assign testout = ar;
     assign McodeOut = ProgramCode;
 
     ///< Wires Linking Controller & Ram
@@ -52,7 +52,7 @@ module MCU2(
 
     ALU MainALU(FunctionSelect, ar, br, DataACC);
 
-    timer myTimer(clk, TimerCS, TimerWR, TimerSTART, TimerRD, TimerDataIn, TimerINT, TimerValue, PinOut);
+    timer myTimer(clk, TimerCS, TimerWR, TimerSTART, TimerRD, TimerDataIn, TimerINT, TimerValue);
 
     controller MainController(.clk(clk),
                               .rom_cs(RomCS), 
@@ -78,7 +78,8 @@ module MCU2(
                               .ram_we(RamWE),
                               .portOut(portOut),
                               .PinOut(PinOut),
-                              .portIn(portIn)
+                              .portIn(portIn),
+                              .testPort(testout)
                              );
 
 

@@ -10,13 +10,9 @@ module timer
     input rd,
     input [timerwid - 1 : 0] datain,
     output reg intrup,
-    output reg [timerwid - 1 : 0] dataout,
-    input clearFlag
+    output reg [timerwid - 1 : 0] dataout
 );
     reg [timerwid - 1 : 0] realTimer;
-
-    always@(posedge clearFlag) 
-        intrup <= 0;
 
     always@(posedge clk) begin
         if(cs) begin    
@@ -27,8 +23,10 @@ module timer
                     realTimer <= datain;
                 end
 
-                else
+                else begin
                     realTimer <= realTimer + 1'b1;
+                    intrup <= 0;
+                end
             end
             else begin
                 if(wr)
