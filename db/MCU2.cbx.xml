@@ -6,6 +6,5 @@
 		<CBX_INST_ENTRY INSTANCE_NAME="|MCU2|ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1" CBX_FILE_NAME="mac_mult_r2h1.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|MCU2|Rom:ProgramMemory|altsyncram:rom_rtl_0" CBX_FILE_NAME="altsyncram_0u61.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|MCU2|ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out2" CBX_FILE_NAME="mac_out_kv82.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|MCU2|Ram:myRam|altsyncram:ram_rtl_0" CBX_FILE_NAME="altsyncram_87d1.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

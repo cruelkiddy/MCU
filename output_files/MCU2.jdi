@@ -1,8 +1,8 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="4bb5e7afe33d3be2875a"/>
+    <hash md5_digest_80b="5ccae78e6842165c584a"/>
   </project>
   <file_info>
-    <file device="EP4CGX22CF19C6" path="MCU2.sof" usercode="0xFFFFFFFF"/>
+    <file device="EP4CGX30CF23C6" path="MCU2.sof" usercode="0xFFFFFFFF"/>
   </file_info>
 </sld_project_info>

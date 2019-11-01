@@ -7,7 +7,12 @@ module MCU2(
     output [15:0] Macc,
     output [15:0] MaccH,
     output [15:0] testout,
+    output [15:0] TimerValuePort,
+    output INTtestout,
+    output [15:0] INTRPort,
     output [15:0] McodeOut,
+    output [7:0] RomAddrPort,
+    output [15:0] OneRamData,
     output PinOut   ///< Pin out    
 );
 
@@ -24,8 +29,10 @@ module MCU2(
     wire [31:0] DataACC;
 
     ///< Test For calculate using ALU
-    // assign testout = ar;
+    // assign testout = RomAddr;
+    assign TimerValuePort = TimerValue;
     assign McodeOut = ProgramCode;
+    assign RomAddrPort = RomAddr;
 
     ///< Wires Linking Controller & Ram
     wire RamCS;
@@ -46,7 +53,7 @@ module MCU2(
 
 
 
-    Ram myRam(DataIntoRam, DataFromRam, RamAddr, RamCS, RamWE, RamRE);
+    Ram myRam(DataIntoRam, DataFromRam, OneRamData, RamAddr, RamCS, RamWE, RamRE);
     
     Rom ProgramMemory(ProgramCode, RomAddr, RomCS, RomRE);
 
@@ -79,7 +86,8 @@ module MCU2(
                               .portOut(portOut),
                               .PinOut(PinOut),
                               .portIn(portIn),
-                              .testPort(testout)
+                              .testPort(INTtestout),
+                              .INTRTest(INTRPort)
                              );
 
 

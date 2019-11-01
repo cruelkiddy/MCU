@@ -28,10 +28,10 @@ module controller(
     output reg [15:0] arin,
     output reg [15:0] brin,
     output [15:0] testPort,
+    output [15:0] INTRTest,
     output reg PinOut
 );
 
-    assign testPort[7:0] = arin[15:8];
 
     parameter IDLE=0, State1=1,
               State2=2, State3=3, 
@@ -55,7 +55,6 @@ module controller(
     parameter rom_E0 = 8'd19; ///< Timer INT Entrance
     parameter rom_F0 = 8'd34; ///< External INT Entrance
 
-    
     reg[7:0] CurrentState = IDLE;
     reg[7:0] ProgramCounter;
     reg[15:0] hacc; 
@@ -63,8 +62,6 @@ module controller(
     reg[15:0] romReg;
     wire[2:0] ControlSelect;
     wire[3:0] FuntionSelect;
-
-    wire[31:0] ar32, br32;  
 
     ///< Registers Concerning INTERRUPT
     reg [15:0] TC;   ///< Timer Controll Register, TC[3]: cs;  TC[2]: wr; TC[1]: start;TC[0]: rd
@@ -81,13 +78,14 @@ module controller(
     assign timer_cs = TC[3];
     assign timer_wr = TC[2];
     assign timer_start = TC[1];
-    assign timer_rd = TC[0];
+    assign timer_rd = 1'b1;     ///< Debugging : replace TC[0] with 1'b1
 
 
     assign ControlSelect = romReg[15:13];
     assign FuntionSelect = romReg[11:8];
-    assign ar32 = arin;
-    assign br32 = brin;
+
+    assign testPort = timer_INT;
+    assign INTRTest = INTR;
 
     always @(posedge clk or posedge rst) begin
 
@@ -130,7 +128,7 @@ module controller(
                     if(INTR[15] & INTR[9] & INTR[1]) begin
                         ProgramCounter <= rom_E0;
                     end
-                    if(INTR[15] & INTR[8] & INTR[0]) begin
+                    else if(INTR[15] & INTR[8] & INTR[0]) begin
                         ProgramCounter <= rom_F0;
                     end
                     CurrentState <= IDLE;
@@ -181,7 +179,7 @@ module controller(
                         4'b0101: begin ///< Perform arin & brin
                             functionSelect <= 4'b0101;
                         end
-                        4'b1000: begin ///< Perform ar32 << br32;
+                        4'b1000: begin ///< Perform ar << br;
                             functionSelect <= 4'b1000;
                         end
                         4'b0100:begin  ///< Perform ar / br32
@@ -276,6 +274,7 @@ module controller(
                     CurrentState <= State27;
                     ram_we <= 0;
                     ram_re <= 0;
+                    ram_cs <= 0;
                 end
                 State27:begin
                     CurrentState <= CheckINT;
@@ -343,6 +342,12 @@ module controller(
                         end
                         8'b00010001:begin
                             PinOut <= 0;
+                        end
+                        8'b11111110:begin ///< CLRE
+                            INTR[0] <= 0;
+                        end
+                        8'b11111111:begin
+                            INTR[1] <= 0; ///< CLRT
                         end
                     endcase
                 end
