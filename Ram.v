@@ -9,10 +9,10 @@ module Ram
     input re
 );
 
-    assign test = ram[8'h30];
-
 	// Declare the RAM variable
 	reg [15:0] ram[0:255];
+
+    assign test = q;
 
     always@(posedge we) 
         if(cs)

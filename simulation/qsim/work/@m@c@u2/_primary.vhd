@@ -16,6 +16,9 @@ entity MCU2 is
         McodeOut        : out    vl_logic_vector(15 downto 0);
         RomAddrPort     : out    vl_logic_vector(7 downto 0);
         OneRamData      : out    vl_logic_vector(15 downto 0);
+        ram_r           : out    vl_logic;
+        ram_w           : out    vl_logic;
+        ram_addr        : out    vl_logic_vector(7 downto 0);
         PinOut          : out    vl_logic
     );
 end MCU2;

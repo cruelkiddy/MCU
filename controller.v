@@ -221,16 +221,45 @@ module controller(
                     ProgramCounter <= ProgramCounter + 1'b1;
                 end
                 State8:begin
-                    CurrentState <= State9;
                     case(FuntionSelect)
-                        4'b0000:ram_cs <= 1;
-                        4'b0001:ram_cs <= 1;
-                        4'b0010:arin <= brin;
-                        4'b0011:brin <= arin;
-                        4'b0100:arin[15:8] <= romReg[7:0];
-                        4'b0101:arin[7:0] <= romReg[7:0];
-                        4'b1101:brin[7:0] <= romReg[7:0];
-                        4'b0110:arin <= hacc;
+                        4'b0000: begin
+                            ram_cs <= 1;
+                            CurrentState <= State9;
+                        end
+                        4'b0001: begin
+                            ram_cs <= 1;
+                            CurrentState <= State9;
+                        end
+                        4'b0010: begin
+                            arin <= brin;
+                            CurrentState <= CheckINT;
+                            ProgramCounter <= ProgramCounter + 1'b1;
+                        end
+                        4'b0011: begin
+                            brin <= arin;
+                            CurrentState <= CheckINT;
+                            ProgramCounter <= ProgramCounter + 1'b1;
+                        end
+                        4'b0100: begin
+                            arin[15:8] <= romReg[7:0];
+                            CurrentState <= CheckINT;
+                            ProgramCounter <= ProgramCounter + 1'b1;
+                        end
+                        4'b0101: begin  
+                            arin[7:0] <= romReg[7:0];
+                            CurrentState <= CheckINT;
+                            ProgramCounter <= ProgramCounter + 1'b1;
+                        end
+                        4'b1101: begin
+                            brin[7:0] <= romReg[7:0];
+                            CurrentState <= CheckINT;
+                            ProgramCounter <= ProgramCounter + 1'b1;
+                        end
+                        4'b0110: begin
+                            arin <= hacc;
+                            CurrentState <= CheckINT;
+                            ProgramCounter <= ProgramCounter + 1'b1;
+                        end
                     endcase
                 end
                 State9:begin

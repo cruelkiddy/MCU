@@ -13,6 +13,9 @@ module MCU2(
     output [15:0] McodeOut,
     output [7:0] RomAddrPort,
     output [15:0] OneRamData,
+    output ram_r,
+    output ram_w,
+    output [7:0] ram_addr,
     output PinOut   ///< Pin out    
 );
 
@@ -20,7 +23,7 @@ module MCU2(
     wire [15:0] ProgramCode;
     wire [7:0] RomAddr;
     wire RomCS;
-    wire RomRE;    
+    wire RomRE;
 
 
     ///< Wires Linking ALU & Controller 
@@ -33,6 +36,9 @@ module MCU2(
     assign TimerValuePort = TimerValue;
     assign McodeOut = ProgramCode;
     assign RomAddrPort = RomAddr;
+    assign ram_r = RamRE;
+    assign ram_w = RamWE;
+    assign ram_addr = RamAddr;
 
     ///< Wires Linking Controller & Ram
     wire RamCS;
@@ -87,6 +93,7 @@ module MCU2(
                               .PinOut(PinOut),
                               .portIn(portIn),
                               .testPort(INTtestout),
+                              .ram_addr(RamAddr),
                               .INTRTest(INTRPort)
                              );
 

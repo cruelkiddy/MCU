@@ -12,6 +12,9 @@ entity MCU2_vlg_check_tst is
         RomAddrPort     : in     vl_logic_vector(7 downto 0);
         TimerValuePort  : in     vl_logic_vector(15 downto 0);
         portOut         : in     vl_logic_vector(15 downto 0);
+        ram_addr        : in     vl_logic_vector(7 downto 0);
+        ram_r           : in     vl_logic;
+        ram_w           : in     vl_logic;
         testout         : in     vl_logic_vector(15 downto 0);
         sampler_rx      : in     vl_logic
     );
