@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MCU2
-Sun Nov 03 19:46:45 2019
+Tue Nov 05 18:11:46 2019
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -64,13 +64,13 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Nov 03 19:46:44 2019       ;
+; Analysis & Synthesis Status        ; Successful - Tue Nov 05 18:11:46 2019       ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
 ; Revision Name                      ; MCU2                                        ;
 ; Top-level Entity Name              ; MCU2                                        ;
 ; Family                             ; Cyclone IV GX                               ;
-; Total logic elements               ; 8,528                                       ;
-;     Total combinational functions  ; 4,332                                       ;
+; Total logic elements               ; 8,529                                       ;
+;     Total combinational functions  ; 4,333                                       ;
 ;     Dedicated logic registers      ; 4,324                                       ;
 ; Total registers                    ; 4324                                        ;
 ; Total pins                         ; 167                                         ;
@@ -211,7 +211,7 @@ applicable agreement for further details.
 ; altram.inc                       ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/altram.inc            ;         ;
 ; altdpram.inc                     ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
 ; db/altsyncram_0u61.tdf           ; yes             ; Auto-Generated Megafunction                           ; C:/Users/84368/Desktop/MCU/db/altsyncram_0u61.tdf                    ;         ;
-; db/mcu2.ram0_rom_15fa0.hdl.mif   ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/84368/Desktop/MCU/db/mcu2.ram0_rom_15fa0.hdl.mif            ;         ;
+; db/MCU2.ram0_Rom_15fa0.hdl.mif   ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/84368/Desktop/MCU/db/MCU2.ram0_Rom_15fa0.hdl.mif            ;         ;
 ; db/altsyncram_o0e1.tdf           ; yes             ; Auto-Generated Megafunction                           ; C:/Users/84368/Desktop/MCU/db/altsyncram_o0e1.tdf                    ;         ;
 ; lpm_mult.tdf                     ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_mult.tdf          ;         ;
 ; lpm_add_sub.inc                  ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_add_sub.inc       ;         ;
@@ -247,7 +247,7 @@ applicable agreement for further details.
 ; DSP block 9-bit elements ; 0                                ;
 ; Maximum fan-out node     ; controller:MainController|ram_we ;
 ; Maximum fan-out          ; 4115                             ;
-; Total fan-out            ; 29612                            ;
+; Total fan-out            ; 29611                            ;
 ; Average fan-out          ; 3.28                             ;
 +--------------------------+----------------------------------+
 
@@ -257,7 +257,7 @@ applicable agreement for further details.
 +-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                    ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                     ; Library Name ;
 +-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |MCU2                                         ; 4332 (0)          ; 4324 (0)     ; 8192        ; 0            ; 0       ; 0         ; 0         ; 167  ; 0            ; |MCU2                                                                                                                                   ; work         ;
+; |MCU2                                         ; 4333 (0)          ; 4324 (0)     ; 8192        ; 0            ; 0       ; 0         ; 0         ; 167  ; 0            ; |MCU2                                                                                                                                   ; work         ;
 ;    |ALU:MainALU|                              ; 1014 (394)        ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU                                                                                                                       ; work         ;
 ;       |lpm_divide:Div0|                       ; 279 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_divide:Div0                                                                                                       ; work         ;
 ;          |lpm_divide_fom:auto_generated|      ; 279 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_divide:Div0|lpm_divide_fom:auto_generated                                                                         ; work         ;
@@ -275,7 +275,7 @@ applicable agreement for further details.
 ;    |Rom:ProgramMemory|                        ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|Rom:ProgramMemory                                                                                                                 ; work         ;
 ;       |altsyncram:rom_rtl_0|                  ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|Rom:ProgramMemory|altsyncram:rom_rtl_0                                                                                            ; work         ;
 ;          |altsyncram_0u61:auto_generated|     ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|Rom:ProgramMemory|altsyncram:rom_rtl_0|altsyncram_0u61:auto_generated                                                             ; work         ;
-;    |controller:MainController|                ; 270 (270)         ; 195 (195)    ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|controller:MainController                                                                                                         ; work         ;
+;    |controller:MainController|                ; 271 (271)         ; 195 (195)    ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|controller:MainController                                                                                                         ; work         ;
 ;    |timer:myTimer|                            ; 24 (24)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|timer:myTimer                                                                                                                     ; work         ;
 +-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -403,7 +403,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Total registers                              ; 4324  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 27    ;
+; Number of registers using Synchronous Load   ; 26    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 4320  ;
@@ -520,7 +520,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; NBranch4       ; 40       ; Signed Integer                             ;
 ; NBranch5       ; 41       ; Signed Integer                             ;
 ; rom_E0         ; 00010011 ; Unsigned Binary                            ;
-; rom_F0         ; 00100010 ; Unsigned Binary                            ;
+; rom_F0         ; 00100011 ; Unsigned Binary                            ;
 +----------------+----------+--------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -930,7 +930,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:14     ;
+; Top            ; 00:00:17     ;
 +----------------+--------------+
 
 
@@ -940,7 +940,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
-    Info: Processing started: Sun Nov 03 19:46:28 2019
+    Info: Processing started: Tue Nov 05 18:11:25 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MCU2 -c MCU2
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file timer.v
@@ -962,7 +962,7 @@ Warning (10034): Output port "testout" at MCU2.v(9) has no driver
 Info (12128): Elaborating entity "Ram" for hierarchy "Ram:myRam"
 Info (12128): Elaborating entity "Rom" for hierarchy "Rom:ProgramMemory"
 Warning (10036): Verilog HDL or VHDL warning at Rom.v(14): object "i" assigned a value but never read
-Warning (10850): Verilog HDL warning at Rom.v(20): number of words (36) in memory file does not match the number of elements in the address range [0:255]
+Warning (10850): Verilog HDL warning at Rom.v(20): number of words (38) in memory file does not match the number of elements in the address range [0:255]
 Warning (10030): Net "rom.data_a" at Rom.v(16) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "rom.waddr_a" at Rom.v(16) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "rom.we_a" at Rom.v(16) has no driver or initial value, using a default initial value '0'
@@ -1052,6 +1052,8 @@ Info (12133): Instantiated megafunction "Rom:ProgramMemory|altsyncram:rom_rtl_0"
     Info (12134): Parameter "INIT_FILE" = "db/MCU2.ram0_Rom_15fa0.hdl.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_0u61.tdf
     Info (12023): Found entity 1: altsyncram_0u61
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/84368/Desktop/MCU/db/MCU2.ram0_Rom_15fa0.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/84368/Desktop/MCU/db/MCU2.ram0_Rom_15fa0.hdl.mif" contains "don't care" values -- overwriting them with 0s
 Info (12130): Elaborated megafunction instantiation "Ram:myRam|altsyncram:ram_rtl_0"
 Info (12133): Instantiated megafunction "Ram:myRam|altsyncram:ram_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -1293,16 +1295,16 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "rst"
-Info (21057): Implemented 8760 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 8761 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 19 input pins
     Info (21059): Implemented 148 output pins
-    Info (21061): Implemented 8561 logic cells
+    Info (21061): Implemented 8562 logic cells
     Info (21064): Implemented 32 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 129 warnings
-    Info: Peak virtual memory: 4728 megabytes
-    Info: Processing ended: Sun Nov 03 19:46:45 2019
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:16
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 131 warnings
+    Info: Peak virtual memory: 4733 megabytes
+    Info: Processing ended: Tue Nov 05 18:11:46 2019
+    Info: Elapsed time: 00:00:21
+    Info: Total CPU time (on all processors): 00:00:19
 
 
 +------------------------------------------+

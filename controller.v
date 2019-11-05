@@ -53,7 +53,7 @@ module controller(
               NBranch4 = 40, NBranch5 = 41;
 
     parameter rom_E0 = 8'd19; ///< Timer INT Entrance
-    parameter rom_F0 = 8'd34; ///< External INT Entrance
+    parameter rom_F0 = 8'd35; ///< External INT Entrance
 
     reg[7:0] CurrentState = IDLE;
     reg[7:0] ProgramCounter;
