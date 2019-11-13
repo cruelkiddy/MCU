@@ -1,5 +1,5 @@
 Flow report for MCU2
-Tue Nov 05 18:23:45 2019
+Tue Nov 12 19:11:14 2019
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -40,26 +40,22 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue Nov 05 18:23:45 2019       ;
+; Flow Status                        ; Successful - Tue Nov 12 19:11:14 2019       ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
 ; Revision Name                      ; MCU2                                        ;
 ; Top-level Entity Name              ; MCU2                                        ;
-; Family                             ; Cyclone IV GX                               ;
-; Total logic elements               ; 6,440 / 29,440 ( 22 % )                     ;
-;     Total combinational functions  ; 4,333 / 29,440 ( 15 % )                     ;
-;     Dedicated logic registers      ; 4,324 / 29,440 ( 15 % )                     ;
-; Total registers                    ; 4324                                        ;
-; Total pins                         ; 167 / 307 ( 54 % )                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 8,192 / 1,105,920 ( < 1 % )                 ;
-; Embedded Multiplier 9-bit elements ; 0 / 160 ( 0 % )                             ;
-; Total GXB Receiver Channel PCS     ; 0 / 4 ( 0 % )                               ;
-; Total GXB Receiver Channel PMA     ; 0 / 4 ( 0 % )                               ;
-; Total GXB Transmitter Channel PCS  ; 0 / 4 ( 0 % )                               ;
-; Total GXB Transmitter Channel PMA  ; 0 / 4 ( 0 % )                               ;
-; Total PLLs                         ; 0 / 6 ( 0 % )                               ;
-; Device                             ; EP4CGX30CF23C6                              ;
+; Family                             ; Cyclone IV E                                ;
+; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
+; Total logic elements               ; 6,146 / 114,480 ( 5 % )                     ;
+;     Total combinational functions  ; 4,089 / 114,480 ( 4 % )                     ;
+;     Dedicated logic registers      ; 4,310 / 114,480 ( 4 % )                     ;
+; Total registers                    ; 4310                                        ;
+; Total pins                         ; 68 / 529 ( 13 % )                           ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 7,936 / 3,981,312 ( < 1 % )                 ;
+; Embedded Multiplier 9-bit elements ; 2 / 532 ( < 1 % )                           ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -68,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/05/2019 18:11:25 ;
+; Start date & time ; 11/12/2019 19:05:08 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; MCU2                ;
 +-------------------+---------------------+
@@ -79,14 +75,19 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                       ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 216182566830051.157294868501900             ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 216182566830051.157355670812924             ; --            ; --          ; --             ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; On                                          ; --            ; --          ; eda_simulation ;
 ; EDA_NETLIST_WRITER_OUTPUT_DIR       ; C:/Users/84368/Desktop/MCU/simulation/qsim/ ; --            ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                                 ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)                   ; <None>        ; --          ; --             ;
+; EDA_TIME_SCALE                      ; 1 ps                                        ; --            ; --          ; eda_simulation ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                          ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                           ; --            ; --          ; --             ;
 ; PARTITION_COLOR                     ; 16764057                                    ; --            ; --          ; Top            ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                       ; --            ; --          ; Top            ;
 ; PARTITION_NETLIST_TYPE              ; SOURCE                                      ; --            ; --          ; Top            ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                         ; --            ; --          ; --             ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW       ; --            ; --          ; --             ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                                ; --            ; --          ; --             ;
 +-------------------------------------+---------------------------------------------+---------------+-------------+----------------+
 
@@ -96,20 +97,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:19     ; 1.0                     ; 4732 MB             ; 00:00:17                           ;
-; Fitter                    ; 00:02:25     ; 1.5                     ; 5485 MB             ; 00:02:44                           ;
-; Assembler                 ; 00:00:06     ; 1.0                     ; 4678 MB             ; 00:00:05                           ;
-; TimeQuest Timing Analyzer ; 00:00:12     ; 1.3                     ; 4791 MB             ; 00:00:12                           ;
-; EDA Netlist Writer        ; 00:00:03     ; 1.0                     ; 4662 MB             ; 00:00:03                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4669 MB             ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4677 MB             ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4661 MB             ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:04     ; 1.0                     ; 4677 MB             ; 00:00:04                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4661 MB             ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4677 MB             ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4661 MB             ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:13     ; 1.0                     ; 4701 MB             ; 00:00:08                           ;
-; Total                     ; 00:03:30     ; --                      ; --                  ; 00:03:41                           ;
+; Analysis & Synthesis      ; 00:00:15     ; 1.0                     ; 4680 MB             ; 00:00:13                           ;
+; Fitter                    ; 00:05:26     ; 1.4                     ; 5554 MB             ; 00:05:39                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 4638 MB             ; 00:00:05                           ;
+; TimeQuest Timing Analyzer ; 00:00:10     ; 1.3                     ; 4822 MB             ; 00:00:10                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4612 MB             ; 00:00:02                           ;
+; Total                     ; 00:05:58     ; --                      ; --                  ; 00:06:09                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -123,14 +116,6 @@ applicable agreement for further details.
 ; Assembler                 ; BeautifulFork    ; Windows 7 ; 6.2        ; x86_64         ;
 ; TimeQuest Timing Analyzer ; BeautifulFork    ; Windows 7 ; 6.2        ; x86_64         ;
 ; EDA Netlist Writer        ; BeautifulFork    ; Windows 7 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; BeautifulFork    ; Windows 7 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; BeautifulFork    ; Windows 7 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; BeautifulFork    ; Windows 7 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; BeautifulFork    ; Windows 7 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; BeautifulFork    ; Windows 7 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; BeautifulFork    ; Windows 7 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; BeautifulFork    ; Windows 7 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; BeautifulFork    ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 
@@ -142,14 +127,6 @@ quartus_fit --read_settings_files=off --write_settings_files=off MCU2 -c MCU2
 quartus_asm --read_settings_files=off --write_settings_files=off MCU2 -c MCU2
 quartus_sta MCU2 -c MCU2
 quartus_eda --read_settings_files=off --write_settings_files=off MCU2 -c MCU2
-quartus_eda --gen_testbench --check_outputs=on --tool=modelsim_oem --format=verilog MCU2 -c MCU2 --vector_source=C:/Users/84368/Desktop/MCU/Waveform.vwf --testbench_file=C:/Users/84368/Desktop/MCU/simulation/qsim/Waveform.vwf.vt
-quartus_eda --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/Users/84368/Desktop/MCU/simulation/qsim/ MCU2 -c MCU2
-quartus_eda --gen_testbench --check_outputs=on --tool=modelsim_oem --format=verilog MCU2 -c MCU2 --vector_source=C:/Users/84368/Desktop/MCU/Waveform.vwf --testbench_file=C:/Users/84368/Desktop/MCU/simulation/qsim/Waveform.vwf.vt
-quartus_eda --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/Users/84368/Desktop/MCU/simulation/qsim/ MCU2 -c MCU2
-quartus_eda --gen_testbench --check_outputs=on --tool=modelsim_oem --format=verilog MCU2 -c MCU2 --vector_source=C:/Users/84368/Desktop/MCU/Waveform.vwf --testbench_file=C:/Users/84368/Desktop/MCU/simulation/qsim/Waveform.vwf.vt
-quartus_eda --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/Users/84368/Desktop/MCU/simulation/qsim/ MCU2 -c MCU2
-quartus_eda --gen_testbench --check_outputs=on --tool=modelsim_oem --format=verilog MCU2 -c MCU2 --vector_source=C:/Users/84368/Desktop/MCU/Waveform.vwf --testbench_file=C:/Users/84368/Desktop/MCU/simulation/qsim/Waveform.vwf.vt
-quartus_eda --functional=off --flatten_buses=off --timescale=1ps --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/Users/84368/Desktop/MCU/simulation/qsim/ MCU2 -c MCU2
 
 
 

@@ -1,20 +1,16 @@
-Fitter Status : Successful - Tue Nov 05 18:14:12 2019
+Fitter Status : Successful - Tue Nov 12 19:10:51 2019
 Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Full Version
 Revision Name : MCU2
 Top-level Entity Name : MCU2
-Family : Cyclone IV GX
-Device : EP4CGX30CF23C6
+Family : Cyclone IV E
+Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 6,440 / 29,440 ( 22 % )
-    Total combinational functions : 4,333 / 29,440 ( 15 % )
-    Dedicated logic registers : 4,324 / 29,440 ( 15 % )
-Total registers : 4324
-Total pins : 167 / 307 ( 54 % )
+Total logic elements : 6,146 / 114,480 ( 5 % )
+    Total combinational functions : 4,089 / 114,480 ( 4 % )
+    Dedicated logic registers : 4,310 / 114,480 ( 4 % )
+Total registers : 4310
+Total pins : 68 / 529 ( 13 % )
 Total virtual pins : 0
-Total memory bits : 8,192 / 1,105,920 ( < 1 % )
-Embedded Multiplier 9-bit elements : 0 / 160 ( 0 % )
-Total GXB Receiver Channel PCS : 0 / 4 ( 0 % )
-Total GXB Receiver Channel PMA : 0 / 4 ( 0 % )
-Total GXB Transmitter Channel PCS : 0 / 4 ( 0 % )
-Total GXB Transmitter Channel PMA : 0 / 4 ( 0 % )
-Total PLLs : 0 / 6 ( 0 % )
+Total memory bits : 7,936 / 3,981,312 ( < 1 % )
+Embedded Multiplier 9-bit elements : 2 / 532 ( < 1 % )
+Total PLLs : 0 / 4 ( 0 % )

@@ -2,7 +2,6 @@ module Ram
 (
 	input [15:0] data,
     output reg [15:0] q,
-    output [15:0] test,
 	input [7:0] addr,
     input cs,
 	input we, 
@@ -12,7 +11,6 @@ module Ram
 	// Declare the RAM variable
 	reg [15:0] ram[0:255];
 
-    assign test = q;
 
     always@(posedge we) 
         if(cs)

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MCU2
-Tue Nov 05 18:11:46 2019
+Tue Nov 12 19:05:24 2019
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -14,31 +14,29 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
-  9. State Machine - |MCU2|controller:MainController|CurrentState
- 10. User-Specified and Inferred Latches
- 11. Registers Removed During Synthesis
- 12. Removed Registers Triggering Further Register Optimizations
- 13. General Register Statistics
- 14. Registers Packed Into Inferred Megafunctions
- 15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Source assignments for Rom:ProgramMemory|altsyncram:rom_rtl_0|altsyncram_0u61:auto_generated
- 17. Source assignments for Ram:myRam|altsyncram:ram_rtl_0|altsyncram_o0e1:auto_generated
- 18. Parameter Settings for User Entity Instance: Rom:ProgramMemory
- 19. Parameter Settings for User Entity Instance: timer:myTimer
- 20. Parameter Settings for User Entity Instance: controller:MainController
- 21. Parameter Settings for Inferred Entity Instance: Rom:ProgramMemory|altsyncram:rom_rtl_0
- 22. Parameter Settings for Inferred Entity Instance: Ram:myRam|altsyncram:ram_rtl_0
- 23. Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_mult:Mult0
- 24. Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_divide:Div0
- 25. Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1
- 26. Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out2
- 27. altsyncram Parameter Settings by Entity Instance
- 28. lpm_mult Parameter Settings by Entity Instance
- 29. Port Connectivity Checks: "controller:MainController"
- 30. Port Connectivity Checks: "ALU:MainALU"
- 31. Elapsed Time Per Partition
- 32. Analysis & Synthesis Messages
- 33. Analysis & Synthesis Suppressed Messages
+  9. Analysis & Synthesis DSP Block Usage Summary
+ 10. State Machine - |MCU2|controller:MainController|CurrentState
+ 11. User-Specified and Inferred Latches
+ 12. Registers Removed During Synthesis
+ 13. Removed Registers Triggering Further Register Optimizations
+ 14. General Register Statistics
+ 15. Registers Packed Into Inferred Megafunctions
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Source assignments for Rom:ProgramMemory|altsyncram:rom_rtl_0|altsyncram_6q61:auto_generated
+ 18. Source assignments for Ram:myRam|altsyncram:ram_rtl_0|altsyncram_usd1:auto_generated
+ 19. Parameter Settings for User Entity Instance: Rom:ProgramMemory
+ 20. Parameter Settings for User Entity Instance: timer:myTimer
+ 21. Parameter Settings for User Entity Instance: controller:MainController
+ 22. Parameter Settings for Inferred Entity Instance: Rom:ProgramMemory|altsyncram:rom_rtl_0
+ 23. Parameter Settings for Inferred Entity Instance: Ram:myRam|altsyncram:ram_rtl_0
+ 24. Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_mult:Mult0
+ 25. Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_divide:Div0
+ 26. altsyncram Parameter Settings by Entity Instance
+ 27. lpm_mult Parameter Settings by Entity Instance
+ 28. Port Connectivity Checks: "controller:MainController"
+ 29. Port Connectivity Checks: "ALU:MainALU"
+ 30. Elapsed Time Per Partition
+ 31. Analysis & Synthesis Messages
 
 
 
@@ -64,23 +62,19 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Nov 05 18:11:46 2019       ;
+; Analysis & Synthesis Status        ; Successful - Tue Nov 12 19:05:23 2019       ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
 ; Revision Name                      ; MCU2                                        ;
 ; Top-level Entity Name              ; MCU2                                        ;
-; Family                             ; Cyclone IV GX                               ;
-; Total logic elements               ; 8,529                                       ;
-;     Total combinational functions  ; 4,333                                       ;
-;     Dedicated logic registers      ; 4,324                                       ;
-; Total registers                    ; 4324                                        ;
-; Total pins                         ; 167                                         ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 8,286                                       ;
+;     Total combinational functions  ; 4,089                                       ;
+;     Dedicated logic registers      ; 4,325                                       ;
+; Total registers                    ; 4325                                        ;
+; Total pins                         ; 68                                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 8,192                                       ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total GXB Receiver Channel PCS     ; 0                                           ;
-; Total GXB Receiver Channel PMA     ; 0                                           ;
-; Total GXB Transmitter Channel PCS  ; 0                                           ;
-; Total GXB Transmitter Channel PMA  ; 0                                           ;
+; Total memory bits                  ; 7,936                                       ;
+; Embedded Multiplier 9-bit elements ; 2                                           ;
 ; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
@@ -90,8 +84,9 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
 ; Top-level entity name                                                      ; MCU2               ; MCU2               ;
-; Family name                                                                ; Cyclone IV GX      ; Cyclone IV GX      ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                                ; Off                ; Off                ;
@@ -194,6 +189,7 @@ applicable agreement for further details.
 +----------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                         ; Library ;
 +----------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------+---------+
+; NixieTube.v                      ; yes             ; User Verilog HDL File                                 ; C:/Users/84368/Desktop/MCU/NixieTube.v                               ;         ;
 ; timer.v                          ; yes             ; User Verilog HDL File                                 ; C:/Users/84368/Desktop/MCU/timer.v                                   ;         ;
 ; Rom.v                            ; yes             ; User Verilog HDL File                                 ; C:/Users/84368/Desktop/MCU/Rom.v                                     ;         ;
 ; Ram.v                            ; yes             ; User Verilog HDL File                                 ; C:/Users/84368/Desktop/MCU/Ram.v                                     ;         ;
@@ -210,74 +206,84 @@ applicable agreement for further details.
 ; altrom.inc                       ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
 ; altram.inc                       ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/altram.inc            ;         ;
 ; altdpram.inc                     ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
-; db/altsyncram_0u61.tdf           ; yes             ; Auto-Generated Megafunction                           ; C:/Users/84368/Desktop/MCU/db/altsyncram_0u61.tdf                    ;         ;
+; db/altsyncram_6q61.tdf           ; yes             ; Auto-Generated Megafunction                           ; C:/Users/84368/Desktop/MCU/db/altsyncram_6q61.tdf                    ;         ;
 ; db/MCU2.ram0_Rom_15fa0.hdl.mif   ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/84368/Desktop/MCU/db/MCU2.ram0_Rom_15fa0.hdl.mif            ;         ;
-; db/altsyncram_o0e1.tdf           ; yes             ; Auto-Generated Megafunction                           ; C:/Users/84368/Desktop/MCU/db/altsyncram_o0e1.tdf                    ;         ;
+; db/altsyncram_usd1.tdf           ; yes             ; Auto-Generated Megafunction                           ; C:/Users/84368/Desktop/MCU/db/altsyncram_usd1.tdf                    ;         ;
 ; lpm_mult.tdf                     ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_mult.tdf          ;         ;
 ; lpm_add_sub.inc                  ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_add_sub.inc       ;         ;
 ; multcore.inc                     ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/multcore.inc          ;         ;
 ; bypassff.inc                     ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/bypassff.inc          ;         ;
 ; altshift.inc                     ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/altshift.inc          ;         ;
-; db/mult_1ht.tdf                  ; yes             ; Auto-Generated Megafunction                           ; C:/Users/84368/Desktop/MCU/db/mult_1ht.tdf                           ;         ;
+; db/mult_7dt.tdf                  ; yes             ; Auto-Generated Megafunction                           ; C:/Users/84368/Desktop/MCU/db/mult_7dt.tdf                           ;         ;
 ; lpm_divide.tdf                   ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_divide.tdf        ;         ;
 ; abs_divider.inc                  ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/abs_divider.inc       ;         ;
 ; sign_div_unsign.inc              ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/sign_div_unsign.inc   ;         ;
-; db/lpm_divide_fom.tdf            ; yes             ; Auto-Generated Megafunction                           ; C:/Users/84368/Desktop/MCU/db/lpm_divide_fom.tdf                     ;         ;
+; db/lpm_divide_lkm.tdf            ; yes             ; Auto-Generated Megafunction                           ; C:/Users/84368/Desktop/MCU/db/lpm_divide_lkm.tdf                     ;         ;
 ; db/sign_div_unsign_dnh.tdf       ; yes             ; Auto-Generated Megafunction                           ; C:/Users/84368/Desktop/MCU/db/sign_div_unsign_dnh.tdf                ;         ;
 ; db/alt_u_div_8ef.tdf             ; yes             ; Auto-Generated Megafunction                           ; C:/Users/84368/Desktop/MCU/db/alt_u_div_8ef.tdf                      ;         ;
 ; db/add_sub_1tc.tdf               ; yes             ; Auto-Generated Megafunction                           ; C:/Users/84368/Desktop/MCU/db/add_sub_1tc.tdf                        ;         ;
 ; db/add_sub_2tc.tdf               ; yes             ; Auto-Generated Megafunction                           ; C:/Users/84368/Desktop/MCU/db/add_sub_2tc.tdf                        ;         ;
-; alt_mac_mult.tdf                 ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/alt_mac_mult.tdf      ;         ;
-; lpm_mult.inc                     ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_mult.inc          ;         ;
-; db/mac_mult_r2h1.tdf             ; yes             ; Auto-Generated Megafunction                           ; C:/Users/84368/Desktop/MCU/db/mac_mult_r2h1.tdf                      ;         ;
-; db/mult_jul.tdf                  ; yes             ; Auto-Generated Megafunction                           ; C:/Users/84368/Desktop/MCU/db/mult_jul.tdf                           ;         ;
-; alt_mac_out.tdf                  ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/alt_mac_out.tdf       ;         ;
-; alt_zaccum.inc                   ; yes             ; Megafunction                                          ; c:/altera/13.1/quartus/libraries/megafunctions/alt_zaccum.inc        ;         ;
-; db/mac_out_kv82.tdf              ; yes             ; Auto-Generated Megafunction                           ; C:/Users/84368/Desktop/MCU/db/mac_out_kv82.tdf                       ;         ;
 +----------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                 ;
-+--------------------------+----------------------------------+
-; Resource                 ; Usage                            ;
-+--------------------------+----------------------------------+
-; I/O pins                 ; 167                              ;
-; Total memory bits        ; 8192                             ;
-; DSP block 9-bit elements ; 0                                ;
-; Maximum fan-out node     ; controller:MainController|ram_we ;
-; Maximum fan-out          ; 4115                             ;
-; Total fan-out            ; 29611                            ;
-; Average fan-out          ; 3.28                             ;
-+--------------------------+----------------------------------+
++--------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                    ;
++---------------------------------------------+----------------------------------+
+; Resource                                    ; Usage                            ;
++---------------------------------------------+----------------------------------+
+; Estimated Total logic elements              ; 8,286                            ;
+;                                             ;                                  ;
+; Total combinational functions               ; 4089                             ;
+; Logic element usage by number of LUT inputs ;                                  ;
+;     -- 4 input functions                    ; 3334                             ;
+;     -- 3 input functions                    ; 366                              ;
+;     -- <=2 input functions                  ; 389                              ;
+;                                             ;                                  ;
+; Logic elements by mode                      ;                                  ;
+;     -- normal mode                          ; 3871                             ;
+;     -- arithmetic mode                      ; 218                              ;
+;                                             ;                                  ;
+; Total registers                             ; 4325                             ;
+;     -- Dedicated logic registers            ; 4325                             ;
+;     -- I/O registers                        ; 0                                ;
+;                                             ;                                  ;
+; I/O pins                                    ; 68                               ;
+; Total memory bits                           ; 7936                             ;
+; Embedded Multiplier 9-bit elements          ; 2                                ;
+; Maximum fan-out node                        ; controller:MainController|ram_we ;
+; Maximum fan-out                             ; 4114                             ;
+; Total fan-out                               ; 28824                            ;
+; Average fan-out                             ; 3.36                             ;
++---------------------------------------------+----------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                            ;
-+-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                    ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                     ; Library Name ;
-+-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |MCU2                                         ; 4333 (0)          ; 4324 (0)     ; 8192        ; 0            ; 0       ; 0         ; 0         ; 167  ; 0            ; |MCU2                                                                                                                                   ; work         ;
-;    |ALU:MainALU|                              ; 1014 (394)        ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU                                                                                                                       ; work         ;
-;       |lpm_divide:Div0|                       ; 279 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_divide:Div0                                                                                                       ; work         ;
-;          |lpm_divide_fom:auto_generated|      ; 279 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_divide:Div0|lpm_divide_fom:auto_generated                                                                         ; work         ;
-;             |sign_div_unsign_dnh:divider|     ; 279 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_divide:Div0|lpm_divide_fom:auto_generated|sign_div_unsign_dnh:divider                                             ; work         ;
-;                |alt_u_div_8ef:divider|        ; 279 (278)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_divide:Div0|lpm_divide_fom:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_8ef:divider                       ; work         ;
-;                   |add_sub_2tc:add_sub_1|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_divide:Div0|lpm_divide_fom:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_8ef:divider|add_sub_2tc:add_sub_1 ; work         ;
-;       |lpm_mult:Mult0|                        ; 341 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_mult:Mult0                                                                                                        ; work         ;
-;          |mult_1ht:auto_generated|            ; 341 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated                                                                                ; work         ;
-;             |alt_mac_mult:mac_mult1|          ; 341 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1                                                         ; work         ;
-;                |mac_mult_r2h1:auto_generated| ; 341 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated                            ; work         ;
-;                   |mult_jul:mult1|            ; 341 (341)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1             ; work         ;
-;    |Ram:myRam|                                ; 3024 (3024)       ; 4096 (4096)  ; 4096        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|Ram:myRam                                                                                                                         ; work         ;
-;       |altsyncram:ram_rtl_0|                  ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|Ram:myRam|altsyncram:ram_rtl_0                                                                                                    ; work         ;
-;          |altsyncram_o0e1:auto_generated|     ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|Ram:myRam|altsyncram:ram_rtl_0|altsyncram_o0e1:auto_generated                                                                     ; work         ;
-;    |Rom:ProgramMemory|                        ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|Rom:ProgramMemory                                                                                                                 ; work         ;
-;       |altsyncram:rom_rtl_0|                  ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|Rom:ProgramMemory|altsyncram:rom_rtl_0                                                                                            ; work         ;
-;          |altsyncram_0u61:auto_generated|     ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|Rom:ProgramMemory|altsyncram:rom_rtl_0|altsyncram_0u61:auto_generated                                                             ; work         ;
-;    |controller:MainController|                ; 271 (271)         ; 195 (195)    ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|controller:MainController                                                                                                         ; work         ;
-;    |timer:myTimer|                            ; 24 (24)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MCU2|timer:myTimer                                                                                                                     ; work         ;
-+-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                      ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                               ; Library Name ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------+--------------+
+; |MCU2                                     ; 4089 (0)          ; 4325 (0)     ; 7936        ; 2            ; 0       ; 1         ; 68   ; 0            ; |MCU2                                                                                                             ; work         ;
+;    |ALU:MainALU|                          ; 742 (463)         ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |MCU2|ALU:MainALU                                                                                                 ; work         ;
+;       |lpm_divide:Div0|                   ; 279 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_divide:Div0                                                                                 ; work         ;
+;          |lpm_divide_lkm:auto_generated|  ; 279 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_divide:Div0|lpm_divide_lkm:auto_generated                                                   ; work         ;
+;             |sign_div_unsign_dnh:divider| ; 279 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_divide:Div0|lpm_divide_lkm:auto_generated|sign_div_unsign_dnh:divider                       ; work         ;
+;                |alt_u_div_8ef:divider|    ; 279 (279)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_divide:Div0|lpm_divide_lkm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_8ef:divider ; work         ;
+;       |lpm_mult:Mult0|                    ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_mult:Mult0                                                                                  ; work         ;
+;          |mult_7dt:auto_generated|        ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |MCU2|ALU:MainALU|lpm_mult:Mult0|mult_7dt:auto_generated                                                          ; work         ;
+;    |NixieTube:myNT|                       ; 28 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MCU2|NixieTube:myNT                                                                                              ; work         ;
+;       |bit4Tube:tl1|                      ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MCU2|NixieTube:myNT|bit4Tube:tl1                                                                                 ; work         ;
+;       |bit4Tube:tl2|                      ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MCU2|NixieTube:myNT|bit4Tube:tl2                                                                                 ; work         ;
+;       |bit4Tube:tl3|                      ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MCU2|NixieTube:myNT|bit4Tube:tl3                                                                                 ; work         ;
+;       |bit4Tube:tl4|                      ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MCU2|NixieTube:myNT|bit4Tube:tl4                                                                                 ; work         ;
+;    |Ram:myRam|                            ; 3025 (3025)       ; 4096 (4096)  ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MCU2|Ram:myRam                                                                                                   ; work         ;
+;       |altsyncram:ram_rtl_0|              ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MCU2|Ram:myRam|altsyncram:ram_rtl_0                                                                              ; work         ;
+;          |altsyncram_usd1:auto_generated| ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MCU2|Ram:myRam|altsyncram:ram_rtl_0|altsyncram_usd1:auto_generated                                               ; work         ;
+;    |Rom:ProgramMemory|                    ; 0 (0)             ; 0 (0)        ; 3840        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MCU2|Rom:ProgramMemory                                                                                           ; work         ;
+;       |altsyncram:rom_rtl_0|              ; 0 (0)             ; 0 (0)        ; 3840        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MCU2|Rom:ProgramMemory|altsyncram:rom_rtl_0                                                                      ; work         ;
+;          |altsyncram_6q61:auto_generated| ; 0 (0)             ; 0 (0)        ; 3840        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MCU2|Rom:ProgramMemory|altsyncram:rom_rtl_0|altsyncram_6q61:auto_generated                                       ; work         ;
+;    |controller:MainController|            ; 269 (269)         ; 196 (196)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MCU2|controller:MainController                                                                                   ; work         ;
+;    |timer:myTimer|                        ; 25 (25)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MCU2|timer:myTimer                                                                                               ; work         ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -286,9 +292,27 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+--------------------------------+
 ; Name                                                                             ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                            ;
 +----------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+--------------------------------+
-; Ram:myRam|altsyncram:ram_rtl_0|altsyncram_o0e1:auto_generated|ALTSYNCRAM         ; AUTO ; Simple Dual Port ; 256          ; 16           ; 256          ; 16           ; 4096 ; None                           ;
-; Rom:ProgramMemory|altsyncram:rom_rtl_0|altsyncram_0u61:auto_generated|ALTSYNCRAM ; AUTO ; ROM              ; 256          ; 16           ; --           ; --           ; 4096 ; db/MCU2.ram0_Rom_15fa0.hdl.mif ;
+; Ram:myRam|altsyncram:ram_rtl_0|altsyncram_usd1:auto_generated|ALTSYNCRAM         ; AUTO ; Simple Dual Port ; 256          ; 16           ; 256          ; 16           ; 4096 ; None                           ;
+; Rom:ProgramMemory|altsyncram:rom_rtl_0|altsyncram_6q61:auto_generated|ALTSYNCRAM ; AUTO ; ROM              ; 256          ; 16           ; --           ; --           ; 4096 ; db/MCU2.ram0_Rom_15fa0.hdl.mif ;
 +----------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+--------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 0           ;
+; Simple Multipliers (18-bit)           ; 1           ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 2           ;
+; Signed Embedded Multipliers           ; 0           ;
+; Unsigned Embedded Multipliers         ; 1           ;
+; Mixed Sign Embedded Multipliers       ; 0           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
 
 
 Encoding Type:  One-Hot
@@ -330,38 +354,38 @@ Encoding Type:  One-Hot
 +-----------------------------------------------------+---------------------+------------------------+
 ; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
 +-----------------------------------------------------+---------------------+------------------------+
-; ALU:MainALU|dataAcc[0]                              ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[1]                              ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[2]                              ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[3]                              ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[4]                              ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[5]                              ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[6]                              ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[7]                              ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[8]                              ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[9]                              ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[10]                             ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[11]                             ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[12]                             ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[13]                             ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[14]                             ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[15]                             ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[16]                             ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[17]                             ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[18]                             ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[19]                             ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[20]                             ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[21]                             ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[22]                             ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[23]                             ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[24]                             ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[25]                             ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[26]                             ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[27]                             ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[28]                             ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[29]                             ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[30]                             ; ALU:MainALU|WideOr0 ; yes                    ;
-; ALU:MainALU|dataAcc[31]                             ; ALU:MainALU|WideOr0 ; yes                    ;
+; ALU:MainALU|dataAcc[0]                              ; ALU:MainALU|WideOr1 ; yes                    ;
+; ALU:MainALU|dataAcc[1]                              ; ALU:MainALU|WideOr1 ; yes                    ;
+; ALU:MainALU|dataAcc[2]                              ; ALU:MainALU|WideOr1 ; yes                    ;
+; ALU:MainALU|dataAcc[3]                              ; ALU:MainALU|WideOr1 ; yes                    ;
+; ALU:MainALU|dataAcc[4]                              ; ALU:MainALU|WideOr1 ; yes                    ;
+; ALU:MainALU|dataAcc[5]                              ; ALU:MainALU|WideOr1 ; yes                    ;
+; ALU:MainALU|dataAcc[6]                              ; ALU:MainALU|WideOr1 ; yes                    ;
+; ALU:MainALU|dataAcc[7]                              ; ALU:MainALU|WideOr1 ; yes                    ;
+; ALU:MainALU|dataAcc[8]                              ; ALU:MainALU|WideOr1 ; yes                    ;
+; ALU:MainALU|dataAcc[9]                              ; ALU:MainALU|WideOr1 ; yes                    ;
+; ALU:MainALU|dataAcc[10]                             ; ALU:MainALU|WideOr1 ; yes                    ;
+; ALU:MainALU|dataAcc[11]                             ; ALU:MainALU|WideOr1 ; yes                    ;
+; ALU:MainALU|dataAcc[12]                             ; ALU:MainALU|WideOr1 ; yes                    ;
+; ALU:MainALU|dataAcc[13]                             ; ALU:MainALU|WideOr1 ; yes                    ;
+; ALU:MainALU|dataAcc[14]                             ; ALU:MainALU|WideOr1 ; yes                    ;
+; ALU:MainALU|dataAcc[15]                             ; ALU:MainALU|WideOr1 ; yes                    ;
+; ALU:MainALU|dataAcc[16]                             ; ALU:MainALU|WideOr1 ; yes                    ;
+; ALU:MainALU|dataAcc[17]                             ; ALU:MainALU|WideOr1 ; yes                    ;
+; ALU:MainALU|dataAcc[18]                             ; ALU:MainALU|WideOr1 ; yes                    ;
+; ALU:MainALU|dataAcc[19]                             ; ALU:MainALU|WideOr1 ; yes                    ;
+; ALU:MainALU|dataAcc[20]                             ; ALU:MainALU|WideOr1 ; yes                    ;
+; ALU:MainALU|dataAcc[21]                             ; ALU:MainALU|WideOr1 ; yes                    ;
+; ALU:MainALU|dataAcc[22]                             ; ALU:MainALU|WideOr1 ; yes                    ;
+; ALU:MainALU|dataAcc[23]                             ; ALU:MainALU|WideOr1 ; yes                    ;
+; ALU:MainALU|dataAcc[24]                             ; ALU:MainALU|WideOr1 ; yes                    ;
+; ALU:MainALU|dataAcc[25]                             ; ALU:MainALU|WideOr1 ; yes                    ;
+; ALU:MainALU|dataAcc[26]                             ; ALU:MainALU|WideOr1 ; yes                    ;
+; ALU:MainALU|dataAcc[27]                             ; ALU:MainALU|WideOr1 ; yes                    ;
+; ALU:MainALU|dataAcc[28]                             ; ALU:MainALU|WideOr1 ; yes                    ;
+; ALU:MainALU|dataAcc[29]                             ; ALU:MainALU|WideOr1 ; yes                    ;
+; ALU:MainALU|dataAcc[30]                             ; ALU:MainALU|WideOr1 ; yes                    ;
+; ALU:MainALU|dataAcc[31]                             ; ALU:MainALU|WideOr1 ; yes                    ;
 ; Number of user-specified and inferred latches = 32  ;                     ;                        ;
 +-----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
@@ -401,24 +425,24 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 4324  ;
+; Total registers                              ; 4325  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 26    ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 139   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 4320  ;
+; Number of registers using Clock Enable       ; 4321  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------+
-; Registers Packed Into Inferred Megafunctions                       ;
-+-------------------------------+-----------------------------+------+
-; Register Name                 ; Megafunction                ; Type ;
-+-------------------------------+-----------------------------+------+
-; Rom:ProgramMemory|data[0..15] ; Rom:ProgramMemory|rom_rtl_0 ; RAM  ;
-; Ram:myRam|q[0..15]            ; Ram:myRam|ram_rtl_0         ; RAM  ;
-+-------------------------------+-----------------------------+------+
++---------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                              ;
++--------------------------------------+-----------------------------+------+
+; Register Name                        ; Megafunction                ; Type ;
++--------------------------------------+-----------------------------+------+
+; Rom:ProgramMemory|data[0..11,13..15] ; Rom:ProgramMemory|rom_rtl_0 ; RAM  ;
+; Ram:myRam|q[0..15]                   ; Ram:myRam|ram_rtl_0         ; RAM  ;
++--------------------------------------+-----------------------------+------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -426,26 +450,27 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |MCU2|controller:MainController|portOut[4]        ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |MCU2|timer:myTimer|realTimer[12]                 ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |MCU2|controller:MainController|portOut[7]        ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |MCU2|timer:myTimer|realTimer[2]                  ;
 ; 29:1               ; 8 bits    ; 152 LEs       ; 24 LEs               ; 128 LEs                ; Yes        ; |MCU2|controller:MainController|ProgramCounter[3] ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |MCU2|controller:MainController|brin[12]          ;
-; 13:1               ; 8 bits    ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |MCU2|controller:MainController|brin[5]           ;
-; 272:1              ; 8 bits    ; 1448 LEs      ; 48 LEs               ; 1400 LEs               ; Yes        ; |MCU2|controller:MainController|arin[8]           ;
-; 84:1               ; 2 bits    ; 112 LEs       ; 12 LEs               ; 100 LEs                ; Yes        ; |MCU2|controller:MainController|arin[1]           ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |MCU2|controller:MainController|brin[9]           ;
+; 13:1               ; 8 bits    ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |MCU2|controller:MainController|brin[0]           ;
+; 272:1              ; 8 bits    ; 1448 LEs      ; 48 LEs               ; 1400 LEs               ; Yes        ; |MCU2|controller:MainController|arin[9]           ;
+; 84:1               ; 2 bits    ; 112 LEs       ; 12 LEs               ; 100 LEs                ; Yes        ; |MCU2|controller:MainController|arin[0]           ;
 ; 147:1              ; 6 bits    ; 588 LEs       ; 36 LEs               ; 552 LEs                ; Yes        ; |MCU2|controller:MainController|arin[7]           ;
 ; 3:1                ; 21 bits   ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; No         ; |MCU2|controller:MainController|CurrentState      ;
-; 21:1               ; 8 bits    ; 112 LEs       ; 64 LEs               ; 48 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux20                           ;
-; 10:1               ; 8 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux8                            ;
-; 10:1               ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux12                           ;
-; 22:1               ; 4 bits    ; 56 LEs        ; 32 LEs               ; 24 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux27                           ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |MCU2|ALU:MainALU|Mux15                           ;
+; 21:1               ; 8 bits    ; 112 LEs       ; 64 LEs               ; 48 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux17                           ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 40 LEs               ; 16 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux6                            ;
+; 11:1               ; 6 bits    ; 42 LEs        ; 30 LEs               ; 12 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux12                           ;
+; 22:1               ; 4 bits    ; 56 LEs        ; 40 LEs               ; 16 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux24                           ;
 ; 23:1               ; 2 bits    ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux29                           ;
-; 24:1               ; 2 bits    ; 32 LEs        ; 18 LEs               ; 14 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux31                           ;
+; 24:1               ; 2 bits    ; 32 LEs        ; 20 LEs               ; 12 LEs                 ; No         ; |MCU2|ALU:MainALU|Mux31                           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------+
-; Source assignments for Rom:ProgramMemory|altsyncram:rom_rtl_0|altsyncram_0u61:auto_generated ;
+; Source assignments for Rom:ProgramMemory|altsyncram:rom_rtl_0|altsyncram_6q61:auto_generated ;
 +---------------------------------+--------------------+------+--------------------------------+
 ; Assignment                      ; Value              ; From ; To                             ;
 +---------------------------------+--------------------+------+--------------------------------+
@@ -454,7 +479,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 
 
 +--------------------------------------------------------------------------------------+
-; Source assignments for Ram:myRam|altsyncram:ram_rtl_0|altsyncram_o0e1:auto_generated ;
+; Source assignments for Ram:myRam|altsyncram:ram_rtl_0|altsyncram_usd1:auto_generated ;
 +---------------------------------+--------------------+------+------------------------+
 ; Assignment                      ; Value              ; From ; To                     ;
 +---------------------------------+--------------------+------+------------------------+
@@ -580,8 +605,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ENABLE_ECC                         ; FALSE                          ; Untyped           ;
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                          ; Untyped           ;
 ; WIDTH_ECCSTATUS                    ; 3                              ; Untyped           ;
-; DEVICE_FAMILY                      ; Cyclone IV GX                  ; Untyped           ;
-; CBXI_PARAMETER                     ; altsyncram_0u61                ; Untyped           ;
+; DEVICE_FAMILY                      ; Cyclone IV E                   ; Untyped           ;
+; CBXI_PARAMETER                     ; altsyncram_6q61                ; Untyped           ;
 +------------------------------------+--------------------------------+-------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -641,44 +666,44 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ENABLE_ECC                         ; FALSE                ; Untyped             ;
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped             ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Untyped             ;
-; DEVICE_FAMILY                      ; Cyclone IV GX        ; Untyped             ;
-; CBXI_PARAMETER                     ; altsyncram_o0e1      ; Untyped             ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped             ;
+; CBXI_PARAMETER                     ; altsyncram_usd1      ; Untyped             ;
 +------------------------------------+----------------------+---------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_mult:Mult0          ;
-+------------------------------------------------+---------------+---------------------+
-; Parameter Name                                 ; Value         ; Type                ;
-+------------------------------------------------+---------------+---------------------+
-; AUTO_CARRY_CHAINS                              ; ON            ; AUTO_CARRY          ;
-; IGNORE_CARRY_BUFFERS                           ; OFF           ; IGNORE_CARRY        ;
-; AUTO_CASCADE_CHAINS                            ; ON            ; AUTO_CASCADE        ;
-; IGNORE_CASCADE_BUFFERS                         ; OFF           ; IGNORE_CASCADE      ;
-; LPM_WIDTHA                                     ; 16            ; Untyped             ;
-; LPM_WIDTHB                                     ; 16            ; Untyped             ;
-; LPM_WIDTHP                                     ; 32            ; Untyped             ;
-; LPM_WIDTHR                                     ; 32            ; Untyped             ;
-; LPM_WIDTHS                                     ; 1             ; Untyped             ;
-; LPM_REPRESENTATION                             ; UNSIGNED      ; Untyped             ;
-; LPM_PIPELINE                                   ; 0             ; Untyped             ;
-; LATENCY                                        ; 0             ; Untyped             ;
-; INPUT_A_IS_CONSTANT                            ; NO            ; Untyped             ;
-; INPUT_B_IS_CONSTANT                            ; NO            ; Untyped             ;
-; USE_EAB                                        ; OFF           ; Untyped             ;
-; MAXIMIZE_SPEED                                 ; 6             ; Untyped             ;
-; DEVICE_FAMILY                                  ; Cyclone IV GX ; Untyped             ;
-; CARRY_CHAIN                                    ; MANUAL        ; Untyped             ;
-; APEX20K_TECHNOLOGY_MAPPER                      ; LUT           ; TECH_MAPPER_APEX20K ;
-; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO          ; Untyped             ;
-; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0             ; Untyped             ;
-; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0             ; Untyped             ;
-; CBXI_PARAMETER                                 ; mult_1ht      ; Untyped             ;
-; INPUT_A_FIXED_VALUE                            ; Bx            ; Untyped             ;
-; INPUT_B_FIXED_VALUE                            ; Bx            ; Untyped             ;
-; USE_AHDL_IMPLEMENTATION                        ; OFF           ; Untyped             ;
-+------------------------------------------------+---------------+---------------------+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_mult:Mult0         ;
++------------------------------------------------+--------------+---------------------+
+; Parameter Name                                 ; Value        ; Type                ;
++------------------------------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 16           ; Untyped             ;
+; LPM_WIDTHB                                     ; 16           ; Untyped             ;
+; LPM_WIDTHP                                     ; 32           ; Untyped             ;
+; LPM_WIDTHR                                     ; 32           ; Untyped             ;
+; LPM_WIDTHS                                     ; 1            ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped             ;
+; LPM_PIPELINE                                   ; 0            ; Untyped             ;
+; LATENCY                                        ; 0            ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped             ;
+; USE_EAB                                        ; OFF          ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 6            ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_7dt     ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
++------------------------------------------------+--------------+---------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -694,7 +719,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; LPM_PIPELINE           ; 0              ; Untyped                            ;
 ; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                            ;
 ; MAXIMIZE_SPEED         ; 5              ; Untyped                            ;
-; CBXI_PARAMETER         ; lpm_divide_fom ; Untyped                            ;
+; CBXI_PARAMETER         ; lpm_divide_lkm ; Untyped                            ;
 ; CARRY_CHAIN            ; MANUAL         ; Untyped                            ;
 ; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                            ;
 ; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                         ;
@@ -702,155 +727,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                       ;
 ; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                     ;
 +------------------------+----------------+------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1 ;
-+------------------------------+---------------+-----------------------------------------------------------------------------+
-; Parameter Name               ; Value         ; Type                                                                        ;
-+------------------------------+---------------+-----------------------------------------------------------------------------+
-; LPM_WIDTHS                   ; 1             ; Untyped                                                                     ;
-; DATAA_WIDTH                  ; 16            ; Untyped                                                                     ;
-; DATAB_WIDTH                  ; 16            ; Untyped                                                                     ;
-; DATAA_CLOCK                  ; NONE          ; Untyped                                                                     ;
-; DATAB_CLOCK                  ; NONE          ; Untyped                                                                     ;
-; SIGNA_CLOCK                  ; NONE          ; Untyped                                                                     ;
-; SIGNB_CLOCK                  ; NONE          ; Untyped                                                                     ;
-; OUTPUT_CLOCK                 ; NONE          ; Untyped                                                                     ;
-; DATAA_CLEAR                  ; NONE          ; Untyped                                                                     ;
-; DATAB_CLEAR                  ; NONE          ; Untyped                                                                     ;
-; SIGNA_CLEAR                  ; NONE          ; Untyped                                                                     ;
-; SIGNB_CLEAR                  ; NONE          ; Untyped                                                                     ;
-; OUTPUT_CLEAR                 ; NONE          ; Untyped                                                                     ;
-; ROUND_CLOCK                  ; none          ; Untyped                                                                     ;
-; ROUND_CLEAR                  ; none          ; Untyped                                                                     ;
-; SATURATE_CLOCK               ; none          ; Untyped                                                                     ;
-; SATURATE_CLEAR               ; none          ; Untyped                                                                     ;
-; BYPASS_MULTIPLIER            ; NO            ; Untyped                                                                     ;
-; DYNAMIC_SCAN_CHAIN_SUPPORTED ; NO            ; Untyped                                                                     ;
-; USING_ROUNDING               ; NO            ; Untyped                                                                     ;
-; USING_SATURATION             ; NO            ; Untyped                                                                     ;
-; EXTRA_OUTPUT_CLOCK           ; none          ; Untyped                                                                     ;
-; EXTRA_SIGNA_CLOCK            ; none          ; Untyped                                                                     ;
-; EXTRA_SIGNB_CLOCK            ; none          ; Untyped                                                                     ;
-; EXTRA_OUTPUT_CLEAR           ; none          ; Untyped                                                                     ;
-; EXTRA_SIGNA_CLEAR            ; none          ; Untyped                                                                     ;
-; EXTRA_SIGNB_CLEAR            ; none          ; Untyped                                                                     ;
-; MULT_PIPELINE                ; 0             ; Untyped                                                                     ;
-; MULT_CLOCK                   ; NONE          ; Untyped                                                                     ;
-; MULT_CLEAR                   ; NONE          ; Untyped                                                                     ;
-; MULT_REPRESENTATION_A        ; UNSIGNED      ; Untyped                                                                     ;
-; MULT_REPRESENTATION_B        ; UNSIGNED      ; Untyped                                                                     ;
-; MULT_INPUT_A_IS_CONSTANT     ; NO            ; Untyped                                                                     ;
-; MULT_INPUT_B_IS_CONSTANT     ; NO            ; Untyped                                                                     ;
-; MULT_INPUT_A_FIXED_VALUE     ; Bx            ; Untyped                                                                     ;
-; MULT_INPUT_B_FIXED_VALUE     ; Bx            ; Untyped                                                                     ;
-; MULT_MAXIMIZE_SPEED          ; 5             ; Untyped                                                                     ;
-; CBXI_PARAMETER               ; mac_mult_r2h1 ; Untyped                                                                     ;
-+------------------------------+---------------+-----------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out2 ;
-+-------------------------------+--------------+---------------------------------------------------------------------------+
-; Parameter Name                ; Value        ; Type                                                                      ;
-+-------------------------------+--------------+---------------------------------------------------------------------------+
-; OPERATION_MODE                ; OUTPUT_ONLY  ; Untyped                                                                   ;
-; DATAA_WIDTH                   ; 32           ; Untyped                                                                   ;
-; DATAB_WIDTH                   ; 0            ; Untyped                                                                   ;
-; DATAC_WIDTH                   ; 0            ; Untyped                                                                   ;
-; DATAD_WIDTH                   ; 0            ; Untyped                                                                   ;
-; ADDNSUB0_CLOCK                ; NONE         ; Untyped                                                                   ;
-; ADDNSUB1_CLOCK                ; NONE         ; Untyped                                                                   ;
-; ROUND0_CLOCK                  ; none         ; Untyped                                                                   ;
-; ROUND1_CLOCK                  ; none         ; Untyped                                                                   ;
-; SATURATE_CLOCK                ; none         ; Untyped                                                                   ;
-; MULTABSATURATE_CLOCK          ; none         ; Untyped                                                                   ;
-; MULTCDSATURATE_CLOCK          ; none         ; Untyped                                                                   ;
-; ZEROACC_CLOCK                 ; NONE         ; Untyped                                                                   ;
-; SIGNA_CLOCK                   ; NONE         ; Untyped                                                                   ;
-; SIGNB_CLOCK                   ; NONE         ; Untyped                                                                   ;
-; OUTPUT_CLOCK                  ; NONE         ; Untyped                                                                   ;
-; ADDNSUB0_CLEAR                ; NONE         ; Untyped                                                                   ;
-; ADDNSUB1_CLEAR                ; NONE         ; Untyped                                                                   ;
-; ROUND0_CLEAR                  ; none         ; Untyped                                                                   ;
-; ROUND1_CLEAR                  ; none         ; Untyped                                                                   ;
-; SATURATE_CLEAR                ; none         ; Untyped                                                                   ;
-; MULTABSATURATE_CLEAR          ; none         ; Untyped                                                                   ;
-; MULTCDSATURATE_CLEAR          ; none         ; Untyped                                                                   ;
-; ZEROACC_CLEAR                 ; NONE         ; Untyped                                                                   ;
-; SIGNA_CLEAR                   ; NONE         ; Untyped                                                                   ;
-; SIGNB_CLEAR                   ; NONE         ; Untyped                                                                   ;
-; OUTPUT_CLEAR                  ; NONE         ; Untyped                                                                   ;
-; ADDNSUB0_PIPELINE_CLOCK       ; NONE         ; Untyped                                                                   ;
-; ADDNSUB1_PIPELINE_CLOCK       ; NONE         ; Untyped                                                                   ;
-; ROUND0_PIPELINE_CLOCK         ; none         ; Untyped                                                                   ;
-; ROUND1_PIPELINE_CLOCK         ; none         ; Untyped                                                                   ;
-; SATURATE_PIPELINE_CLOCK       ; none         ; Untyped                                                                   ;
-; MULTABSATURATE_PIPELINE_CLOCK ; none         ; Untyped                                                                   ;
-; MULTCDSATURATE_PIPELINE_CLOCK ; none         ; Untyped                                                                   ;
-; ZEROACC_PIPELINE_CLOCK        ; NONE         ; Untyped                                                                   ;
-; SIGNA_PIPELINE_CLOCK          ; NONE         ; Untyped                                                                   ;
-; SIGNB_PIPELINE_CLOCK          ; NONE         ; Untyped                                                                   ;
-; ADDNSUB0_PIPELINE_CLEAR       ; NONE         ; Untyped                                                                   ;
-; ADDNSUB1_PIPELINE_CLEAR       ; NONE         ; Untyped                                                                   ;
-; ROUND0_PIPELINE_CLEAR         ; none         ; Untyped                                                                   ;
-; ROUND1_PIPELINE_CLEAR         ; none         ; Untyped                                                                   ;
-; SATURATE_PIPELINE_CLEAR       ; none         ; Untyped                                                                   ;
-; MULTABSATURATE_PIPELINE_CLEAR ; none         ; Untyped                                                                   ;
-; MULTCDSATURATE_PIPELINE_CLEAR ; none         ; Untyped                                                                   ;
-; ZEROACC_PIPELINE_CLEAR        ; NONE         ; Untyped                                                                   ;
-; SIGNA_PIPELINE_CLEAR          ; NONE         ; Untyped                                                                   ;
-; SIGNB_PIPELINE_CLEAR          ; NONE         ; Untyped                                                                   ;
-; MODE0_CLOCK                   ; none         ; Untyped                                                                   ;
-; MODE1_CLOCK                   ; none         ; Untyped                                                                   ;
-; ZEROACC1_CLOCK                ; none         ; Untyped                                                                   ;
-; SATURATE1_CLOCK               ; none         ; Untyped                                                                   ;
-; OUTPUT1_CLOCK                 ; none         ; Untyped                                                                   ;
-; OUTPUT2_CLOCK                 ; none         ; Untyped                                                                   ;
-; OUTPUT3_CLOCK                 ; none         ; Untyped                                                                   ;
-; OUTPUT4_CLOCK                 ; none         ; Untyped                                                                   ;
-; OUTPUT5_CLOCK                 ; none         ; Untyped                                                                   ;
-; OUTPUT6_CLOCK                 ; none         ; Untyped                                                                   ;
-; OUTPUT7_CLOCK                 ; none         ; Untyped                                                                   ;
-; MODE0_CLEAR                   ; none         ; Untyped                                                                   ;
-; MODE1_CLEAR                   ; none         ; Untyped                                                                   ;
-; ZEROACC1_CLEAR                ; none         ; Untyped                                                                   ;
-; SATURATE1_CLEAR               ; none         ; Untyped                                                                   ;
-; OUTPUT1_CLEAR                 ; none         ; Untyped                                                                   ;
-; OUTPUT2_CLEAR                 ; none         ; Untyped                                                                   ;
-; OUTPUT3_CLEAR                 ; none         ; Untyped                                                                   ;
-; OUTPUT4_CLEAR                 ; none         ; Untyped                                                                   ;
-; OUTPUT5_CLEAR                 ; none         ; Untyped                                                                   ;
-; OUTPUT6_CLEAR                 ; none         ; Untyped                                                                   ;
-; OUTPUT7_CLEAR                 ; none         ; Untyped                                                                   ;
-; MODE0_PIPELINE_CLOCK          ; none         ; Untyped                                                                   ;
-; MODE1_PIPELINE_CLOCK          ; none         ; Untyped                                                                   ;
-; ZEROACC1_PIPELINE_CLOCK       ; none         ; Untyped                                                                   ;
-; SATURATE1_PIPELINE_CLOCK      ; none         ; Untyped                                                                   ;
-; MODE0_PIPELINE_CLEAR          ; none         ; Untyped                                                                   ;
-; MODE1_PIPELINE_CLEAR          ; none         ; Untyped                                                                   ;
-; ZEROACC1_PIPELINE_CLEAR       ; none         ; Untyped                                                                   ;
-; SATURATE1_PIPELINE_CLEAR      ; none         ; Untyped                                                                   ;
-; FIRST_ADDER0_CLOCK            ; NONE         ; Untyped                                                                   ;
-; FIRST_ADDER1_CLOCK            ; NONE         ; Untyped                                                                   ;
-; FIRST_ADDER0_CLEAR            ; NONE         ; Untyped                                                                   ;
-; FIRST_ADDER1_CLEAR            ; NONE         ; Untyped                                                                   ;
-; DATAA_FORCED_TO_ZERO          ; NO           ; Untyped                                                                   ;
-; DATAC_FORCED_TO_ZERO          ; NO           ; Untyped                                                                   ;
-; USING_ROUNDING                ; NO           ; Untyped                                                                   ;
-; USING_SATURATION              ; NO           ; Untyped                                                                   ;
-; USING_MULT_SATURATION         ; NO           ; Untyped                                                                   ;
-; USING_LOADABLE_ACCUM          ; NO           ; Untyped                                                                   ;
-; LOADABLE_ACCUM_SUPPORTED      ; NO           ; Untyped                                                                   ;
-; USING_CHAINOUT                ; NO           ; Untyped                                                                   ;
-; CHAININ_WIDTH                 ; 0            ; Untyped                                                                   ;
-; CHAINOUT_PIPELINE_CLOCK       ; none         ; Untyped                                                                   ;
-; CHAINOUT_PIPELINE_CLEAR       ; none         ; Untyped                                                                   ;
-; CBXI_PARAMETER                ; mac_out_kv82 ; Untyped                                                                   ;
-+-------------------------------+--------------+---------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -905,15 +781,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------+----------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "controller:MainController"                                                                                                                       ;
-+----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                                                                                      ;
-+----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; testPort ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "testPort[15..1]" have no fanouts                ;
-; rst      ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; codeOut  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-+----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "controller:MainController"                                                                                   ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                  ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; codeOut  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; testPort ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; INTRTest ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------+
@@ -930,7 +806,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:17     ;
+; Top            ; 00:00:12     ;
 +----------------+--------------+
 
 
@@ -940,9 +816,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
-    Info: Processing started: Tue Nov 05 18:11:25 2019
+    Info: Processing started: Tue Nov 12 19:05:07 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MCU2 -c MCU2
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Info (12021): Found 2 design units, including 2 entities, in source file nixietube.v
+    Info (12023): Found entity 1: bit4Tube
+    Info (12023): Found entity 2: NixieTube
 Info (12021): Found 1 design units, including 1 entities, in source file timer.v
     Info (12023): Found entity 1: timer
 Info (12021): Found 1 design units, including 1 entities, in source file rom.v
@@ -956,13 +835,10 @@ Info (12021): Found 1 design units, including 1 entities, in source file control
 Info (12021): Found 1 design units, including 1 entities, in source file alu.v
     Info (12023): Found entity 1: ALU
 Info (12127): Elaborating entity "MCU2" for the top level hierarchy
-Warning (10034): Output port "Macc" at MCU2.v(7) has no driver
-Warning (10034): Output port "MaccH" at MCU2.v(8) has no driver
-Warning (10034): Output port "testout" at MCU2.v(9) has no driver
 Info (12128): Elaborating entity "Ram" for hierarchy "Ram:myRam"
 Info (12128): Elaborating entity "Rom" for hierarchy "Rom:ProgramMemory"
 Warning (10036): Verilog HDL or VHDL warning at Rom.v(14): object "i" assigned a value but never read
-Warning (10850): Verilog HDL warning at Rom.v(20): number of words (38) in memory file does not match the number of elements in the address range [0:255]
+Warning (10850): Verilog HDL warning at Rom.v(20): number of words (8) in memory file does not match the number of elements in the address range [0:255]
 Warning (10030): Net "rom.data_a" at Rom.v(16) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "rom.waddr_a" at Rom.v(16) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "rom.we_a" at Rom.v(16) has no driver or initial value, using a default initial value '0'
@@ -1002,9 +878,11 @@ Info (10041): Inferred latch for "dataAcc[30]" at ALU.v(12)
 Info (10041): Inferred latch for "dataAcc[31]" at ALU.v(12)
 Info (12128): Elaborating entity "timer" for hierarchy "timer:myTimer"
 Info (12128): Elaborating entity "controller" for hierarchy "controller:MainController"
-Warning (10272): Verilog HDL Case Statement warning at controller.v(191): case item expression covers a value already covered by a previous case item
-Warning (10272): Verilog HDL Case Statement warning at controller.v(200): case item expression covers a value already covered by a previous case item
-Warning (10230): Verilog HDL assignment warning at controller.v(344): truncated value with size 32 to match size of target (8)
+Warning (10272): Verilog HDL Case Statement warning at controller.v(193): case item expression covers a value already covered by a previous case item
+Warning (10272): Verilog HDL Case Statement warning at controller.v(202): case item expression covers a value already covered by a previous case item
+Warning (10230): Verilog HDL assignment warning at controller.v(352): truncated value with size 32 to match size of target (8)
+Info (12128): Elaborating entity "NixieTube" for hierarchy "NixieTube:myNT"
+Info (12128): Elaborating entity "bit4Tube" for hierarchy "NixieTube:myNT|bit4Tube:tl1"
 Warning (276027): Inferred dual-clock RAM node "Ram:myRam|ram_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276007): RAM logic "Ram:myRam|ram" is uninferred due to asynchronous read logic
@@ -1050,8 +928,8 @@ Info (12133): Instantiated megafunction "Rom:ProgramMemory|altsyncram:rom_rtl_0"
     Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
     Info (12134): Parameter "INIT_FILE" = "db/MCU2.ram0_Rom_15fa0.hdl.mif"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_0u61.tdf
-    Info (12023): Found entity 1: altsyncram_0u61
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_6q61.tdf
+    Info (12023): Found entity 1: altsyncram_6q61
 Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/84368/Desktop/MCU/db/MCU2.ram0_Rom_15fa0.hdl.mif" contains "don't care" values -- overwriting them with 0s
 Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/84368/Desktop/MCU/db/MCU2.ram0_Rom_15fa0.hdl.mif" contains "don't care" values -- overwriting them with 0s
 Info (12130): Elaborated megafunction instantiation "Ram:myRam|altsyncram:ram_rtl_0"
@@ -1070,8 +948,8 @@ Info (12133): Instantiated megafunction "Ram:myRam|altsyncram:ram_rtl_0" with th
     Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK1"
     Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_o0e1.tdf
-    Info (12023): Found entity 1: altsyncram_o0e1
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_usd1.tdf
+    Info (12023): Found entity 1: altsyncram_usd1
 Info (12130): Elaborated megafunction instantiation "ALU:MainALU|lpm_mult:Mult0"
 Info (12133): Instantiated megafunction "ALU:MainALU|lpm_mult:Mult0" with the following parameter:
     Info (12134): Parameter "LPM_WIDTHA" = "16"
@@ -1083,16 +961,16 @@ Info (12133): Instantiated megafunction "ALU:MainALU|lpm_mult:Mult0" with the fo
     Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
     Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
     Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
-Info (12021): Found 1 design units, including 1 entities, in source file db/mult_1ht.tdf
-    Info (12023): Found entity 1: mult_1ht
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_7dt.tdf
+    Info (12023): Found entity 1: mult_7dt
 Info (12130): Elaborated megafunction instantiation "ALU:MainALU|lpm_divide:Div0"
 Info (12133): Instantiated megafunction "ALU:MainALU|lpm_divide:Div0" with the following parameter:
     Info (12134): Parameter "LPM_WIDTHN" = "16"
     Info (12134): Parameter "LPM_WIDTHD" = "16"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_fom.tdf
-    Info (12023): Found entity 1: lpm_divide_fom
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_lkm.tdf
+    Info (12023): Found entity 1: lpm_divide_lkm
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_dnh.tdf
     Info (12023): Found entity 1: sign_div_unsign_dnh
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_8ef.tdf
@@ -1101,215 +979,93 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/add_
     Info (12023): Found entity 1: add_sub_1tc
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_2tc.tdf
     Info (12023): Found entity 1: add_sub_2tc
-Info (270001): Converted 1 DSP block slices
-    Info (270002): Used 1 DSP blocks before DSP block balancing
-        Info (270003): Used 1 DSP block slices in "Simple Multiplier (18-bit)" mode implemented in approximately 1 DSP blocks
-    Info (270013): Converted the following 1 DSP block slices to logic elements
-        Info (270006): DSP block slice in "Simple Multiplier (18-bit)" mode with output node "ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|mac_out2"
-            Info (270004): DSP block output node "ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|mac_out2"
-            Info (270005): DSP block multiplier node "ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|mac_mult1"
-    Info (270002): Used 0 DSP blocks after DSP block balancing
-Info (12130): Elaborated megafunction instantiation "ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1"
-Info (12133): Instantiated megafunction "ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1" with the following parameter:
-    Info (12134): Parameter "MULT_REPRESENTATION_A" = "UNSIGNED"
-    Info (12134): Parameter "MULT_REPRESENTATION_B" = "UNSIGNED"
-    Info (12134): Parameter "MULT_PIPELINE" = "0"
-    Info (12134): Parameter "MULT_CLOCK" = "NONE"
-    Info (12134): Parameter "MULT_CLEAR" = "NONE"
-    Info (12134): Parameter "MULT_INPUT_A_IS_CONSTANT" = "NO"
-    Info (12134): Parameter "MULT_INPUT_B_IS_CONSTANT" = "NO"
-    Info (12134): Parameter "dataa_width" = "16"
-    Info (12134): Parameter "datab_width" = "16"
-    Info (12134): Parameter "output_width" = "32"
-    Info (12134): Parameter "dataa_clock" = "NONE"
-    Info (12134): Parameter "datab_clock" = "NONE"
-    Info (12134): Parameter "signa_clock" = "NONE"
-    Info (12134): Parameter "signb_clock" = "NONE"
-    Info (12134): Parameter "output_clock" = "NONE"
-    Info (12134): Parameter "dataa_clear" = "NONE"
-    Info (12134): Parameter "datab_clear" = "NONE"
-    Info (12134): Parameter "signa_clear" = "NONE"
-    Info (12134): Parameter "signb_clear" = "NONE"
-    Info (12134): Parameter "output_clear" = "NONE"
-Info (12021): Found 1 design units, including 1 entities, in source file db/mac_mult_r2h1.tdf
-    Info (12023): Found entity 1: mac_mult_r2h1
-Info (12021): Found 1 design units, including 1 entities, in source file db/mult_jul.tdf
-    Info (12023): Found entity 1: mult_jul
-Info (12130): Elaborated megafunction instantiation "ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out2"
-Info (12133): Instantiated megafunction "ALU:MainALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out2" with the following parameter:
-    Info (12134): Parameter "OPERATION_MODE" = "OUTPUT_ONLY"
-    Info (12134): Parameter "dataa_width" = "32"
-    Info (12134): Parameter "datab_width" = "0"
-    Info (12134): Parameter "datac_width" = "0"
-    Info (12134): Parameter "datad_width" = "0"
-    Info (12134): Parameter "output_width" = "32"
-    Info (12134): Parameter "signa_clock" = "NONE"
-    Info (12134): Parameter "signb_clock" = "NONE"
-    Info (12134): Parameter "addnsub0_clock" = "NONE"
-    Info (12134): Parameter "addnsub1_clock" = "NONE"
-    Info (12134): Parameter "zeroacc_clock" = "NONE"
-    Info (12134): Parameter "first_adder0_clock" = "NONE"
-    Info (12134): Parameter "first_adder1_clock" = "NONE"
-    Info (12134): Parameter "output_clock" = "NONE"
-    Info (12134): Parameter "signa_clear" = "NONE"
-    Info (12134): Parameter "signb_clear" = "NONE"
-    Info (12134): Parameter "addnsub0_clear" = "NONE"
-    Info (12134): Parameter "addnsub1_clear" = "NONE"
-    Info (12134): Parameter "zeroacc_clear" = "NONE"
-    Info (12134): Parameter "first_adder0_clear" = "NONE"
-    Info (12134): Parameter "first_adder1_clear" = "NONE"
-    Info (12134): Parameter "output_clear" = "NONE"
-    Info (12134): Parameter "signa_pipeline_clock" = "NONE"
-    Info (12134): Parameter "signb_pipeline_clock" = "NONE"
-    Info (12134): Parameter "addnsub0_pipeline_clock" = "NONE"
-    Info (12134): Parameter "addnsub1_pipeline_clock" = "NONE"
-    Info (12134): Parameter "zeroacc_pipeline_clock" = "NONE"
-    Info (12134): Parameter "signa_pipeline_clear" = "NONE"
-    Info (12134): Parameter "signb_pipeline_clear" = "NONE"
-    Info (12134): Parameter "addnsub0_pipeline_clear" = "NONE"
-    Info (12134): Parameter "addnsub1_pipeline_clear" = "NONE"
-    Info (12134): Parameter "zeroacc_pipeline_clear" = "NONE"
-Info (12021): Found 1 design units, including 1 entities, in source file db/mac_out_kv82.tdf
-    Info (12023): Found entity 1: mac_out_kv82
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "Rom:ProgramMemory|altsyncram:rom_rtl_0|altsyncram_6q61:auto_generated|ram_block1a12"
 Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info (13014): Ignored 496 buffer(s)
-    Info (13016): Ignored 16 CARRY_SUM buffer(s)
-    Info (13019): Ignored 480 SOFT buffer(s)
 Warning (13012): Latch ALU:MainALU|dataAcc[0] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
 Warning (13012): Latch ALU:MainALU|dataAcc[1] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
 Warning (13012): Latch ALU:MainALU|dataAcc[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
 Warning (13012): Latch ALU:MainALU|dataAcc[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
 Warning (13012): Latch ALU:MainALU|dataAcc[4] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
 Warning (13012): Latch ALU:MainALU|dataAcc[5] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
 Warning (13012): Latch ALU:MainALU|dataAcc[6] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
 Warning (13012): Latch ALU:MainALU|dataAcc[7] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
 Warning (13012): Latch ALU:MainALU|dataAcc[8] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
 Warning (13012): Latch ALU:MainALU|dataAcc[9] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
 Warning (13012): Latch ALU:MainALU|dataAcc[10] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
 Warning (13012): Latch ALU:MainALU|dataAcc[11] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
 Warning (13012): Latch ALU:MainALU|dataAcc[12] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
 Warning (13012): Latch ALU:MainALU|dataAcc[13] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
 Warning (13012): Latch ALU:MainALU|dataAcc[14] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
 Warning (13012): Latch ALU:MainALU|dataAcc[15] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
 Warning (13012): Latch ALU:MainALU|dataAcc[16] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[0]
 Warning (13012): Latch ALU:MainALU|dataAcc[17] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
 Warning (13012): Latch ALU:MainALU|dataAcc[18] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
 Warning (13012): Latch ALU:MainALU|dataAcc[19] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
 Warning (13012): Latch ALU:MainALU|dataAcc[20] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
 Warning (13012): Latch ALU:MainALU|dataAcc[21] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
 Warning (13012): Latch ALU:MainALU|dataAcc[22] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[3]
 Warning (13012): Latch ALU:MainALU|dataAcc[23] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[0]
 Warning (13012): Latch ALU:MainALU|dataAcc[24] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[0]
 Warning (13012): Latch ALU:MainALU|dataAcc[25] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[0]
 Warning (13012): Latch ALU:MainALU|dataAcc[26] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[0]
 Warning (13012): Latch ALU:MainALU|dataAcc[27] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[0]
 Warning (13012): Latch ALU:MainALU|dataAcc[28] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[0]
 Warning (13012): Latch ALU:MainALU|dataAcc[29] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[0]
 Warning (13012): Latch ALU:MainALU|dataAcc[30] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[0]
 Warning (13012): Latch ALU:MainALU|dataAcc[31] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[2]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controller:MainController|functionSelect[0]
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "Macc[0]" is stuck at GND
-    Warning (13410): Pin "Macc[1]" is stuck at GND
-    Warning (13410): Pin "Macc[2]" is stuck at GND
-    Warning (13410): Pin "Macc[3]" is stuck at GND
-    Warning (13410): Pin "Macc[4]" is stuck at GND
-    Warning (13410): Pin "Macc[5]" is stuck at GND
-    Warning (13410): Pin "Macc[6]" is stuck at GND
-    Warning (13410): Pin "Macc[7]" is stuck at GND
-    Warning (13410): Pin "Macc[8]" is stuck at GND
-    Warning (13410): Pin "Macc[9]" is stuck at GND
-    Warning (13410): Pin "Macc[10]" is stuck at GND
-    Warning (13410): Pin "Macc[11]" is stuck at GND
-    Warning (13410): Pin "Macc[12]" is stuck at GND
-    Warning (13410): Pin "Macc[13]" is stuck at GND
-    Warning (13410): Pin "Macc[14]" is stuck at GND
-    Warning (13410): Pin "Macc[15]" is stuck at GND
-    Warning (13410): Pin "MaccH[0]" is stuck at GND
-    Warning (13410): Pin "MaccH[1]" is stuck at GND
-    Warning (13410): Pin "MaccH[2]" is stuck at GND
-    Warning (13410): Pin "MaccH[3]" is stuck at GND
-    Warning (13410): Pin "MaccH[4]" is stuck at GND
-    Warning (13410): Pin "MaccH[5]" is stuck at GND
-    Warning (13410): Pin "MaccH[6]" is stuck at GND
-    Warning (13410): Pin "MaccH[7]" is stuck at GND
-    Warning (13410): Pin "MaccH[8]" is stuck at GND
-    Warning (13410): Pin "MaccH[9]" is stuck at GND
-    Warning (13410): Pin "MaccH[10]" is stuck at GND
-    Warning (13410): Pin "MaccH[11]" is stuck at GND
-    Warning (13410): Pin "MaccH[12]" is stuck at GND
-    Warning (13410): Pin "MaccH[13]" is stuck at GND
-    Warning (13410): Pin "MaccH[14]" is stuck at GND
-    Warning (13410): Pin "MaccH[15]" is stuck at GND
-    Warning (13410): Pin "testout[0]" is stuck at GND
-    Warning (13410): Pin "testout[1]" is stuck at GND
-    Warning (13410): Pin "testout[2]" is stuck at GND
-    Warning (13410): Pin "testout[3]" is stuck at GND
-    Warning (13410): Pin "testout[4]" is stuck at GND
-    Warning (13410): Pin "testout[5]" is stuck at GND
-    Warning (13410): Pin "testout[6]" is stuck at GND
-    Warning (13410): Pin "testout[7]" is stuck at GND
-    Warning (13410): Pin "testout[8]" is stuck at GND
-    Warning (13410): Pin "testout[9]" is stuck at GND
-    Warning (13410): Pin "testout[10]" is stuck at GND
-    Warning (13410): Pin "testout[11]" is stuck at GND
-    Warning (13410): Pin "testout[12]" is stuck at GND
-    Warning (13410): Pin "testout[13]" is stuck at GND
-    Warning (13410): Pin "testout[14]" is stuck at GND
-    Warning (13410): Pin "testout[15]" is stuck at GND
+    Warning (13410): Pin "drive[7]" is stuck at VCC
+    Warning (13410): Pin "drive[15]" is stuck at VCC
+    Warning (13410): Pin "drive[23]" is stuck at VCC
+    Warning (13410): Pin "drive[31]" is stuck at VCC
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 8 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file C:/Users/84368/Desktop/MCU/output_files/MCU2.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "rst"
-Info (21057): Implemented 8761 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 8420 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 19 input pins
-    Info (21059): Implemented 148 output pins
-    Info (21061): Implemented 8562 logic cells
-    Info (21064): Implemented 32 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 131 warnings
-    Info: Peak virtual memory: 4733 megabytes
-    Info: Processing ended: Tue Nov 05 18:11:46 2019
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:19
-
-
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in C:/Users/84368/Desktop/MCU/output_files/MCU2.map.smsg.
+    Info (21059): Implemented 49 output pins
+    Info (21061): Implemented 8319 logic cells
+    Info (21064): Implemented 31 RAM segments
+    Info (21062): Implemented 2 DSP elements
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 85 warnings
+    Info: Peak virtual memory: 4681 megabytes
+    Info: Processing ended: Tue Nov 12 19:05:24 2019
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:14
 
 

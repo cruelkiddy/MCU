@@ -4,18 +4,7 @@ module MCU2(
     input  [15:0] portIn,
     input exINT,    ///< Interrupt Pin
     output [15:0] portOut,
-    output [15:0] Macc,
-    output [15:0] MaccH,
-    output [15:0] testout,
-    output [15:0] TimerValuePort,
-    output INTtestout,
-    output [15:0] INTRPort,
-    output [15:0] McodeOut,
-    output [7:0] RomAddrPort,
-    output [15:0] OneRamData,
-    output ram_r,
-    output ram_w,
-    output [7:0] ram_addr,
+    output [31:0] drive,
     output PinOut   ///< Pin out    
 );
 
@@ -33,12 +22,7 @@ module MCU2(
 
     ///< Test For calculate using ALU
     // assign testout = RomAddr;
-    assign TimerValuePort = TimerValue;
-    assign McodeOut = ProgramCode;
-    assign RomAddrPort = RomAddr;
-    assign ram_r = RamRE;
-    assign ram_w = RamWE;
-    assign ram_addr = RamAddr;
+
 
     ///< Wires Linking Controller & Ram
     wire RamCS;
@@ -57,9 +41,13 @@ module MCU2(
     wire TimerINT;
     wire [15:0] TimerValue;
 
+    wire [15:0] datadisplay;
+
+    assign datadisplay = portOut;
 
 
-    Ram myRam(DataIntoRam, DataFromRam, OneRamData, RamAddr, RamCS, RamWE, RamRE);
+
+    Ram myRam(DataIntoRam, DataFromRam, RamAddr, RamCS, RamWE, RamRE);
     
     Rom ProgramMemory(ProgramCode, RomAddr, RomCS, RomRE);
 
@@ -68,6 +56,7 @@ module MCU2(
     timer myTimer(clk, TimerCS, TimerWR, TimerSTART, TimerRD, TimerDataIn, TimerINT, TimerValue);
 
     controller MainController(.clk(clk),
+                              .rst(rst),
                               .rom_cs(RomCS), 
                               .re(RomRE), 
                               .EXT_INT(exINT),
@@ -92,11 +81,10 @@ module MCU2(
                               .portOut(portOut),
                               .PinOut(PinOut),
                               .portIn(portIn),
-                              .testPort(INTtestout),
-                              .ram_addr(RamAddr),
-                              .INTRTest(INTRPort)
+                              .ram_addr(RamAddr)
                              );
 
+    NixieTube myNT(datadisplay, drive);
 
 
 endmodule // MCU2

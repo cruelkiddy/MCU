@@ -55,6 +55,16 @@ module ALU(funcSelect, ar, br, dataAcc, carry);
                 dataAcc <= result[15:0]; 
                 carry <= 0; 
             end 
+            4'b1010:begin
+                result <= ar + 1'b1;
+                dataAcc <= result[15:0];
+                carry <= result[16];
+            end
+            4'b1011:begin
+                result <= ar - 1'b1;
+                dataAcc <= result[15:0];
+                carry <= result[16];
+            end
 
             default: begin result <= 0; carry <= 0; end
         endcase

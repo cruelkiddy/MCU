@@ -78,7 +78,7 @@ module controller(
     assign timer_cs = TC[3];
     assign timer_wr = TC[2];
     assign timer_start = TC[1];
-    assign timer_rd = 1'b1;     ///< Debugging : replace TC[0] with 1'b1
+    assign timer_rd = TC[0];     ///< Debugging : replace TC[0] with 1'b1
 
 
     assign ControlSelect = romReg[15:13];
@@ -87,9 +87,9 @@ module controller(
     assign testPort = timer_INT;
     assign INTRTest = INTR;
 
-    always @(posedge clk or posedge rst) begin
+    always @(posedge clk or negedge rst) begin
 
-        if(rst) begin
+        if(!rst) begin
            CurrentState <= CheckINT;
            ProgramCounter <= 0;
            re <= 0;
@@ -104,9 +104,11 @@ module controller(
            brin <= 0;
            functionSelect <= 0;
 
-           TC = 0;
-           INTR = 0;
-           pcSave = 0;
+           romReg <= 0;
+
+           TC <= 0;
+           INTR <= 0;
+           pcSave <= 0;
         end
         else if(INTR[15] & INTR[9] & timer_INT) INTR[1] <= 1'b1;
         else if(INTR[15] & INTR[8] & EXT_INT)   INTR[0] <= 1'b1;
@@ -202,7 +204,13 @@ module controller(
                         end
                         4'b1001:begin ///< Perform ar >> br
                             functionSelect <= 4'b1001;
-                        end                       
+                        end
+                        4'b1010:begin ///< Perform ar ++
+                            functionSelect <= 4'b1010;
+                        end      
+                        4'b1011:begin ///< Perform ar --
+                            functionSelect <= 4'b1011;
+                        end                 
                         default: begin ///< Do nothing
                             functionSelect <= 0;
                         end

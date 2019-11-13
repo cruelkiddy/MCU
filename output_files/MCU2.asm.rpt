@@ -1,5 +1,5 @@
 Assembler report for MCU2
-Tue Nov 05 18:14:21 2019
+Tue Nov 12 19:10:59 2019
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -37,11 +37,11 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Nov 05 18:14:21 2019 ;
+; Assembler Status      ; Successful - Tue Nov 12 19:10:59 2019 ;
 ; Revision Name         ; MCU2                                  ;
 ; Top-level Entity Name ; MCU2                                  ;
-; Family                ; Cyclone IV GX                         ;
-; Device                ; EP4CGX30CF23C6                        ;
+; Family                ; Cyclone IV E                          ;
+; Device                ; EP4CE115F29C7                         ;
 +-----------------------+---------------------------------------+
 
 
@@ -91,9 +91,9 @@ applicable agreement for further details.
 +----------------+-----------------------------------------------------------+
 ; Option         ; Setting                                                   ;
 +----------------+-----------------------------------------------------------+
-; Device         ; EP4CGX30CF23C6                                            ;
-; JTAG usercode  ; 0x0089300E                                                ;
-; Checksum       ; 0x0089300E                                                ;
+; Device         ; EP4CE115F29C7                                             ;
+; JTAG usercode  ; 0x00A2E5BE                                                ;
+; Checksum       ; 0x00A2E5BE                                                ;
 +----------------+-----------------------------------------------------------+
 
 
@@ -103,14 +103,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
-    Info: Processing started: Tue Nov 05 18:14:15 2019
+    Info: Processing started: Tue Nov 12 19:10:54 2019
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off MCU2 -c MCU2
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4686 megabytes
-    Info: Processing ended: Tue Nov 05 18:14:21 2019
-    Info: Elapsed time: 00:00:06
+    Info: Peak virtual memory: 4646 megabytes
+    Info: Processing ended: Tue Nov 12 19:10:59 2019
+    Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:05
 
 

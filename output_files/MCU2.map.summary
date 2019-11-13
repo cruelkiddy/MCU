@@ -1,18 +1,14 @@
-Analysis & Synthesis Status : Successful - Tue Nov 05 18:11:46 2019
+Analysis & Synthesis Status : Successful - Tue Nov 12 19:05:23 2019
 Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Full Version
 Revision Name : MCU2
 Top-level Entity Name : MCU2
-Family : Cyclone IV GX
-Total logic elements : 8,529
-    Total combinational functions : 4,333
-    Dedicated logic registers : 4,324
-Total registers : 4324
-Total pins : 167
+Family : Cyclone IV E
+Total logic elements : 8,286
+    Total combinational functions : 4,089
+    Dedicated logic registers : 4,325
+Total registers : 4325
+Total pins : 68
 Total virtual pins : 0
-Total memory bits : 8,192
-Embedded Multiplier 9-bit elements : 0
-Total GXB Receiver Channel PCS : 0
-Total GXB Receiver Channel PMA : 0
-Total GXB Transmitter Channel PCS : 0
-Total GXB Transmitter Channel PMA : 0
+Total memory bits : 7,936
+Embedded Multiplier 9-bit elements : 2
 Total PLLs : 0

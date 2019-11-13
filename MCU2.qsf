@@ -36,8 +36,8 @@
 # -------------------------------------------------------------------------- #
 
 
-set_global_assignment -name FAMILY "Cyclone IV GX"
-set_global_assignment -name DEVICE auto
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE115F29C7
 set_global_assignment -name TOP_LEVEL_ENTITY MCU2
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "18:03:32  OCTOBER 15, 2019"
@@ -49,7 +49,11 @@ set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name EDA_NETLIST_WRITER_OUTPUT_DIR "C:/Users/84368/Desktop/MCU/simulation/qsim/" -section_id eda_simulation
-set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_simulation
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST ON -section_id eda_simulation
+set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name VERILOG_FILE NixieTube.v
 set_global_assignment -name VERILOG_FILE timer.v
 set_global_assignment -name VERILOG_FILE Rom.v
 set_global_assignment -name VERILOG_FILE Ram.v
@@ -57,5 +61,74 @@ set_global_assignment -name VERILOG_FILE MCU2.v
 set_global_assignment -name VERILOG_FILE controller.v
 set_global_assignment -name VERILOG_FILE ALU.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
+set_global_assignment -name SOURCE_FILE db/MCU2.cmp.rdb
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_location_assignment PIN_M21 -to rst
+set_location_assignment PIN_Y2 -to clk
+set_location_assignment PIN_Y23 -to portIn[15]
+set_location_assignment PIN_Y24 -to portIn[14]
+set_location_assignment PIN_AA22 -to portIn[13]
+set_location_assignment PIN_AA23 -to portIn[12]
+set_location_assignment PIN_AA24 -to portIn[11]
+set_location_assignment PIN_AB23 -to portIn[10]
+set_location_assignment PIN_AB24 -to portIn[9]
+set_location_assignment PIN_AC24 -to portIn[8]
+set_location_assignment PIN_AB25 -to portIn[7]
+set_location_assignment PIN_AC25 -to portIn[6]
+set_location_assignment PIN_AB26 -to portIn[5]
+set_location_assignment PIN_AD26 -to portIn[4]
+set_location_assignment PIN_AC26 -to portIn[3]
+set_location_assignment PIN_AB27 -to portIn[2]
+set_location_assignment PIN_AD27 -to portIn[1]
+set_location_assignment PIN_AC27 -to portIn[0]
+set_location_assignment PIN_H15 -to portOut[15]
+set_location_assignment PIN_G16 -to portOut[14]
+set_location_assignment PIN_G15 -to portOut[13]
+set_location_assignment PIN_F15 -to portOut[12]
+set_location_assignment PIN_H17 -to portOut[11]
+set_location_assignment PIN_J16 -to portOut[10]
+set_location_assignment PIN_H16 -to portOut[9]
+set_location_assignment PIN_J15 -to portOut[8]
+set_location_assignment PIN_G17 -to portOut[7]
+set_location_assignment PIN_J17 -to portOut[6]
+set_location_assignment PIN_H19 -to portOut[5]
+set_location_assignment PIN_J19 -to portOut[4]
+set_location_assignment PIN_E18 -to portOut[3]
+set_location_assignment PIN_F18 -to portOut[2]
+set_location_assignment PIN_F21 -to portOut[1]
+set_location_assignment PIN_E19 -to portOut[0]
+set_location_assignment PIN_J10 -to drive[31]
+set_location_assignment PIN_H22 -to drive[30]
+set_location_assignment PIN_J22 -to drive[29]
+set_location_assignment PIN_L25 -to drive[28]
+set_location_assignment PIN_L26 -to drive[27]
+set_location_assignment PIN_E17 -to drive[26]
+set_location_assignment PIN_F22 -to drive[25]
+set_location_assignment PIN_G18 -to drive[24]
+set_location_assignment PIN_J14 -to drive[23]
+set_location_assignment PIN_U24 -to drive[22]
+set_location_assignment PIN_U23 -to drive[21]
+set_location_assignment PIN_W25 -to drive[20]
+set_location_assignment PIN_W22 -to drive[19]
+set_location_assignment PIN_W21 -to drive[18]
+set_location_assignment PIN_Y22 -to drive[17]
+set_location_assignment PIN_M24 -to drive[16]
+set_location_assignment PIN_H13 -to drive[15]
+set_location_assignment PIN_W28 -to drive[14]
+set_location_assignment PIN_W27 -to drive[13]
+set_location_assignment PIN_Y26 -to drive[12]
+set_location_assignment PIN_W26 -to drive[11]
+set_location_assignment PIN_Y25 -to drive[10]
+set_location_assignment PIN_AA26 -to drive[9]
+set_location_assignment PIN_AA25 -to drive[8]
+set_location_assignment PIN_H14 -to drive[7]
+set_location_assignment PIN_Y19 -to drive[6]
+set_location_assignment PIN_AF23 -to drive[5]
+set_location_assignment PIN_AD24 -to drive[4]
+set_location_assignment PIN_AA21 -to drive[3]
+set_location_assignment PIN_AB20 -to drive[2]
+set_location_assignment PIN_U21 -to drive[1]
+set_location_assignment PIN_V21 -to drive[0]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
